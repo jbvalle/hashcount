@@ -3,8 +3,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <!--\image html logo.png width=50%-->
-    
+    \image html logo.png width=50%
+
+    <img src="../doxy/images/logo.png" alt="Logo" width="200" height="200">
+
   <p align="center">
     <i>This project aims to demonstrate search and sorting algorithms as well as time complexity based comparisons to determine efficiency and usability. It is implemented in two parts.</i>
     <br />
