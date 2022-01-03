@@ -2,11 +2,8 @@
 
 <!-- PROJECT LOGO -->
 <br />
-    <img src="../doxy/images/logo.png" alt="Logo" width="200"">
 
     <div align="center">
-    \image html logo.png width=50%
-
 
     <p align="center">
 
@@ -16,6 +13,10 @@
 </div>
 
 
+\image html logo.png width=50%
+
+
+    <img src="../doxy/images/logo.png" alt="Logo" width="200"">
 
 <!-- TABLE OF CONTENTS -->
   <br />Table of Contents<br />
