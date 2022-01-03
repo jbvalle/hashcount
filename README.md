@@ -6,7 +6,7 @@
 
 <div align="center">
 
-![picture](./images/logo.png)
+![picture](../doxy/images/logo.png)
 <img src="./doxy/images/logo.png" width="200" height="200">
 </div>
 
