@@ -2,6 +2,7 @@
 
 <!-- PROJECT LOGO -->
 <br />
+
 <div align="center">
     \image html logo.png width=50%
     
@@ -10,6 +11,7 @@
     <br />
     <br />
   </p>
+
 </div>
 
 
