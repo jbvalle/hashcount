@@ -1,5 +1,9 @@
 CC=gcc
 
+INC_DIR=../inc
+
+DOX_DIR=../doxy
+
 CFLAGS =-g -Wall -Wextra -pedantic -O0
 
 SRCS = $(wildcard *.c)
@@ -12,6 +16,9 @@ all: clean $(TARGET) run
 
 $(TARGET): $(SRCS)
 	@$(CC) $(CFLAGS) -o $@ $^ -lm
+
+$(DOX_DIR)/index.html: 
+	doxygen ../doxy/Doxyfile
 
 run:
 	@./$(TARGET)
