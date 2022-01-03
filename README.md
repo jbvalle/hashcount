@@ -4,7 +4,7 @@
 <br />
 
 
-<div align="center" style="height:100px">
+<div align="center" style="height: 30px;">
 
 ![picture](./doxy/images/logo.png)
 
