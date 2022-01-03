@@ -5,10 +5,11 @@
 
 
 
-<div align="center">
-    <!--\image html logo.png width=50%-->
+![picture](./images/logo.png)
+
 
 <div align="center">
+
 <img src="./doxy/images/logo.png" width="200" height="200">
 </div>
 
