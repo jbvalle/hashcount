@@ -6,7 +6,7 @@
 
 <div align="center">
 
-<img src="./doxy/images/logo.png" width="50%" height="50%">
+<img src="./doxy/images/logo.png" width="70%" height="70%">
 
 <i>This project aims to demonstrate search and sorting algorithms as well as time complexity based comparisons to determine efficiency and usability. It is implemented in two parts.</i>
 <br />
