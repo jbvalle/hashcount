@@ -8,8 +8,7 @@
 
 <p>
 <img src="./doxy/images/logo.png" height="200" weight="200">
-![picture](./doxy/images/logo.png)</p>
-
+\image html ./images/logo.png "cap"
 </div>
 
   <p align="center">
