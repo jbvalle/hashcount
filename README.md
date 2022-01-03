@@ -3,8 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    \image html logo.png width=50%
-
+    
     <img src="../doxy/images/logo.png" alt="Logo" width="200" height="200">
 
   <p align="center">
