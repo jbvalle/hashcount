@@ -9,6 +9,8 @@
 <!-- \image html ./images/logo.png width=50% height=50% 
 
 ![picture](../doxy/images/logo.png)
+
+
 -->
 <br /><img src="./doxy/images/logo.png" width="50%" height="50%">
 
