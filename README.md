@@ -3,13 +3,15 @@
 <!-- PROJECT LOGO -->
 <br />
 
+
+
+<div align="center">
+    \image html logo.png width=50%
+
 <div align="center">
 <img src="./doxy/images/logo.png" width="200" height="200">
 </div>
 
-<div align="center">
-    \image html logo.png width=50%
-    
   <p align="center">
     <i>This project aims to demonstrate search and sorting algorithms as well as time complexity based comparisons to determine efficiency and usability. It is implemented in two parts.</i>
     <br />
