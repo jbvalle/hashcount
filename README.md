@@ -4,14 +4,16 @@
 <br />
 
 
-<div align="center" style="height: 30px;">
+<div align="center">
 
 <p>
 <img src="./doxy/images/logo.png" height="200" weight="200"><br />
-\image html ./images/logo.png "cap"
+</p>
 </div>
 
   <p align="center">
+
+\image html ./images/logo.png width=50% 
     <i>This project aims to demonstrate search and sorting algorithms as well as time complexity based comparisons to determine efficiency and usability. It is implemented in two parts.</i>
     <br />
     <br />
