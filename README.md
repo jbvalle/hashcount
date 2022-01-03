@@ -6,7 +6,9 @@
 
 <div align="center" style="height: 30px;">
 
-![picture](./doxy/images/logo.png)
+<p>
+<img src="./doxy/images/logo.png" height="200" weight="200">
+![picture](./doxy/images/logo.png)</p>
 
 </div>
 
