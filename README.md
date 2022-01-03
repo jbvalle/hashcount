@@ -7,7 +7,7 @@
 <div align="center" style="height: 30px;">
 
 <p>
-<img src="./doxy/images/logo.png" height="200" weight="200">
+<img src="./doxy/images/logo.png" height="200" weight="200"><br />
 \image html ./images/logo.png "cap"
 </div>
 
