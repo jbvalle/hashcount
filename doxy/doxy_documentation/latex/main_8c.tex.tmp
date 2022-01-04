@@ -2,15 +2,117 @@
 \label{main_8c}\index{/home/jv/Coding/hashcount/src/main.c@{/home/jv/Coding/hashcount/src/main.c}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
 Include dependency graph for main.\+c\+:
 % FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnode}{node}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{main_8c_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
-int {\bfseries main} (void)
+void \mbox{\hyperlink{main_8c_a53de05066e101242b94e4f458b5ae35b}{append}} (\mbox{\hyperlink{main_8c_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$head, char $\ast$word)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{main_8c_a81d78745bfb621471ef9dac9badb6db9}{pow\+\_\+t}} (int base, int exp)
+\item 
+int \mbox{\hyperlink{main_8c_aa6707e4d0f37a801750800a3571741fc}{hash\+\_\+index}} (char $\ast$word, int hash\+\_\+limit)
+\item 
+int \mbox{\hyperlink{main_8c_ae21639cf20f5664a23ff0a302a030900}{sort\+\_\+words}} ()
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 {\ttfamily \mbox{\hyperlink{main_8c}{main.\+c}}} main entry point for hashcount program 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{main_8c_a7c02633e18d6aa5f58539b75f08753d9}\label{main_8c_a7c02633e18d6aa5f58539b75f08753d9}} 
+\index{main.c@{main.c}!node\_t@{node\_t}}
+\index{node\_t@{node\_t}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{node\_t}{node\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{main_8c_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}}}
+
+{\ttfamily node\+\_\+t} linked list bucket element with word elements 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a53de05066e101242b94e4f458b5ae35b}\label{main_8c_a53de05066e101242b94e4f458b5ae35b}} 
+\index{main.c@{main.c}!append@{append}}
+\index{append@{append}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily void append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8c_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$}]{head,  }\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+Appends data to node of buckets 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em head} & head node element of list to append data \\
+\hline
+\mbox{\texttt{ in}}  & {\em word} & element of node \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item assign head to temporary ptr element
+\item Init new Element with assigned values to new element
+\item If head element is a null pointer assign new element
+\item Traverse through list until Null Pointer is found
+\item Assign new Element to Null Pointer
+\end{DoxyEnumerate}\mbox{\Hypertarget{main_8c_aa6707e4d0f37a801750800a3571741fc}\label{main_8c_aa6707e4d0f37a801750800a3571741fc}} 
+\index{main.c@{main.c}!hash\_index@{hash\_index}}
+\index{hash\_index@{hash\_index}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hash\_index()}{hash\_index()}}
+{\footnotesize\ttfamily int hash\+\_\+index (\begin{DoxyParamCaption}\item[{char $\ast$}]{word,  }\item[{int}]{hash\+\_\+limit }\end{DoxyParamCaption})}
+
+Generates hashindex depending on word Formular\+: {\ttfamily hash\+\_\+index = word\mbox{[}i\mbox{]} $\ast$ k $^\wedge$ i} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em word} & Assigned Word per Node \\
+\hline
+\mbox{\texttt{ in}}  & {\em hash\+\_\+limit} & size of hashmap array \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Initialize hash\+\_\+value variable
+\item Iterate through letters and perform formular
+\item Return forumlar
+\end{DoxyEnumerate}\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyEnumerate}
+\item Init {\ttfamily buckets} array of nodes
+\end{DoxyEnumerate}\mbox{\Hypertarget{main_8c_a81d78745bfb621471ef9dac9badb6db9}\label{main_8c_a81d78745bfb621471ef9dac9badb6db9}} 
+\index{main.c@{main.c}!pow\_t@{pow\_t}}
+\index{pow\_t@{pow\_t}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{pow\_t()}{pow\_t()}}
+{\footnotesize\ttfamily uint64\+\_\+t pow\+\_\+t (\begin{DoxyParamCaption}\item[{int}]{base,  }\item[{int}]{exp }\end{DoxyParamCaption})}
+
+{\ttfamily pow\+\_\+t} serves as an alternative to pow() from math library 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em base} & Base @exp\mbox{[}in\mbox{]} exp Power \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Initialize result variable
+\item Catch zero exponent return 1
+\item Error catch negative exp, in this application neg exp not required
+\item Multiply base with itself exp times
+\item Return resulting value
+\end{DoxyEnumerate}\mbox{\Hypertarget{main_8c_ae21639cf20f5664a23ff0a302a030900}\label{main_8c_ae21639cf20f5664a23ff0a302a030900}} 
+\index{main.c@{main.c}!sort\_words@{sort\_words}}
+\index{sort\_words@{sort\_words}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sort\_words()}{sort\_words()}}
+{\footnotesize\ttfamily int sort\+\_\+words (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sorts words of buckets alphabetically 
