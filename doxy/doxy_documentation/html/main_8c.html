@@ -101,8 +101,10 @@ Functions</h2></td></tr>
 <tr class="separator:a81d78745bfb621471ef9dac9badb6db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6707e4d0f37a801750800a3571741fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aa6707e4d0f37a801750800a3571741fc">hash_index</a> (char *word, int hash_limit)</td></tr>
 <tr class="separator:aa6707e4d0f37a801750800a3571741fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae21639cf20f5664a23ff0a302a030900"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae21639cf20f5664a23ff0a302a030900">sort_words</a> ()</td></tr>
-<tr class="separator:ae21639cf20f5664a23ff0a302a030900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a062d88740e93261fe8a67352675e54ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a062d88740e93261fe8a67352675e54ca">sort_words</a> (<a class="el" href="main_8c.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> **buckets, int hash_limit)</td></tr>
+<tr class="separator:a062d88740e93261fe8a67352675e54ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49fec80669e0bd67bbdc830bd45572e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a49fec80669e0bd67bbdc830bd45572e6">free_buckets</a> (<a class="el" href="main_8c.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> *head)</td></tr>
+<tr class="separator:a49fec80669e0bd67bbdc830bd45572e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -163,6 +165,39 @@ Functions</h2></td></tr>
 <li>If head element is a null pointer assign new element</li>
 <li>Traverse through list until Null Pointer is found</li>
 <li>Assign new Element to Null Pointer</li>
+</ol>
+
+</div>
+</div>
+<a id="a49fec80669e0bd67bbdc830bd45572e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49fec80669e0bd67bbdc830bd45572e6">&#9670;&nbsp;</a></span>free_buckets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_buckets </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="main_8c.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> *&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Frees all mallocs of buckets</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[int]</td><td>buckets </td></tr>
+  </table>
+  </dd>
+</dl>
+<ol type="1">
+<li>Check for Null Pointer</li>
+<li>Assign head to temporary ptr</li>
+<li>Traverse through list until NUll pointer is found</li>
+<li>Assign next element to temporary ptr</li>
+<li>Free ptr</li>
+<li>Reassign temporary next element to ptr</li>
 </ol>
 
 </div>
@@ -255,7 +290,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p><code>pow_t</code> serves as an alternative to pow() from math library </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">base</td><td>Base @exp[in] exp Power </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">base</td><td>Base </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exp</td><td>Power </td></tr>
   </table>
   </dd>
 </dl>
@@ -269,21 +305,39 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae21639cf20f5664a23ff0a302a030900"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae21639cf20f5664a23ff0a302a030900">&#9670;&nbsp;</a></span>sort_words()</h2>
+<a id="a062d88740e93261fe8a67352675e54ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a062d88740e93261fe8a67352675e54ca">&#9670;&nbsp;</a></span>sort_words()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int sort_words </td>
+          <td class="memname">void sort_words </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="main_8c.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> **&#160;</td>
+          <td class="paramname"><em>buckets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hash_limit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sorts words of buckets alphabetically </p>
+<p>Sorts words of buckets alphabetically</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">buckets</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hash_limit</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

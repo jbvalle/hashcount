@@ -25,7 +25,9 @@ uint64\+\_\+t \mbox{\hyperlink{main_8c_a81d78745bfb621471ef9dac9badb6db9}{pow\+\
 \item 
 int \mbox{\hyperlink{main_8c_aa6707e4d0f37a801750800a3571741fc}{hash\+\_\+index}} (char $\ast$word, int hash\+\_\+limit)
 \item 
-int \mbox{\hyperlink{main_8c_ae21639cf20f5664a23ff0a302a030900}{sort\+\_\+words}} ()
+void \mbox{\hyperlink{main_8c_a062d88740e93261fe8a67352675e54ca}{sort\+\_\+words}} (\mbox{\hyperlink{main_8c_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$buckets, int hash\+\_\+limit)
+\item 
+void \mbox{\hyperlink{main_8c_a49fec80669e0bd67bbdc830bd45572e6}{free\+\_\+buckets}} (\mbox{\hyperlink{main_8c_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$head)
 \item 
 int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 \end{DoxyCompactItemize}
@@ -64,6 +66,27 @@ Appends data to node of buckets
 \item If head element is a null pointer assign new element
 \item Traverse through list until Null Pointer is found
 \item Assign new Element to Null Pointer
+\end{DoxyEnumerate}\mbox{\Hypertarget{main_8c_a49fec80669e0bd67bbdc830bd45572e6}\label{main_8c_a49fec80669e0bd67bbdc830bd45572e6}} 
+\index{main.c@{main.c}!free\_buckets@{free\_buckets}}
+\index{free\_buckets@{free\_buckets}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{free\_buckets()}{free\_buckets()}}
+{\footnotesize\ttfamily void free\+\_\+buckets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8c_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$}]{head }\end{DoxyParamCaption})}
+
+Frees all mallocs of buckets
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}int\mbox{]}} & buckets \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Check for Null Pointer
+\item Assign head to temporary ptr
+\item Traverse through list until N\+Ull pointer is found
+\item Assign next element to temporary ptr
+\item Free ptr
+\item Reassign temporary next element to ptr
 \end{DoxyEnumerate}\mbox{\Hypertarget{main_8c_aa6707e4d0f37a801750800a3571741fc}\label{main_8c_aa6707e4d0f37a801750800a3571741fc}} 
 \index{main.c@{main.c}!hash\_index@{hash\_index}}
 \index{hash\_index@{hash\_index}!main.c@{main.c}}
@@ -99,7 +122,9 @@ Generates hashindex depending on word Formular\+: {\ttfamily hash\+\_\+index = w
 
 {\ttfamily pow\+\_\+t} serves as an alternative to pow() from math library 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em base} & Base @exp\mbox{[}in\mbox{]} exp Power \\
+\mbox{\texttt{ in}}  & {\em base} & Base \\
+\hline
+\mbox{\texttt{ in}}  & {\em exp} & Power \\
 \hline
 \end{DoxyParams}
 
@@ -109,10 +134,18 @@ Generates hashindex depending on word Formular\+: {\ttfamily hash\+\_\+index = w
 \item Error catch negative exp, in this application neg exp not required
 \item Multiply base with itself exp times
 \item Return resulting value
-\end{DoxyEnumerate}\mbox{\Hypertarget{main_8c_ae21639cf20f5664a23ff0a302a030900}\label{main_8c_ae21639cf20f5664a23ff0a302a030900}} 
+\end{DoxyEnumerate}\mbox{\Hypertarget{main_8c_a062d88740e93261fe8a67352675e54ca}\label{main_8c_a062d88740e93261fe8a67352675e54ca}} 
 \index{main.c@{main.c}!sort\_words@{sort\_words}}
 \index{sort\_words@{sort\_words}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{sort\_words()}{sort\_words()}}
-{\footnotesize\ttfamily int sort\+\_\+words (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void sort\+\_\+words (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8c_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$}]{buckets,  }\item[{int}]{hash\+\_\+limit }\end{DoxyParamCaption})}
 
-Sorts words of buckets alphabetically 
+Sorts words of buckets alphabetically
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buckets} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em hash\+\_\+limit} & \\
+\hline
+\end{DoxyParams}

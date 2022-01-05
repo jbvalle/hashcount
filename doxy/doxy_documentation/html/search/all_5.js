@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sort_5fwords_7',['sort_words',['../main_8c.html#ae21639cf20f5664a23ff0a302a030900',1,'main.c']]]
+  ['pow_5ft_7',['pow_t',['../main_8c.html#a81d78745bfb621471ef9dac9badb6db9',1,'main.c']]]
 ];
