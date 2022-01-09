@@ -16,6 +16,8 @@
 #include "../inc/hash_index.h"
 
 
+#define COLOR "\033[0;94m"
+#define RESET "\033[0m"
 
 /**
  *Sorts words of buckets alphabetically
@@ -29,10 +31,17 @@ void display_list(node_t **buckets, int hash_limit){
     for(int i = 0; i < hash_limit; i++){
     
         node_t *ptr = buckets[i];
+        
+        printf("\n[%2d]: ", i);
+        for(int j = 1; ptr != NULL; ptr = ptr->next, j++){
 
-        for(;ptr != NULL; ptr = ptr->next){
+            if(ptr->occurance > 1){
+                printf(COLOR);
+                printf("%s(%d), ",ptr->word, ptr->occurance);
+                printf(RESET);
+            }else printf("%s, ",ptr->word);
 
-            printf("%d: %s \n", i, ptr->word);
+            if((j%10)==0)printf("\n");
         }
     }
 }
@@ -41,33 +50,40 @@ void display_list(node_t **buckets, int hash_limit){
 
 
 int main(void){
-
+    
     ///1. Init `buckets` array of nodes
     int hash_limit = 40;
-
     node_t *buckets[40];
 
     for(int i = 0; i < hash_limit; i++)buckets[i] = NULL;
 
+    FILE *input_stream = fopen("input.txt", "r");
+    FILE *output_stream = fopen("output.txt", "wb+");
 
-    buckets[hash_index("House", hash_limit)] = NULL;
- 
-    add_node(&buckets[hash_index("House", hash_limit)], "House");
+    char buff[100];
+    char *token;
 
-    add_node(&buckets[hash_index("House", hash_limit)], "Robot");
+    while(fgets(buff,sizeof(buff),input_stream)!=NULL){
 
-    add_node(&buckets[hash_index("House", hash_limit)], "Climbing");
-
-    add_node(&buckets[hash_index("House", hash_limit)], "Tree");
-
-    add_node(&buckets[hash_index("House", hash_limit)], "Building");
-
-    add_node(&buckets[hash_index("House", hash_limit)], "Curry");
-
-    
+        token = strtok(buff, " .,?\n\t");
+        
+        while(token!=NULL){
+            
+            printf("\n%s", token);
+            add_node(&buckets[hash_index(token, hash_limit)], token);
+            fprintf(output_stream, "%s\n", token); 
+            
+            token = strtok(NULL," .,?\n\t");
+        } 
+        printf("\n");
+        
+        for(int i = 0; i < 100; i++)buff[i]='\0';
+    }
+        
     display_list(buckets, 40);
 
     for(int i = 0; i < hash_limit; i++)free_buckets(buckets[i]);
+
 
     return 0;
 }

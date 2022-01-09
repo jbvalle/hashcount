@@ -4,13 +4,14 @@
 #include <stdint.h>
 
 /**
+ *@file hash_index.c
  * `pow_t` serves as an alternative to pow() from math library
  * @param[in] base Base
  * @param[in] exp Power
- * @param[out] result 
+ * @param[out] result
  */
 uint64_t pow_t(int base, int exp){
-    
+
     ///1. Initialize result variable
     uint64_t result = 1;
 
@@ -36,7 +37,7 @@ uint64_t pow_t(int base, int exp){
  * @parma[out] hash_index resulting hashindex between 0 - hashlimit
  */
 int hash_index(char *word, int hash_limit){
-    
+
     ///1. Initialize hash_value variable
     uint64_t hash_value = 0;
     int hash_const = 13;

@@ -6,6 +6,7 @@
 #include "../inc/node_t.h"
 
 /**
+ *@file insert.c
  *Insertion new Element after element with key as string member
  *@param[in] head head reference
  *@param[in] key Preceding String member of list element
@@ -17,6 +18,7 @@ void insert(node_t **head, char *key, char *new_key){
 
     node_t *new = (node_t *)malloc(sizeof(node_t));
     strcpy(new->word, new_key);
+    new->occurance = 1;
     new->next = NULL;
 
     for(; ptr != NULL; ptr = ptr->next){

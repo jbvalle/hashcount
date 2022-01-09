@@ -3,13 +3,14 @@
 #include <string.h>
 #include "../inc/node_t.h"
 /**
+ *@file free_buckets.c
  *Frees all mallocs of buckets
  *
- *@param[int] buckets 
+ *@param[int] buckets
  */
 void free_buckets(node_t *head){
 
-    ///1. Check for Null Pointer 
+    ///1. Check for Null Pointer
     if(head == NULL)return;
 
     ///2. Assign head to temporary ptr

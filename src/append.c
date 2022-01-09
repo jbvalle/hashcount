@@ -6,6 +6,7 @@
 #include "../inc/node_t.h"
 
 /**
+ *@file append.c
  *Appends to last element of list
  *@param[in] head headreference
  *@param[in] word string member to be added
@@ -16,10 +17,11 @@ void append(node_t **head, char *word){
 
     node_t *new = (node_t *)malloc(sizeof(node_t));
     strcpy(new->word, word);
+    new->occurance = 1;
     new->next = NULL;
 
     if(ptr == NULL){
-    
+
         *head = new;
         return;
     }
