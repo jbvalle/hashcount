@@ -1,0 +1,53 @@
+\hypertarget{add__node_8c}{}\doxysection{/home/jv/\+Coding/hashcount/src/add\+\_\+node.c File Reference}
+\label{add__node_8c}\index{/home/jv/Coding/hashcount/src/add\_node.c@{/home/jv/Coding/hashcount/src/add\_node.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../inc/node\+\_\+t.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../inc/stack.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../inc/append.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../inc/insert.\+h\char`\"{}}\newline
+Include dependency graph for add\+\_\+node.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{add__node_8c_ad8202785f43186178e979f230ffa5075}{add\+\_\+node}} (\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$head, char $\ast$new\+\_\+key)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Adds new node to list using \mbox{\hyperlink{stack_8c_a566f0c4642ac167626a631f693169b11}{stack()}}, \mbox{\hyperlink{insert_8c_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert()}} and \mbox{\hyperlink{append_8c_a53de05066e101242b94e4f458b5ae35b}{append()}} function Add new node in alphabetical order depending in string members of elements 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em head} & headreference of list \\
+\hline
+\mbox{\texttt{ in}}  & {\em new\+\_\+key} & new string member of new node \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{add__node_8c_ad8202785f43186178e979f230ffa5075}\label{add__node_8c_ad8202785f43186178e979f230ffa5075}} 
+\index{add\_node.c@{add\_node.c}!add\_node@{add\_node}}
+\index{add\_node@{add\_node}!add\_node.c@{add\_node.c}}
+\doxysubsubsection{\texorpdfstring{add\_node()}{add\_node()}}
+{\footnotesize\ttfamily void add\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$}]{head,  }\item[{char $\ast$}]{new\+\_\+key }\end{DoxyParamCaption})}
+
+Adds new node to list using \mbox{\hyperlink{stack_8c_a566f0c4642ac167626a631f693169b11}{stack()}}, \mbox{\hyperlink{insert_8c_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert()}} and \mbox{\hyperlink{append_8c_a53de05066e101242b94e4f458b5ae35b}{append()}} function Add new node in alphabetical order depending in string members of elements 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em head} & headreference of list \\
+\hline
+\mbox{\texttt{ in}}  & {\em new\+\_\+key} & new string member of new node \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Assign ptr to head reference
+\item Allocate new node and assign values
+\item Check for if Head is N\+U\+LL Pointer and assign new element as new head
+\item Check for multiple occurances in list
+\item Check if first elements string member -\/$>$ correct alphabetical order, else -\/$>$ stack unto list
+\item Traverse through list using ptr and stop when correct slot for new element is found according to string member
+\item If all preceding elements are preceding string members append new element to lost
+\end{DoxyEnumerate}

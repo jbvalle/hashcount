@@ -7,6 +7,7 @@
 typedef struct node{
 
     char word[15];
+    int occurance;
     struct node *next;
 }node_t;
 #endif

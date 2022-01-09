@@ -1,0 +1,48 @@
+\hypertarget{free__buckets_8c}{}\doxysection{/home/jv/\+Coding/hashcount/src/free\+\_\+buckets.c File Reference}
+\label{free__buckets_8c}\index{/home/jv/Coding/hashcount/src/free\_buckets.c@{/home/jv/Coding/hashcount/src/free\_buckets.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../inc/node\+\_\+t.\+h\char`\"{}}\newline
+Include dependency graph for free\+\_\+buckets.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{free__buckets_8c_a49fec80669e0bd67bbdc830bd45572e6}{free\+\_\+buckets}} (\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$head)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Frees all mallocs of buckets
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}int\mbox{]}} & buckets \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{free__buckets_8c_a49fec80669e0bd67bbdc830bd45572e6}\label{free__buckets_8c_a49fec80669e0bd67bbdc830bd45572e6}} 
+\index{free\_buckets.c@{free\_buckets.c}!free\_buckets@{free\_buckets}}
+\index{free\_buckets@{free\_buckets}!free\_buckets.c@{free\_buckets.c}}
+\doxysubsubsection{\texorpdfstring{free\_buckets()}{free\_buckets()}}
+{\footnotesize\ttfamily void free\+\_\+buckets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$}]{head }\end{DoxyParamCaption})}
+
+Frees all mallocs of buckets
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}int\mbox{]}} & buckets \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Check for Null Pointer
+\item Assign head to temporary ptr
+\item Traverse through list until N\+Ull pointer is found
+\item Assign next element to temporary ptr
+\item Free ptr
+\item Reassign temporary next element to ptr
+\end{DoxyEnumerate}

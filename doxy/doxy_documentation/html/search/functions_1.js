@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['free_5fbuckets_12',['free_buckets',['../main_8c.html#a49fec80669e0bd67bbdc830bd45572e6',1,'main.c']]]
+  ['display_5flist_27',['display_list',['../main_8c.html#ad0b6b4441c14706ca92b139dd676bee0',1,'main.c']]]
 ];

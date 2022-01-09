@@ -4,4 +4,59 @@
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../inc/node\+\_\+t.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../inc/free\+\_\+buckets.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../inc/stack.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../inc/append.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../inc/insert.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../inc/add\+\_\+node.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../inc/hash\+\_\+index.\+h\char`\"{}}\newline
 Include dependency graph for main.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a4b5014034c9aac136ab8c82c2d16dc82}\label{main_8c_a4b5014034c9aac136ab8c82c2d16dc82}} 
+\#define {\bfseries C\+O\+L\+OR}~\char`\"{}\textbackslash{}033\mbox{[}0;94m\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8c_ab702106cf3b3e96750b6845ded4e0299}\label{main_8c_ab702106cf3b3e96750b6845ded4e0299}} 
+\#define {\bfseries R\+E\+S\+ET}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_ad0b6b4441c14706ca92b139dd676bee0}{display\+\_\+list}} (\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$buckets, int hash\+\_\+limit)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+{\ttfamily \mbox{\hyperlink{main_8c}{main.\+c}}} main entry point for hashcount program 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_ad0b6b4441c14706ca92b139dd676bee0}\label{main_8c_ad0b6b4441c14706ca92b139dd676bee0}} 
+\index{main.c@{main.c}!display\_list@{display\_list}}
+\index{display\_list@{display\_list}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{display\_list()}{display\_list()}}
+{\footnotesize\ttfamily void display\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$}]{buckets,  }\item[{int}]{hash\+\_\+limit }\end{DoxyParamCaption})}
+
+Sorts words of buckets alphabetically
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buckets} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em hash\+\_\+limit} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyEnumerate}
+\item Init {\ttfamily buckets} array of nodes
+\end{DoxyEnumerate}
