@@ -32,7 +32,7 @@ void add_node(node_t **head, char *new_key){
         *head = new;
         return;
     }
-
+    free(new);
 
     ///4. Check for multiple occurances in list
     ptr = *head;

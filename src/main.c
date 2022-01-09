@@ -84,7 +84,8 @@ int main(void){
 
     for(int i = 0; i < hash_limit; i++)free_buckets(buckets[i]);
 
-
+    fclose(input_stream);input_stream = NULL;
+    fclose(output_stream);output_stream = NULL;
     return 0;
 }
 

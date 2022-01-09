@@ -23,7 +23,7 @@ void free_buckets(node_t *head){
         node_t *temp = ptr->next;
 
         ///5. Free ptr
-        free(ptr);
+        free(ptr);ptr = NULL;
 
         ///6. Reassign temporary next element to ptr
         ptr = temp;
