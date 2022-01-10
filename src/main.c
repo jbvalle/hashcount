@@ -57,15 +57,19 @@ int main(void){
 
     for(int i = 0; i < hash_limit; i++)buckets[i] = NULL;
 
+    //=================================================
+    // infuse buckets with input words
+    //=================================================
+
     FILE *input_stream = fopen("input.txt", "r");
     FILE *output_stream = fopen("output.txt", "wb+");
 
     char buff[100];
-    char *token;
+    char *token;char delimiter[] = " .\n;:,?\t";
 
     while(fgets(buff,sizeof(buff),input_stream)!=NULL){
 
-        token = strtok(buff, " .,?\n\t");
+        token = strtok(buff, delimiter);
         
         while(token!=NULL){
             
@@ -73,19 +77,32 @@ int main(void){
             add_node(&buckets[hash_index(token, hash_limit)], token);
             fprintf(output_stream, "%s\n", token); 
             
-            token = strtok(NULL," .,?\n\t");
+            token = strtok(NULL, delimiter);
         } 
         printf("\n");
         
         for(int i = 0; i < 100; i++)buff[i]='\0';
     }
+    //Close input and output streams
+    fclose(input_stream);input_stream = NULL;
+    fclose(output_stream);output_stream = NULL;
         
     display_list(buckets, 40);
 
+
+    //=================================================
+    // Select buckets and output new textfile
+    //=================================================
+
+
+
+    //=================================================
+    // free all nodes
+    //=================================================
+
+
     for(int i = 0; i < hash_limit; i++)free_buckets(buckets[i]);
 
-    fclose(input_stream);input_stream = NULL;
-    fclose(output_stream);output_stream = NULL;
     return 0;
 }
 
