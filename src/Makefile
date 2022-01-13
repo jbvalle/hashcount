@@ -33,7 +33,7 @@ segfault: $(SRCS)
 	gdb $(TARGET) core
 
 memleak:
-	valgrind --leak-check=full ./$(TARGET)
+	valgrind --leak-check=full --track-origins=yes ./$(TARGET)
 
 help:
 	cat Makefile
