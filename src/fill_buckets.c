@@ -8,6 +8,47 @@
 #include "../inc/append.h"
 #include "../inc/insert.h"
 
+uint64_t pow_t(int base, int exp){
+
+    ///1. Initialize result variable
+    uint64_t result = 1;
+
+    ///2. Catch zero exponent return 1
+    if(exp == 0)return 1;
+
+    ///3. Error catch negative exp, in this application neg exp not required
+    if(exp < 0)return -1;
+
+    ///4. Multiply base with itself exp times
+    for(int i = 0; i < exp; i++){
+        result *= (uint64_t)base;
+    }
+
+    ///5. Return resulting value
+    return result;
+}
+/**
+ *Generates hashindex depending on word
+ * Formular: `hash_index = word[i] * k ^ i `
+ * @param[in] word Assigned Word per Node
+ * @param[in] hash_limit size of hashmap array
+ * @parma[out] hash_index resulting hashindex between 0 - hashlimit
+ */
+int hash_index(char *word, int hash_limit){
+
+    ///1. Initialize hash_value variable
+    uint64_t hash_value = 0;
+    int hash_const = 13;
+
+    ///2. Iterate through letters and perform formular
+    for(int i = 0; word[i] != '\0'; i++){
+
+        hash_value += word[i] * pow_t(hash_const, i);
+    }
+
+    ///3. Return forumlar
+    return hash_value%hash_limit;
+}
 /**
  *@file add_node.c
  *Adds new node to list using stack(), insert() and append() function
@@ -67,5 +108,29 @@ void add_node(node_t **head, char *new_key){
 
     ///8. If all preceding elements are preceding string members append new element to lost
     if(ptr == NULL)append(head, new_key);
+
+}
+
+void fill_buckets(node_t **buckets, int hash_limit, FILE *input_stream){
+
+
+    char buff[100];
+    char *token;char delimiter[] = " .\n;:,?\t";
+
+    while(fgets(buff,sizeof(buff),input_stream)!=NULL){
+
+        token = strtok(buff, delimiter);
+        
+        while(token!=NULL){
+            
+            add_node(&buckets[hash_index(token, hash_limit)], token);
+            
+            token = strtok(NULL, delimiter);
+        } 
+        printf("\n");
+        
+        for(int i = 0; i < 100; i++)buff[i]='\0';
+    }
+
 
 }
