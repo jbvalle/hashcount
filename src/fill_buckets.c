@@ -127,7 +127,6 @@ void fill_buckets(node_t **buckets, int hash_limit, FILE *input_stream){
             
             token = strtok(NULL, delimiter);
         } 
-        printf("\n");
         
         for(int i = 0; i < 100; i++)buff[i]='\0';
     }

@@ -37,22 +37,25 @@ int main(int argc, char **argv){
     // censoring text
     // ================================================
 
-    int chosen_flag[2] = {0, 0};
+    int chosen_flag[3] = {0, 0, 0};
     int option;
 
     char input_file[100];
 
     while((option = getopt(argc, argv, "f:rc")) != -1){
 
-        if(option == 'f')strcpy(input_file, optarg);
+        if(option == 'f'){
+            strcpy(input_file, optarg);
+            chosen_flag[3] = 1;
+        }
         if(option == 'r')chosen_flag[0] = 1;
         if(option == 'c')chosen_flag[1] = 1;
     }
     
-    if(argc <= 1){
+    if(!chosen_flag[2]){
         
-        printf("\nDefault Input file file_streams/default.txt used\n");
-        strcpy(input_file, "file_streams/default.txt");
+        printf("\nDefault Input file TEXTFILES/default.txt used\n");
+        strcpy(input_file, "TEXTFILES/default.txt");
     }
     //=================================================
     // infuse buckets with input words
@@ -60,7 +63,7 @@ int main(int argc, char **argv){
 
     FILE *input_stream_censored;
     FILE *input_stream = fopen(input_file, "r");
-    FILE *output_stream = fopen("file_streams/buckets.txt", "wb+");
+    FILE *output_stream = fopen("TEXTFILES/buckets.txt", "wb+");
 
     fill_buckets(buckets, hash_limit, input_stream);
     
@@ -87,15 +90,18 @@ int main(int argc, char **argv){
     // ================================================
     if(chosen_flag[0]){
 
+        //Set 3rd flag to 1 for requesting indices for censored buckets
+        chosen_flag[2] = 1;
+
         input_stream  = fopen(input_file, "r");
-        output_stream = fopen("file_streams/censored_buckets.txt", "wb+");
-        
+        output_stream = fopen("TEXTFILES/censored_buckets.txt", "wb+");
         //Request user input
         choose_buckets(buckets, requested_index, chosen_flag);
         //Censor all words matching chosen buckets
         //and write to censored_buckets.txt
         censor_buckets(buckets, input_stream, output_stream, requested_index);
 
+        printf(COLOR);printf("\n\nTextfile TEXTFILES/censored_buckets.txt was created\n");printf(RESET);
         //Close input and output streams
         fclose(input_stream);input_stream = NULL;
         fclose(output_stream);output_stream = NULL;
@@ -106,11 +112,14 @@ int main(int argc, char **argv){
     // ===============================================
     if(chosen_flag[1]){
 
+        //Set 3rd flag to 1 for requesting indices for censored buckets
+        chosen_flag[2] = 0;
+
         // Reinit array for requested indices
         for(int i = 0; i < requested_index_size; i++)requested_index[i] = -1;
 
         input_stream          = fopen(input_file, "r");
-        output_stream = fopen("file_streams/temp.txt", "wb+");
+        output_stream = fopen("TEXTFILES/temp.txt", "wb+");
 
         //Request user input
         choose_buckets(buckets, requested_index, chosen_flag);
@@ -122,9 +131,10 @@ int main(int argc, char **argv){
         fclose(output_stream);output_stream = NULL;
 
         input_stream          = fopen(input_file, "r");
-        input_stream_censored = fopen("file_streams/temp.txt", "r");
-        output_stream         = fopen("file_streams/censored_all_except_buckets.txt", "wb+");
+        input_stream_censored = fopen("TEXTFILES/temp.txt", "r");
+        output_stream         = fopen("TEXTFILES/censored_all_except_buckets.txt", "wb+");
         
+        printf(COLOR);printf("\n\nTextfile TEXTFILES/censored_all_except_buckets.txt was created\n");printf(RESET);
         //Read censored textfile and compare to original input file and replace all letter with censored char
         //Write new file to censored_all_except_buckets.txt
         censor_except_buckets(input_stream, input_stream_censored, output_stream);

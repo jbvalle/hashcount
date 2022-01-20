@@ -65,6 +65,7 @@ void censor_buckets(node_t **buckets, FILE *input_stream, FILE *output_stream, i
         //fprintf(output_stream, "\n");
         for(int i = 0; i < 100; i++)buff[i]='\0';
     }
+
 }
 
 

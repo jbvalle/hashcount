@@ -34,4 +34,5 @@ void censor_except_buckets(FILE *input_stream, FILE *input_stream_censored, FILE
         for(int i = 0; i < 100; i++)buff_input1[i]='\0';
         for(int i = 0; i < 100; i++)buff_input2[i]='\0';
     }
+
 }
