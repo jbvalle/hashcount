@@ -46,7 +46,7 @@ int main(int argc, char **argv){
 
         if(option == 'f'){
             strcpy(input_file, optarg);
-            chosen_flag[3] = 1;
+            chosen_flag[2] = 1;
         }
         if(option == 'r')chosen_flag[0] = 1;
         if(option == 'c')chosen_flag[1] = 1;
@@ -94,14 +94,14 @@ int main(int argc, char **argv){
         chosen_flag[2] = 1;
 
         input_stream  = fopen(input_file, "r");
-        output_stream = fopen("TEXTFILES/censored_buckets.txt", "wb+");
+        output_stream = fopen("censored_buckets.txt", "wb+");
         //Request user input
         choose_buckets(buckets, requested_index, chosen_flag);
         //Censor all words matching chosen buckets
         //and write to censored_buckets.txt
         censor_buckets(buckets, input_stream, output_stream, requested_index);
 
-        printf(COLOR);printf("\n\nTextfile TEXTFILES/censored_buckets.txt was created\n");printf(RESET);
+        printf(COLOR);printf("\n\nTextfile censored_buckets.txt was created\n");printf(RESET);
         //Close input and output streams
         fclose(input_stream);input_stream = NULL;
         fclose(output_stream);output_stream = NULL;
@@ -112,7 +112,7 @@ int main(int argc, char **argv){
     // ===============================================
     if(chosen_flag[1]){
 
-        //Set 3rd flag to 1 for requesting indices for censored buckets
+        //Set 3rd flag to 0 for requesting indices for buckets which should not be censored
         chosen_flag[2] = 0;
 
         // Reinit array for requested indices
@@ -132,9 +132,9 @@ int main(int argc, char **argv){
 
         input_stream          = fopen(input_file, "r");
         input_stream_censored = fopen("TEXTFILES/temp.txt", "r");
-        output_stream         = fopen("TEXTFILES/censored_all_except_buckets.txt", "wb+");
+        output_stream         = fopen("censored_all_except_buckets.txt", "wb+");
         
-        printf(COLOR);printf("\n\nTextfile TEXTFILES/censored_all_except_buckets.txt was created\n");printf(RESET);
+        printf(COLOR);printf("\n\nTextfile censored_all_except_buckets.txt was created\n");printf(RESET);
         //Read censored textfile and compare to original input file and replace all letter with censored char
         //Write new file to censored_all_except_buckets.txt
         censor_except_buckets(input_stream, input_stream_censored, output_stream);

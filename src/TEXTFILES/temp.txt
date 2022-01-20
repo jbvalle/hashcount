@@ -1,3 +1,10 @@
- A neural network is a ------ of algorithms that endeavors to recognize underly--g relationships -- a set of data through a process that mimics the way the human bra-- operates. In this sense, neural networks refer to systems of neurons, either organic or artificial -- nature.
+ Multi-Layered Perceptron
 
-Neural networks can adapt to chang--g --put; so the network generates the best possible result without need--g to redesign the output --------. The concept of neural networks, which has its roots -- artificial --telligence, is swiftly ga----g popularity -- the development of trad--g systems. 
+In a multi-layered perceptron (MLP), perceptrons are arranged -- --terconnected layers. The --put layer collects --put patterns. The output layer has classifications or output signals -- which --put patterns may map. For --stance, the patterns may comprise a list of quantities for technical --dica--rs ----- a security; potential outputs could be “buy,” “hold” or “sell.”
+
+Hidden layers f--e-tune the --put weight--gs until the neural network’s marg-- of error is m--imal. It is hypothesized that hidden layers extrapolate salient features -- the --put data that have predictive power regard--g the outputs. This describes feature extraction, which accomplishes a utility similar -- statistical techniques ---- as pr--cipal component analysis.
+Application of Neural Networks
+
+Neural networks are broadly used, with applications for f--ancial operations, enterprise --------, trad--g, bus--ess analytics, and product ma--tenance. Neural networks have also ga--ed widespread adoption -- bus--ess applications ---- as forecast--g and market--g research solutions, fraud detection, and risk assessment.
+
+A neural network evaluates price data and unearths opportunities for mak--g trade decisions based on the data analysis. The networks can dist--guish subtle nonl--ear --terdependencies and patterns other methods of technical analysis ------. Accord--g -- research, the accuracy of neural networks in mak--g price -------ions for s--cks -------. Some models ------- the correct s--ck prices 50 -- 60 percent of the ----, while others are accurate -- -- percent of all --stances. Some have posited that a 10 percent improvement -- efficiency is all an --ves--r can ask for from a neural network.

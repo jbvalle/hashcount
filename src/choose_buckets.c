@@ -19,7 +19,7 @@ void choose_buckets(node_t **buckets, int *requested_index, int *chosen_flag){
     
     if(chosen_flag[2]){
 
-        printf("\n+-------------------------------------------------------+\n");
+        printf("\n\n+-------------------------------------------------------+\n");
         printf("| Please enter desired indices of buckets to be removed |\n");
         printf("+-------------------------------------------------------+\n");
         printf("\n»");
@@ -27,7 +27,7 @@ void choose_buckets(node_t **buckets, int *requested_index, int *chosen_flag){
 
     if(!chosen_flag[2]){
 
-        printf("\n+---------------------------------------------------------------------+\n");
+        printf("\n\n+---------------------------------------------------------------------+\n");
         printf("| Please enter desired indices of buckets which should not be censored|\n");
         printf("+---------------------------------------------------------------------+\n");
         printf("\n»");

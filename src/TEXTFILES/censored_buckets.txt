@@ -1,3 +1,0 @@
- A neural network is a ------ of algorithms that endeavors to recognize underly--g relationships -- a set of data through a process that mimics the way the human bra-- operates. In this sense, neural networks refer to systems of neurons, either organic or artificial -- nature.
-
-Neural networks can adapt to chang--g --put; so the network generates the best possible result without need--g to redesign the output --------. The concept of neural networks, which has its roots -- artificial --telligence, is swiftly ga----g popularity -- the development of trad--g systems. 

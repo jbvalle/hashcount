@@ -39,6 +39,6 @@ help:
 	cat Makefile
 	
 clean:
-	rm -rf .*swp .*swo *.o $(BINS)
+	rm -rf .*swp .*swo *.o $(BINS) censored_buckets.txt censored_all_except_buckets.txt 
 
 
