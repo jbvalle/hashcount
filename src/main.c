@@ -82,7 +82,7 @@ void remove_key_word(char *input_string, char *comparison_string){
     }
 }
 
-void overwrite_string_censor_buckets(node_t **buckets, FILE *input_stream, FILE *output_stream, int *requested_index){
+void censor_buckets(node_t **buckets, FILE *input_stream, FILE *output_stream, int *requested_index){
 
     //Output Requested Buckets
     char buff[100];
@@ -107,12 +107,30 @@ void overwrite_string_censor_buckets(node_t **buckets, FILE *input_stream, FILE 
             }
         }
         fputs(buff, output_stream);
-        fprintf(output_stream, "\n");
+        //fprintf(output_stream, "\n");
         for(int i = 0; i < 100; i++)buff[i]='\0';
     }
 }
 
+void censor_except_buckets(FILE *input_stream, FILE *input_stream_censored, FILE *output_stream){
 
+    //Output Requested Buckets
+    char buff_input1[100];
+    char buff_input2[100];
+
+    while((fgets(buff_input1,sizeof(buff_input1),input_stream))&&(fgets(buff_input2,sizeof(buff_input2),input_stream_censored)!=NULL)){
+
+        for(int x = 0; x < (int)strlen(buff_input1); x++){
+        
+            if(buff_input2[x] != '-')buff_input1[x] = '-';
+
+        }
+        fputs(buff_input1, output_stream);
+        //fprintf(output_stream, "\n");
+        for(int i = 0; i < 100; i++)buff_input1[i]='\0';
+        for(int i = 0; i < 100; i++)buff_input2[i]='\0';
+    }
+}
 void fill_buckets(node_t **buckets, int hash_limit, FILE *input_stream){
 
 
@@ -190,7 +208,7 @@ void choose_buckets(node_t **buckets, int *requested_index){
     }
 }
 
-int main(void){
+int main(int argc, char **argv){
     
     ///1. Init `buckets` array of nodes
     int hash_limit = 40;
@@ -233,12 +251,26 @@ int main(void){
     output_stream = fopen("file_streams/censored_buckets.txt", "wb+");
     
 
-    overwrite_string_censor_buckets(buckets, input_stream, output_stream, requested_index);
+    censor_buckets(buckets, input_stream, output_stream, requested_index);
 
     //Close input and output streams
     fclose(input_stream);input_stream = NULL;
     fclose(output_stream);output_stream = NULL;
 
+
+    //=================================================
+    // remove everything except buckets from textfile
+    // and write to new textfile
+    // ===============================================
+    FILE *input_stream_censored = fopen("file_streams/censored_buckets.txt", "r");
+    input_stream = fopen("file_streams/input.txt", "r");
+    output_stream = fopen("file_streams/censored_all_except_buckets.txt", "wb+");
+    
+    censor_except_buckets(input_stream, input_stream_censored, output_stream);
+
+    fclose(input_stream_censored);input_stream_censored = NULL;
+    fclose(input_stream);input_stream = NULL;
+    fclose(output_stream);output_stream = NULL;
     //=================================================
     // free all nodes
     //=================================================
