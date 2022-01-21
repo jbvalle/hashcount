@@ -1,5 +1,6 @@
 /**
  *@file censor_except_buckets.c
+ *@brief Censor everything except key words of buckets
  *@author John Bryan Valle
  */
 #include <stdio.h>
@@ -34,13 +35,13 @@ void censor_except_buckets(FILE *input_stream, FILE *input_stream_censored, FILE
     while((fgets(buff_input1,sizeof(buff_input1),input_stream))&&(fgets(buff_input2,sizeof(buff_input2),input_stream_censored)!=NULL)){
 
         for(int x = 0; x < (int)strlen(buff_input1); x++){
-        
+
             if(buff_input2[x] != '-')buff_input1[x] = '-';
 
         }
         fputs(buff_input1, output_stream);
         fprintf(output_stream, "\n”");
-    
+
         for(int i = 0; i < 100; i++)buff_input1[i]='\0';
         for(int i = 0; i < 100; i++)buff_input2[i]='\0';
     }

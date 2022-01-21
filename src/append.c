@@ -1,5 +1,6 @@
 /**
  *@file append.c
+ *@brief Appends to last element of list
  *@author John Bryan Valle
  */
 
@@ -16,7 +17,7 @@
  *@param[in] word string member to be added
  */
 void append(node_t **head, char *word){
-    
+
     node_t *ptr = *head;
 
     node_t *new = (node_t *)malloc(sizeof(node_t));

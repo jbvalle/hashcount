@@ -1,5 +1,6 @@
 /**
  *@file censor_buckets.c
+ *@brief Removes keywords of buckets from a string.<br />
  *@author John Bryan Valle
  */
 #include <stdio.h>
@@ -50,8 +51,8 @@ void remove_key_word(char *input_string, char *comparison_string){
 /**
  *@brief Itterate through all lines and check for all words in buckets.<br />
  *@param[in] buckets All buckets of given requested indices are checed
- *@param[in] input_stream Current Input stream of an input text 
- *@param[in] output_stream Output Stream to write new line 
+ *@param[in] input_stream Current Input stream of an input text
+ *@param[in] output_stream Output Stream to write new line
  *@param[in] requested_index Array with all requested indices
  */
 void censor_buckets(node_t **buckets, FILE *input_stream, FILE *output_stream, int *requested_index){
@@ -65,13 +66,13 @@ void censor_buckets(node_t **buckets, FILE *input_stream, FILE *output_stream, i
         ///1. request word of single bucket
         //===================================
         for(int x = 0; requested_index[x] != -1; x++){
-        
+
             int i = requested_index[x];
 
             node_t *ptr = buckets[i];
-            
+
             for(int j = 1; ptr != NULL; ptr = ptr->next, j++){
-                
+
                 //======================================
                 ///2. remove words inside bucket from string
                 //======================================
@@ -83,5 +84,3 @@ void censor_buckets(node_t **buckets, FILE *input_stream, FILE *output_stream, i
     }
 
 }
-
-

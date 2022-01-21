@@ -91,7 +91,7 @@
         <th>DESCRIPTION</th>
     </tr>
     <tr ALIGN=LEFT>
-        <th>-f path_rel_to_path/filename.txt</th>
+        <th>-f path_rel_to_bin/filename.txt</th>
         <th>For specifying an input file declare a file name after the -f option i.e. -f input.txt</th>
     </tr>
     <tr ALIGN=LEFT>

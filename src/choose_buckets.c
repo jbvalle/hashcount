@@ -1,5 +1,6 @@
 /**
  *@file choose_buckets.c
+ *@brief Function requests user input of indices and displays them
  *@author John Bryan Valle
  */
 #include <stdio.h>
@@ -25,7 +26,7 @@ void choose_buckets(node_t **buckets, int *requested_index, int *chosen_flag){
     int input_index;
     ///1. Initialize user_input
     for(int i = 0; i < 50; i++)user_input[i] = '\0';
-    
+
     ///2. Request Users indices input
     if(chosen_flag[2]){
 
@@ -51,22 +52,22 @@ void choose_buckets(node_t **buckets, int *requested_index, int *chosen_flag){
     while(input_index < 50)user_input[input_index++] = '\0';
 
     ///5. Parse User input -> interpret numbers and read number indices using strtok
-    char *token_in = strtok(user_input, delimiter); 
-    
+    char *token_in = strtok(user_input, delimiter);
+
     for(int i = 0; token_in != NULL; i++){
 
         requested_index[i] = strtol(token_in, NULL, 10);
 
         token_in = strtok(NULL, delimiter);
-    } 
+    }
 
     ///6. Output Requested Buckets
     for(int x = 0; requested_index[x] != -1; x++){
-    
+
         int i = requested_index[x];
 
         node_t *ptr = buckets[i];
-        
+
         printf("\n[%2d]: ", i);
         for(int j = 1; ptr != NULL; ptr = ptr->next, j++){
 

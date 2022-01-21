@@ -1,5 +1,6 @@
 /**
  *@file fill_buckets.c
+ @brief This function adds new nodes to hashtable by calculating the hashindex and adding it to a list
  *@author John Bryan Valle
  */
 #include <stdio.h>
@@ -88,13 +89,13 @@ void add_node(node_t **head, char *new_key){
     ptr = *head;
 
     while(ptr!=NULL){
-        
+
         if(strcmp(ptr->word,new_key)==0){
-            
+
             ptr->occurance += 1;
             return;
         }
-        
+
         ptr = ptr->next;
     }
 
@@ -137,15 +138,15 @@ void fill_buckets(node_t **buckets, int hash_limit, FILE *input_stream){
 
         ///2. Parse every word seperated by delimiter
         token = strtok(buff, delimiter);
-        
+
         while(token!=NULL){
-            
+
             ///3. Add Word to linked list of given bucket of calculated hashindex
             add_node(&buckets[hash_index(token, hash_limit)], token);
-            
+
             token = strtok(NULL, delimiter);
-        } 
-        
+        }
+
         ///4. Reset Buffer to save line
         for(int i = 0; i < 100; i++)buff[i]='\0';
     }

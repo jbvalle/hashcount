@@ -1,5 +1,6 @@
 /**
  *@file display_list.c
+ *@brief Display each element of buckets
  *@author John Bryan Valle
  */
 #include <stdio.h>
@@ -23,10 +24,10 @@ void display_list(node_t **buckets, FILE *output_stream, int hash_limit){
 
     ///1. Itterate through al buckets
     for(int i = 0; i < hash_limit; i++){
-    
+
         ///2. Set Header Element of each list
         node_t *ptr = buckets[i];
-        
+
         printf("\n[%2d]: ", i);
         fprintf(output_stream, "\n[%2d]: ", i);
 
@@ -50,5 +51,3 @@ void display_list(node_t **buckets, FILE *output_stream, int hash_limit){
         }
     }
 }
-
-
