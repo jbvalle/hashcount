@@ -112,8 +112,8 @@
    ```sh
    ./hashcount -f input.txt -rc
    ```
-<img src="./doxy/images/remove.png" width="70%" height="70%">
-<img src="./doxy/images/censor.png" width="70%" height="70%">
+<img src="./doxy/images/remove.png" width="70%" height="70%" align="left">
+<img src="./doxy/images/censor.png" width="70%" height="70%" align="left">
 
 <hr>
 

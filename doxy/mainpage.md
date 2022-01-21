@@ -115,8 +115,8 @@
    ./hashcount -f input.txt -rc
    ```
 
-\image html ./images/remove.png width=50% height=50% 
-\image html ./images/censor.png width=50% height=50% 
+\image html ./images/remove.png width=50% height=50% align="left"
+\image html ./images/censor.png width=50% height=50% align="left"
 
 
 <hr>
