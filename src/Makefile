@@ -37,6 +37,9 @@ memleak:
 
 help:
 	cat Makefile
+
+html:
+	firefox ../doxy/doxy_documentation/html/index.html
 	
 clean:
 	rm -rf .*swp .*swo *.o $(BINS) censored_buckets.txt censored_all_except_buckets.txt 
