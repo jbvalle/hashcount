@@ -120,7 +120,7 @@
 
 
 <hr>
-
+<br />
 <!-- CONTACT -->
 ## Contact
 

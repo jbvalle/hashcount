@@ -42,6 +42,22 @@
 * The lists shall always retain alphabetic order.
 * The program arguments are handled by getopt(3).
 
+<strong>4 Part: (SOLVED)<br /></strong>
+* Give the user a choice to select one bucket to output separately.
+* Print out the entries in the Bucket.
+* Let the user select one or more buckets and remove all words from the text which do not match to these selected buckets and write it to a new text file.
+
+<strong>5 Part: (SOLVED)<br /></strong>
+* Let the user select one or more buckets and censor all words from the text which match to these selected buckets and write it to a new text file.
+* All word separators shall be copied to the new file in the correct places.
+
+<strong>6 Part: (SOLVED)<br /></strong>
+* Store the hash in a binary file
+* Read and populate the hash from a file and append/count new words into it when the user wants to do this.
+
+<strong>7 Part: (SOLVED)<br /></strong>
+* The program arguments are handled by getopt(3).
+
 
 <hr>
 
@@ -116,7 +132,7 @@
 <img src="./doxy/images/censor.png" width="70%" height="70%" align="left">
 
 <hr>
-
+<br />
 
 ## Contact
 
