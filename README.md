@@ -19,6 +19,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+
 <strong>1 Part: (SOLVED)<br /></strong>
 * Open a text file and read the text row by row.<br />
 * Separate words by these characters (" ", ".", "\n")<br />
@@ -89,8 +90,6 @@
     </tr>
 
 
-
-
 </table>
 
 <hr>
@@ -104,9 +103,8 @@
    make html
    ```
 <hr>
-<!-- CONTACT -->
+
 ## Contact
 
 Author: John Bryan Valle
 Email: jbvalle.jv@gmail.com
-D
