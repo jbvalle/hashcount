@@ -3,111 +3,111 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 }
-\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <stdio.h>}}
-\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <stdlib.h>}}
-\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <string.h>}}
-\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <stdint.h>}}
-\DoxyCodeLine{00009 }
-\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "../inc/node\_t.h"}}
-\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "../inc/stack.h"}}
-\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "../inc/append.h"}}
-\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "../inc/insert.h"}}
-\DoxyCodeLine{00014 }
-\DoxyCodeLine{\Hypertarget{fill__buckets_8c_source_l00021}\mbox{\hyperlink{fill__buckets_8c_a81d78745bfb621471ef9dac9badb6db9}{00021}} uint64\_t \mbox{\hyperlink{fill__buckets_8c_a81d78745bfb621471ef9dac9badb6db9}{pow\_t}}(\textcolor{keywordtype}{int} base, \textcolor{keywordtype}{int} exp)\{}
-\DoxyCodeLine{00022 }
-\DoxyCodeLine{00024     uint64\_t result = 1;}
-\DoxyCodeLine{00025 }
-\DoxyCodeLine{00027     \textcolor{keywordflow}{if}(exp == 0)\textcolor{keywordflow}{return} 1;}
-\DoxyCodeLine{00028 }
-\DoxyCodeLine{00030     \textcolor{keywordflow}{if}(exp < 0)\textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{00031 }
-\DoxyCodeLine{00033     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < exp; i++)\{}
-\DoxyCodeLine{00034         result *= (uint64\_t)base;}
-\DoxyCodeLine{00035     \}}
-\DoxyCodeLine{00036 }
-\DoxyCodeLine{00038     \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{00039 \}}
-\DoxyCodeLine{\Hypertarget{fill__buckets_8c_source_l00047}\mbox{\hyperlink{fill__buckets_8c_aa6707e4d0f37a801750800a3571741fc}{00047}} \textcolor{keywordtype}{int} \mbox{\hyperlink{fill__buckets_8c_aa6707e4d0f37a801750800a3571741fc}{hash\_index}}(\textcolor{keywordtype}{char} *word, \textcolor{keywordtype}{int} hash\_limit)\{}
-\DoxyCodeLine{00048 }
-\DoxyCodeLine{00050     uint64\_t hash\_value = 0;}
-\DoxyCodeLine{00051     \textcolor{keywordtype}{int} hash\_const = 13;}
-\DoxyCodeLine{00052 }
-\DoxyCodeLine{00054     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; word[i] != \textcolor{charliteral}{'\(\backslash\)0'}; i++)\{}
-\DoxyCodeLine{00055 }
-\DoxyCodeLine{00056         hash\_value += word[i] * \mbox{\hyperlink{fill__buckets_8c_a81d78745bfb621471ef9dac9badb6db9}{pow\_t}}(hash\_const, i);}
-\DoxyCodeLine{00057     \}}
-\DoxyCodeLine{00058 }
-\DoxyCodeLine{00060     \textcolor{keywordflow}{return} hash\_value\%hash\_limit;}
-\DoxyCodeLine{00061 \}}
-\DoxyCodeLine{\Hypertarget{fill__buckets_8c_source_l00068}\mbox{\hyperlink{fill__buckets_8c_ad8202785f43186178e979f230ffa5075}{00068}} \textcolor{keywordtype}{void} \mbox{\hyperlink{fill__buckets_8c_ad8202785f43186178e979f230ffa5075}{add\_node}}(\mbox{\hyperlink{structnode}{node\_t}} **head, \textcolor{keywordtype}{char} *new\_key)\{}
-\DoxyCodeLine{00069 }
-\DoxyCodeLine{00071     \mbox{\hyperlink{structnode}{node\_t}} *ptr = *head;}
-\DoxyCodeLine{00072 }
-\DoxyCodeLine{00074     \mbox{\hyperlink{structnode}{node\_t}} *\textcolor{keyword}{new} = (\mbox{\hyperlink{structnode}{node\_t}} *)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structnode}{node\_t}}));}
-\DoxyCodeLine{00075     strcpy(new-\/>word, new\_key);}
-\DoxyCodeLine{00076     \textcolor{keyword}{new}-\/>occurance = 1;}
-\DoxyCodeLine{00077     \textcolor{keyword}{new}-\/>next = NULL;}
-\DoxyCodeLine{00078 }
-\DoxyCodeLine{00080     \textcolor{keywordflow}{if}(ptr == NULL)\{}
-\DoxyCodeLine{00081 }
-\DoxyCodeLine{00082         *head = \textcolor{keyword}{new};}
-\DoxyCodeLine{00083         \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00084     \}}
-\DoxyCodeLine{00085     free(\textcolor{keyword}{new});}
-\DoxyCodeLine{00086 }
-\DoxyCodeLine{00088     ptr = *head;}
-\DoxyCodeLine{00089 }
-\DoxyCodeLine{00090     \textcolor{keywordflow}{while}(ptr!=NULL)\{}
-\DoxyCodeLine{00091         }
-\DoxyCodeLine{00092         \textcolor{keywordflow}{if}(strcmp(ptr-\/>word,new\_key)==0)\{}
-\DoxyCodeLine{00093             }
-\DoxyCodeLine{00094             ptr-\/>occurance += 1;}
-\DoxyCodeLine{00095             \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00096         \}}
-\DoxyCodeLine{00097         }
-\DoxyCodeLine{00098         ptr = ptr-\/>next;}
-\DoxyCodeLine{00099     \}}
-\DoxyCodeLine{00100 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "../inc/node\_t.h"}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "../inc/stack.h"}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "../inc/append.h"}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "../inc/insert.h"}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{\Hypertarget{fill__buckets_8c_source_l00022}\mbox{\hyperlink{fill__buckets_8c_a81d78745bfb621471ef9dac9badb6db9}{00022}} uint64\_t \mbox{\hyperlink{fill__buckets_8c_a81d78745bfb621471ef9dac9badb6db9}{pow\_t}}(\textcolor{keywordtype}{int} base, \textcolor{keywordtype}{int} exp)\{}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00025     uint64\_t result = 1;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00028     \textcolor{keywordflow}{if}(exp == 0)\textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00031     \textcolor{keywordflow}{if}(exp < 0)\textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00034     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < exp; i++)\{}
+\DoxyCodeLine{00035         result *= (uint64\_t)base;}
+\DoxyCodeLine{00036     \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00039     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00040 \}}
+\DoxyCodeLine{\Hypertarget{fill__buckets_8c_source_l00048}\mbox{\hyperlink{fill__buckets_8c_aa6707e4d0f37a801750800a3571741fc}{00048}} \textcolor{keywordtype}{int} \mbox{\hyperlink{fill__buckets_8c_aa6707e4d0f37a801750800a3571741fc}{hash\_index}}(\textcolor{keywordtype}{char} *word, \textcolor{keywordtype}{int} hash\_limit)\{}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00051     uint64\_t hash\_value = 0;}
+\DoxyCodeLine{00052     \textcolor{keywordtype}{int} hash\_const = 13;}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00055     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; word[i] != \textcolor{charliteral}{'\(\backslash\)0'}; i++)\{}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057         hash\_value += word[i] * \mbox{\hyperlink{fill__buckets_8c_a81d78745bfb621471ef9dac9badb6db9}{pow\_t}}(hash\_const, i);}
+\DoxyCodeLine{00058     \}}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00061     \textcolor{keywordflow}{return} hash\_value\%hash\_limit;}
+\DoxyCodeLine{00062 \}}
+\DoxyCodeLine{\Hypertarget{fill__buckets_8c_source_l00069}\mbox{\hyperlink{fill__buckets_8c_ad8202785f43186178e979f230ffa5075}{00069}} \textcolor{keywordtype}{void} \mbox{\hyperlink{fill__buckets_8c_ad8202785f43186178e979f230ffa5075}{add\_node}}(\mbox{\hyperlink{structnode}{node\_t}} **head, \textcolor{keywordtype}{char} *new\_key)\{}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00072     \mbox{\hyperlink{structnode}{node\_t}} *ptr = *head;}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00075     \mbox{\hyperlink{structnode}{node\_t}} *\textcolor{keyword}{new} = (\mbox{\hyperlink{structnode}{node\_t}} *)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structnode}{node\_t}}));}
+\DoxyCodeLine{00076     strcpy(new-\/>word, new\_key);}
+\DoxyCodeLine{00077     \textcolor{keyword}{new}-\/>occurance = 1;}
+\DoxyCodeLine{00078     \textcolor{keyword}{new}-\/>next = NULL;}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00081     \textcolor{keywordflow}{if}(ptr == NULL)\{}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083         *head = \textcolor{keyword}{new};}
+\DoxyCodeLine{00084         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00085     \}}
+\DoxyCodeLine{00086     free(\textcolor{keyword}{new});}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00089     ptr = *head;}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091     \textcolor{keywordflow}{while}(ptr!=NULL)\{}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093         \textcolor{keywordflow}{if}(strcmp(ptr-\/>word,new\_key)==0)\{}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095             ptr-\/>occurance += 1;}
+\DoxyCodeLine{00096             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00097         \}}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099         ptr = ptr-\/>next;}
+\DoxyCodeLine{00100     \}}
 \DoxyCodeLine{00101 }
 \DoxyCodeLine{00102 }
-\DoxyCodeLine{00104     ptr = *head;}
-\DoxyCodeLine{00105     \textcolor{keywordflow}{if}(strcmp(ptr-\/>word, new\_key) > 0)\{}
-\DoxyCodeLine{00106 }
-\DoxyCodeLine{00107         \mbox{\hyperlink{stack_8c_a566f0c4642ac167626a631f693169b11}{stack}}(head, new\_key);}
-\DoxyCodeLine{00108         \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00109     \}}
-\DoxyCodeLine{00110 }
-\DoxyCodeLine{00112     ptr = *head;}
-\DoxyCodeLine{00113 }
-\DoxyCodeLine{00114     \textcolor{keywordflow}{for}(; (ptr-\/>next != NULL)\&\&(strcmp(ptr-\/>next-\/>word, new\_key) > 0); ptr = ptr-\/>next);}
-\DoxyCodeLine{00115 }
-\DoxyCodeLine{00116     \mbox{\hyperlink{insert_8c_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert}}(head, ptr-\/>word, new\_key);}
-\DoxyCodeLine{00117 }
-\DoxyCodeLine{00119     \textcolor{keywordflow}{if}(ptr == NULL)\mbox{\hyperlink{append_8c_a53de05066e101242b94e4f458b5ae35b}{append}}(head, new\_key);}
-\DoxyCodeLine{00120 }
-\DoxyCodeLine{00121 \}}
-\DoxyCodeLine{00122 }
-\DoxyCodeLine{\Hypertarget{fill__buckets_8c_source_l00129}\mbox{\hyperlink{fill__buckets_8c_ad7879271ac1cf2fd1a4fd3159d65b627}{00129}} \textcolor{keywordtype}{void} \mbox{\hyperlink{fill__buckets_8c_ad7879271ac1cf2fd1a4fd3159d65b627}{fill\_buckets}}(\mbox{\hyperlink{structnode}{node\_t}} **buckets, \textcolor{keywordtype}{int} hash\_limit, FILE *input\_stream)\{}
-\DoxyCodeLine{00130 }
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00105     ptr = *head;}
+\DoxyCodeLine{00106     \textcolor{keywordflow}{if}(strcmp(ptr-\/>word, new\_key) > 0)\{}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108         \mbox{\hyperlink{stack_8c_a566f0c4642ac167626a631f693169b11}{stack}}(head, new\_key);}
+\DoxyCodeLine{00109         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00110     \}}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00113     ptr = *head;}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115     \textcolor{keywordflow}{for}(; (ptr-\/>next != NULL)\&\&(strcmp(ptr-\/>next-\/>word, new\_key) > 0); ptr = ptr-\/>next);}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117     \mbox{\hyperlink{insert_8c_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert}}(head, ptr-\/>word, new\_key);}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00120     \textcolor{keywordflow}{if}(ptr == NULL)\mbox{\hyperlink{append_8c_a53de05066e101242b94e4f458b5ae35b}{append}}(head, new\_key);}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122 \}}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{\Hypertarget{fill__buckets_8c_source_l00130}\mbox{\hyperlink{fill__buckets_8c_ad7879271ac1cf2fd1a4fd3159d65b627}{00130}} \textcolor{keywordtype}{void} \mbox{\hyperlink{fill__buckets_8c_ad7879271ac1cf2fd1a4fd3159d65b627}{fill\_buckets}}(\mbox{\hyperlink{structnode}{node\_t}} **buckets, \textcolor{keywordtype}{int} hash\_limit, FILE *input\_stream)\{}
 \DoxyCodeLine{00131 }
-\DoxyCodeLine{00132     \textcolor{keywordtype}{char} buff[100];}
-\DoxyCodeLine{00133     \textcolor{keywordtype}{char} *token;\textcolor{keywordtype}{char} delimiter[] = \textcolor{stringliteral}{" .\(\backslash\)n;:,?\(\backslash\)t"};}
-\DoxyCodeLine{00134 }
-\DoxyCodeLine{00136     \textcolor{keywordflow}{while}(fgets(buff,\textcolor{keyword}{sizeof}(buff),input\_stream)!=NULL)\{}
-\DoxyCodeLine{00137 }
-\DoxyCodeLine{00139         token = strtok(buff, delimiter);}
-\DoxyCodeLine{00140         }
-\DoxyCodeLine{00141         \textcolor{keywordflow}{while}(token!=NULL)\{}
-\DoxyCodeLine{00142             }
-\DoxyCodeLine{00144             \mbox{\hyperlink{fill__buckets_8c_ad8202785f43186178e979f230ffa5075}{add\_node}}(\&buckets[\mbox{\hyperlink{fill__buckets_8c_aa6707e4d0f37a801750800a3571741fc}{hash\_index}}(token, hash\_limit)], token);}
-\DoxyCodeLine{00145             }
-\DoxyCodeLine{00146             token = strtok(NULL, delimiter);}
-\DoxyCodeLine{00147         \} }
-\DoxyCodeLine{00148         }
-\DoxyCodeLine{00150         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 100; i++)buff[i]=\textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00151     \}}
-\DoxyCodeLine{00152 }
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133     \textcolor{keywordtype}{char} buff[100];}
+\DoxyCodeLine{00134     \textcolor{keywordtype}{char} *token;\textcolor{keywordtype}{char} delimiter[] = \textcolor{stringliteral}{" .\(\backslash\)n;:,?\(\backslash\)t"};}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00137     \textcolor{keywordflow}{while}(fgets(buff,\textcolor{keyword}{sizeof}(buff),input\_stream)!=NULL)\{}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00140         token = strtok(buff, delimiter);}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142         \textcolor{keywordflow}{while}(token!=NULL)\{}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00145             \mbox{\hyperlink{fill__buckets_8c_ad8202785f43186178e979f230ffa5075}{add\_node}}(\&buckets[\mbox{\hyperlink{fill__buckets_8c_aa6707e4d0f37a801750800a3571741fc}{hash\_index}}(token, hash\_limit)], token);}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147             token = strtok(NULL, delimiter);}
+\DoxyCodeLine{00148         \}}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00151         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 100; i++)buff[i]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00152     \}}
 \DoxyCodeLine{00153 }
-\DoxyCodeLine{00154 \}}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155 \}}
 
 \end{DoxyCode}

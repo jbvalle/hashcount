@@ -3,46 +3,44 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 }
-\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <stdio.h>}}
-\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <stdlib.h>}}
-\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <string.h>}}
-\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <stdint.h>}}
-\DoxyCodeLine{00009 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <stdint.h>}}
 \DoxyCodeLine{00010 }
-\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "../inc/node\_t.h"}}
-\DoxyCodeLine{00012 }
-\DoxyCodeLine{00013 \textcolor{preprocessor}{\#define COLOR "\(\backslash\)033[0;94m"}}
-\DoxyCodeLine{00014 \textcolor{preprocessor}{\#define RESET "\(\backslash\)033[0m"}}
-\DoxyCodeLine{00015 }
-\DoxyCodeLine{\Hypertarget{display__list_8c_source_l00022}\mbox{\hyperlink{display__list_8c_ad0de26c7c2dc54dba3dbec2d7623e6a7}{00022}} \textcolor{keywordtype}{void} \mbox{\hyperlink{display__list_8c_ad0de26c7c2dc54dba3dbec2d7623e6a7}{display\_list}}(\mbox{\hyperlink{structnode}{node\_t}} **buckets, FILE *output\_stream, \textcolor{keywordtype}{int} hash\_limit)\{}
-\DoxyCodeLine{00023 }
-\DoxyCodeLine{00025     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < hash\_limit; i++)\{}
-\DoxyCodeLine{00026     }
-\DoxyCodeLine{00028         \mbox{\hyperlink{structnode}{node\_t}} *ptr = buckets[i];}
-\DoxyCodeLine{00029         }
-\DoxyCodeLine{00030         printf(\textcolor{stringliteral}{"\(\backslash\)n[\%2d]: "}, i);}
-\DoxyCodeLine{00031         fprintf(output\_stream, \textcolor{stringliteral}{"\(\backslash\)n[\%2d]: "}, i);}
-\DoxyCodeLine{00032 }
-\DoxyCodeLine{00034         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>next, j++)\{}
-\DoxyCodeLine{00035 }
-\DoxyCodeLine{00036             \textcolor{keywordflow}{if}(ptr-\/>occurance > 1)\{}
-\DoxyCodeLine{00037                 printf(COLOR);}
-\DoxyCodeLine{00038                 printf(\textcolor{stringliteral}{"\%s(\%d), "},ptr-\/>word, ptr-\/>occurance);}
-\DoxyCodeLine{00039                 fprintf(output\_stream, \textcolor{stringliteral}{"\%s(\%d), "},ptr-\/>word, ptr-\/>occurance);}
-\DoxyCodeLine{00040                 printf(RESET);}
-\DoxyCodeLine{00041             \}\textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{00042                 printf(\textcolor{stringliteral}{"\%s, "},ptr-\/>word);}
-\DoxyCodeLine{00043                 fprintf(output\_stream, \textcolor{stringliteral}{"\%s, "},ptr-\/>word);}
-\DoxyCodeLine{00044             \}}
-\DoxyCodeLine{00045 }
-\DoxyCodeLine{00046             \textcolor{keywordflow}{if}((j\%10)==0)\{}
-\DoxyCodeLine{00047                 printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
-\DoxyCodeLine{00048                 fprintf(output\_stream, \textcolor{stringliteral}{"\(\backslash\)n"});}
-\DoxyCodeLine{00049             \}}
-\DoxyCodeLine{00050         \}}
-\DoxyCodeLine{00051     \}}
-\DoxyCodeLine{00052 \}}
-\DoxyCodeLine{00053 }
-\DoxyCodeLine{00054 }
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "../inc/node\_t.h"}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#define COLOR "\(\backslash\)033[0;94m"}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#define RESET "\(\backslash\)033[0m"}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{\Hypertarget{display__list_8c_source_l00023}\mbox{\hyperlink{display__list_8c_ad0de26c7c2dc54dba3dbec2d7623e6a7}{00023}} \textcolor{keywordtype}{void} \mbox{\hyperlink{display__list_8c_ad0de26c7c2dc54dba3dbec2d7623e6a7}{display\_list}}(\mbox{\hyperlink{structnode}{node\_t}} **buckets, FILE *output\_stream, \textcolor{keywordtype}{int} hash\_limit)\{}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00026     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < hash\_limit; i++)\{}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00029         \mbox{\hyperlink{structnode}{node\_t}} *ptr = buckets[i];}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031         printf(\textcolor{stringliteral}{"\(\backslash\)n[\%2d]: "}, i);}
+\DoxyCodeLine{00032         fprintf(output\_stream, \textcolor{stringliteral}{"\(\backslash\)n[\%2d]: "}, i);}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00035         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>next, j++)\{}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037             \textcolor{keywordflow}{if}(ptr-\/>occurance > 1)\{}
+\DoxyCodeLine{00038                 printf(COLOR);}
+\DoxyCodeLine{00039                 printf(\textcolor{stringliteral}{"\%s(\%d), "},ptr-\/>word, ptr-\/>occurance);}
+\DoxyCodeLine{00040                 fprintf(output\_stream, \textcolor{stringliteral}{"\%s(\%d), "},ptr-\/>word, ptr-\/>occurance);}
+\DoxyCodeLine{00041                 printf(RESET);}
+\DoxyCodeLine{00042             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00043                 printf(\textcolor{stringliteral}{"\%s, "},ptr-\/>word);}
+\DoxyCodeLine{00044                 fprintf(output\_stream, \textcolor{stringliteral}{"\%s, "},ptr-\/>word);}
+\DoxyCodeLine{00045             \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047             \textcolor{keywordflow}{if}((j\%10)==0)\{}
+\DoxyCodeLine{00048                 printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{00049                 fprintf(output\_stream, \textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{00050             \}}
+\DoxyCodeLine{00051         \}}
+\DoxyCodeLine{00052     \}}
+\DoxyCodeLine{00053 \}}
 
 \end{DoxyCode}
