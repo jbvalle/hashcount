@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['stack_41',['stack',['../stack_8h.html#a566f0c4642ac167626a631f693169b11',1,'stack(node_t **head, char *word):&#160;stack.c'],['../stack_8c.html#a566f0c4642ac167626a631f693169b11',1,'stack(node_t **head, char *word):&#160;stack.c']]],
-  ['stack_2ec_42',['stack.c',['../stack_8c.html',1,'']]],
-  ['stack_2eh_43',['stack.h',['../stack_8h.html',1,'']]]
+  ['remove_5fkey_5fword_42',['remove_key_word',['../censor__buckets_8h.html#a93fc0d88295578ea4567b8000723d635',1,'remove_key_word(char *input_string, char *comparison_string):&#160;censor_buckets.c'],['../censor__buckets_8c.html#a93fc0d88295578ea4567b8000723d635',1,'remove_key_word(char *input_string, char *comparison_string):&#160;censor_buckets.c']]],
+  ['reset_43',['RESET',['../censor__buckets_8c.html#ab702106cf3b3e96750b6845ded4e0299',1,'RESET():&#160;censor_buckets.c'],['../censor__except__buckets_8c.html#ab702106cf3b3e96750b6845ded4e0299',1,'RESET():&#160;censor_except_buckets.c'],['../choose__buckets_8c.html#ab702106cf3b3e96750b6845ded4e0299',1,'RESET():&#160;choose_buckets.c'],['../display__list_8c.html#ab702106cf3b3e96750b6845ded4e0299',1,'RESET():&#160;display_list.c'],['../main_8c.html#ab702106cf3b3e96750b6845ded4e0299',1,'RESET():&#160;main.c']]]
 ];

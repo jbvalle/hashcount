@@ -11,63 +11,71 @@
 \DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "../inc/node\_t.h"}}
 \DoxyCodeLine{00012 }
 \DoxyCodeLine{\Hypertarget{choose__buckets_8c_source_l00013}\mbox{\hyperlink{choose__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}{00013}} \textcolor{preprocessor}{\#define COLOR "\(\backslash\)033[0;94m"}}
-\DoxyCodeLine{\Hypertarget{choose__buckets_8c_source_l00014}\mbox{\hyperlink{choose__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}{00014}} \textcolor{preprocessor}{\#define RESET "\(\backslash\)033[0m"}}
-\DoxyCodeLine{00015 }
-\DoxyCodeLine{\Hypertarget{choose__buckets_8c_source_l00022}\mbox{\hyperlink{choose__buckets_8c_a8ae7c98d661bdc4d004450b9548a60c3}{00022}} \textcolor{keywordtype}{void} \mbox{\hyperlink{choose__buckets_8c_a8ae7c98d661bdc4d004450b9548a60c3}{choose\_buckets}}(\mbox{\hyperlink{structnode}{node\_t}} **buckets, \textcolor{keywordtype}{int} *requested\_index, \textcolor{keywordtype}{int} *chosen\_flag)\{}
-\DoxyCodeLine{00023 }
-\DoxyCodeLine{00024     \textcolor{keywordtype}{char} delimiter[] = \textcolor{stringliteral}{" .\(\backslash\)n;:,?\(\backslash\)t"};}
-\DoxyCodeLine{00025     \textcolor{keywordtype}{char} user\_input[50], letter;}
-\DoxyCodeLine{00026     \textcolor{keywordtype}{int} input\_index;}
-\DoxyCodeLine{00028     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 50; i++)user\_input[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00029 }
-\DoxyCodeLine{00031     \textcolor{keywordflow}{if}(chosen\_flag[2])\{}
-\DoxyCodeLine{00032 }
-\DoxyCodeLine{00033         printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
-\DoxyCodeLine{00034         printf(\textcolor{stringliteral}{"| Please enter desired indices of buckets to be removed |\(\backslash\)n"});}
-\DoxyCodeLine{00035         printf(\textcolor{stringliteral}{"+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
-\DoxyCodeLine{00036         printf(\textcolor{stringliteral}{"\(\backslash\)n»"});}
-\DoxyCodeLine{00037     \}}
-\DoxyCodeLine{00038 }
-\DoxyCodeLine{00039     \textcolor{keywordflow}{if}(!chosen\_flag[2])\{}
+\DoxyCodeLine{\Hypertarget{choose__buckets_8c_source_l00014}\mbox{\hyperlink{choose__buckets_8c_a735563036dced0b7d6cc98f97ea4978b}{00014}} \textcolor{preprocessor}{\#define ERR "\(\backslash\)033[0;91m"}}
+\DoxyCodeLine{\Hypertarget{choose__buckets_8c_source_l00015}\mbox{\hyperlink{choose__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}{00015}} \textcolor{preprocessor}{\#define RESET "\(\backslash\)033[0m"}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{\Hypertarget{choose__buckets_8c_source_l00024}\mbox{\hyperlink{choose__buckets_8c_a81f26cf581c56301b1ae920918a7fdbb}{00024}} \textcolor{keywordtype}{int} \mbox{\hyperlink{choose__buckets_8c_a81f26cf581c56301b1ae920918a7fdbb}{choose\_buckets}}(\mbox{\hyperlink{structnode}{node\_t}} **buckets, \textcolor{keywordtype}{int} *requested\_index, \textcolor{keywordtype}{int} *chosen\_flag)\{}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \textcolor{keywordtype}{char} delimiter[] = \textcolor{stringliteral}{" .\(\backslash\)n;:,?\(\backslash\)t"};}
+\DoxyCodeLine{00027     \textcolor{keywordtype}{char} user\_input[50], letter;}
+\DoxyCodeLine{00028     \textcolor{keywordtype}{int} input\_index;}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 50; i++)user\_input[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00033     \textcolor{keywordflow}{if}(chosen\_flag[2])\{}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
+\DoxyCodeLine{00036         printf(\textcolor{stringliteral}{"| Please enter desired indices of buckets to be removed |\(\backslash\)n"});}
+\DoxyCodeLine{00037         printf(\textcolor{stringliteral}{"+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
+\DoxyCodeLine{00038         printf(\textcolor{stringliteral}{"\(\backslash\)n»"});}
+\DoxyCodeLine{00039     \}}
 \DoxyCodeLine{00040 }
-\DoxyCodeLine{00041         printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
-\DoxyCodeLine{00042         printf(\textcolor{stringliteral}{"| Please enter desired indices of buckets which should not be censored|\(\backslash\)n"});}
-\DoxyCodeLine{00043         printf(\textcolor{stringliteral}{"+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
-\DoxyCodeLine{00044         printf(\textcolor{stringliteral}{"\(\backslash\)n»"});}
-\DoxyCodeLine{00045     \}}
-\DoxyCodeLine{00047     \textcolor{keywordflow}{for}(input\_index = 0; (letter = getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}; input\_index++)\{}
-\DoxyCodeLine{00048 }
-\DoxyCodeLine{00049         user\_input[input\_index] = letter;}
-\DoxyCodeLine{00050     \}}
-\DoxyCodeLine{00052     \textcolor{keywordflow}{while}(input\_index < 50)user\_input[input\_index++] = \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00053 }
-\DoxyCodeLine{00055     \textcolor{keywordtype}{char} *token\_in = strtok(user\_input, delimiter);}
-\DoxyCodeLine{00056 }
-\DoxyCodeLine{00057     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; token\_in != NULL; i++)\{}
+\DoxyCodeLine{00041     \textcolor{keywordflow}{if}(!chosen\_flag[2])\{}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043         printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
+\DoxyCodeLine{00044         printf(\textcolor{stringliteral}{"| Please enter desired indices of buckets which should not be censored|\(\backslash\)n"});}
+\DoxyCodeLine{00045         printf(\textcolor{stringliteral}{"+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
+\DoxyCodeLine{00046         printf(\textcolor{stringliteral}{"\(\backslash\)n»"});}
+\DoxyCodeLine{00047     \}}
+\DoxyCodeLine{00049     \textcolor{keywordflow}{for}(input\_index = 0; (letter = getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}; input\_index++)\{}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051         user\_input[input\_index] = letter;}
+\DoxyCodeLine{00052     \}}
+\DoxyCodeLine{00054     \textcolor{keywordflow}{while}(input\_index < 50)user\_input[input\_index++] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00057     \textcolor{keywordtype}{char} *token\_in = strtok(user\_input, delimiter);}
 \DoxyCodeLine{00058 }
-\DoxyCodeLine{00059         requested\_index[i] = strtol(token\_in, NULL, 10);}
+\DoxyCodeLine{00059     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; token\_in != NULL; i++)\{}
 \DoxyCodeLine{00060 }
-\DoxyCodeLine{00061         token\_in = strtok(NULL, delimiter);}
-\DoxyCodeLine{00062     \}}
-\DoxyCodeLine{00063 }
-\DoxyCodeLine{00065     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} x = 0; requested\_index[x] != -\/1; x++)\{}
-\DoxyCodeLine{00066 }
-\DoxyCodeLine{00067         \textcolor{keywordtype}{int} i = requested\_index[x];}
-\DoxyCodeLine{00068 }
-\DoxyCodeLine{00069         \mbox{\hyperlink{structnode}{node\_t}} *ptr = buckets[i];}
-\DoxyCodeLine{00070 }
-\DoxyCodeLine{00071         printf(\textcolor{stringliteral}{"\(\backslash\)n[\%2d]: "}, i);}
-\DoxyCodeLine{00072         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}, j++)\{}
+\DoxyCodeLine{00061         requested\_index[i] = strtol(token\_in, NULL, 10);}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063         token\_in = strtok(NULL, delimiter);}
+\DoxyCodeLine{00064     \}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00067     \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{00068     \textcolor{keywordflow}{for}(x = 0; requested\_index[x] != -\/1; x++)\{}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070         \textcolor{keywordtype}{int} i = requested\_index[x];}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072         \mbox{\hyperlink{structnode}{node\_t}} *ptr = buckets[i];}
 \DoxyCodeLine{00073 }
-\DoxyCodeLine{00074             \textcolor{keywordflow}{if}(ptr-\/>\mbox{\hyperlink{structnode_a94387ceffd9f9e4b7d3e1697c4f8d507}{occurance}} > 1)\{}
-\DoxyCodeLine{00075                 printf(\mbox{\hyperlink{choose__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}{COLOR}});}
-\DoxyCodeLine{00076                 printf(\textcolor{stringliteral}{"\%s(\%d), "},ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, ptr-\/>\mbox{\hyperlink{structnode_a94387ceffd9f9e4b7d3e1697c4f8d507}{occurance}});}
-\DoxyCodeLine{00077                 printf(\mbox{\hyperlink{choose__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}{RESET}});}
-\DoxyCodeLine{00078             \}\textcolor{keywordflow}{else} printf(\textcolor{stringliteral}{"\%s, "},ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}});}
-\DoxyCodeLine{00079 }
-\DoxyCodeLine{00080             \textcolor{keywordflow}{if}((j\%10)==0)printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
-\DoxyCodeLine{00081         \}}
-\DoxyCodeLine{00082     \}}
-\DoxyCodeLine{00083 \}}
+\DoxyCodeLine{00074         printf(\textcolor{stringliteral}{"\(\backslash\)n[\%2d]: "}, i);}
+\DoxyCodeLine{00075         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}, j++)\{}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077             \textcolor{keywordflow}{if}(ptr-\/>\mbox{\hyperlink{structnode_a94387ceffd9f9e4b7d3e1697c4f8d507}{occurance}} > 1)\{}
+\DoxyCodeLine{00078                 printf(\mbox{\hyperlink{choose__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}{COLOR}});}
+\DoxyCodeLine{00079                 printf(\textcolor{stringliteral}{"\%s(\%d), "},ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, ptr-\/>\mbox{\hyperlink{structnode_a94387ceffd9f9e4b7d3e1697c4f8d507}{occurance}});}
+\DoxyCodeLine{00080                 printf(\mbox{\hyperlink{choose__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}{RESET}});}
+\DoxyCodeLine{00081             \}\textcolor{keywordflow}{else} printf(\textcolor{stringliteral}{"\%s, "},ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}});}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083             \textcolor{keywordflow}{if}((j\%10)==0)printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{00084         \}}
+\DoxyCodeLine{00085     \}}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00088     \textcolor{keywordflow}{if}(x == 0)\{}
+\DoxyCodeLine{00089         printf(\mbox{\hyperlink{choose__buckets_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}});printf(\textcolor{stringliteral}{"\(\backslash\)nERROR: INVALID USER INPUT!\(\backslash\)n\(\backslash\)n"});printf(\mbox{\hyperlink{choose__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}{RESET}});}
+\DoxyCodeLine{00090         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{00091     \}}
+\DoxyCodeLine{00092     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{00093 \}}
 
 \end{DoxyCode}

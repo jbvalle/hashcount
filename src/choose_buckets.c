@@ -11,6 +11,7 @@
 #include "../inc/node_t.h"
 
 #define COLOR "\033[0;94m"
+#define ERR "\033[0;91m"
 #define RESET "\033[0m"
 
 /**
@@ -18,8 +19,9 @@
  *@param[in] buckets Generated buckets to choose from
  *@param[in] requested_index Empty Array serve as a look up table datastructure to save user input
  *@param[in] chosen_flag Depending on previous chosen arguments for running the program, requested data changes
+ *@return Returns total number of arguments, otherwise return -1
  */
-void choose_buckets(node_t **buckets, int *requested_index, int *chosen_flag){
+int choose_buckets(node_t **buckets, int *requested_index, int *chosen_flag){
 
     char delimiter[] = " .\n;:,?\t";
     char user_input[50], letter;
@@ -62,7 +64,8 @@ void choose_buckets(node_t **buckets, int *requested_index, int *chosen_flag){
     }
 
     ///6. Output Requested Buckets
-    for(int x = 0; requested_index[x] != -1; x++){
+    int x;
+    for(x = 0; requested_index[x] != -1; x++){
 
         int i = requested_index[x];
 
@@ -80,4 +83,11 @@ void choose_buckets(node_t **buckets, int *requested_index, int *chosen_flag){
             if((j%10)==0)printf("\n");
         }
     }
+
+    ///7. Return -1 Error incase invalid user input, otherwise return N numbers of user arguments
+    if(x == 0){
+        printf(ERR);printf("\nERROR: INVALID USER INPUT!\n\n");printf(RESET);
+        return -1;
+    }
+    else return x;
 }

@@ -106,8 +106,9 @@ int main(int argc, char **argv){
         if(output_stream == NULL)fprintf(stderr, "Error accessing Output stream"); 
         //-----------------------------------------------------------------------
 
-        //Request user input
-        choose_buckets(buckets, requested_index, chosen_flag);
+        //Request user input until valid input has been recognized
+        while(choose_buckets(buckets, requested_index, chosen_flag) == -1);
+
         //Censor all words matching chosen buckets
         //and write to censored_buckets.txt
         censor_buckets(buckets, input_stream, output_stream, requested_index);
@@ -136,9 +137,9 @@ int main(int argc, char **argv){
         if(output_stream == NULL)fprintf(stderr, "Error accessing Output stream"); 
         //-----------------------------------------------------------------------
 
+        //Request user input until valid input has been recognized
+        while(choose_buckets(buckets, requested_index, chosen_flag) == -1);
 
-        //Request user input
-        choose_buckets(buckets, requested_index, chosen_flag);
         //Censor all word matching the buckets
         censor_buckets(buckets, input_stream, output_stream, requested_index);
 
