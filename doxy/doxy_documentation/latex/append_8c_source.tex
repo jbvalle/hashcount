@@ -10,12 +10,12 @@
 \DoxyCodeLine{00011 }
 \DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "../inc/node\_t.h"}}
 \DoxyCodeLine{00013 }
-\DoxyCodeLine{\Hypertarget{append_8c_source_l00019}\mbox{\hyperlink{append_8c_a53de05066e101242b94e4f458b5ae35b}{00019}} \textcolor{keywordtype}{void} \mbox{\hyperlink{append_8c_a53de05066e101242b94e4f458b5ae35b}{append}}(\mbox{\hyperlink{structnode}{node\_t}} **head, \textcolor{keywordtype}{char} *word)\{}
+\DoxyCodeLine{\Hypertarget{append_8c_source_l00019}\mbox{\hyperlink{append_8c_a53de05066e101242b94e4f458b5ae35b}{00019}} \textcolor{keywordtype}{void} \mbox{\hyperlink{append_8c_a53de05066e101242b94e4f458b5ae35b}{append}}(\mbox{\hyperlink{structnode}{node\_t}} **head, \textcolor{keywordtype}{char} *\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}})\{}
 \DoxyCodeLine{00020 }
 \DoxyCodeLine{00021     \mbox{\hyperlink{structnode}{node\_t}} *ptr = *head;}
 \DoxyCodeLine{00022 }
 \DoxyCodeLine{00023     \mbox{\hyperlink{structnode}{node\_t}} *\textcolor{keyword}{new} = (\mbox{\hyperlink{structnode}{node\_t}} *)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structnode}{node\_t}}));}
-\DoxyCodeLine{00024     strcpy(new-\/>word, word);}
+\DoxyCodeLine{00024     strcpy(new-\/>word, \mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}});}
 \DoxyCodeLine{00025     \textcolor{keyword}{new}-\/>occurance = 1;}
 \DoxyCodeLine{00026     \textcolor{keyword}{new}-\/>next = NULL;}
 \DoxyCodeLine{00027 }
@@ -25,9 +25,9 @@
 \DoxyCodeLine{00031         \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00032     \}}
 \DoxyCodeLine{00033 }
-\DoxyCodeLine{00034     \textcolor{keywordflow}{for}(; ptr-\/>next != NULL; ptr = ptr-\/>next);}
+\DoxyCodeLine{00034     \textcolor{keywordflow}{for}(; ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} != NULL; ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}});}
 \DoxyCodeLine{00035 }
-\DoxyCodeLine{00036     ptr-\/>next = \textcolor{keyword}{new};}
+\DoxyCodeLine{00036     ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = \textcolor{keyword}{new};}
 \DoxyCodeLine{00037 \}}
 
 \end{DoxyCode}

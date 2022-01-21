@@ -16,11 +16,9 @@ Include dependency graph for censor\+\_\+buckets.\+c\+:
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{censor__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}\label{censor__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}} 
-\#define {\bfseries C\+O\+L\+OR}~\char`\"{}\textbackslash{}033\mbox{[}0;93m\char`\"{}
+\#define \mbox{\hyperlink{censor__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}{C\+O\+L\+OR}}~\char`\"{}\textbackslash{}033\mbox{[}0;93m\char`\"{}
 \item 
-\mbox{\Hypertarget{censor__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}\label{censor__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}} 
-\#define {\bfseries R\+E\+S\+ET}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\#define \mbox{\hyperlink{censor__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}{R\+E\+S\+ET}}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -28,7 +26,7 @@ Include dependency graph for censor\+\_\+buckets.\+c\+:
 void \mbox{\hyperlink{censor__buckets_8c_a93fc0d88295578ea4567b8000723d635}{remove\+\_\+key\+\_\+word}} (char $\ast$input\+\_\+string, char $\ast$comparison\+\_\+string)
 \begin{DoxyCompactList}\small\item\em Removes keywords of buckets from a string.~\newline
  A string is itteratively analyzed and letterwise compared with the keyword if a complete Keyword was matched remove by rplacing characters with dashes. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{censor__buckets_8c_ac3c63497a5e45ed0a4dab4c05d9ac171}{censor\+\_\+buckets}} (\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$buckets, F\+I\+LE $\ast$input\+\_\+stream, F\+I\+LE $\ast$output\+\_\+stream, int $\ast$requested\+\_\+index)
+void \mbox{\hyperlink{censor__buckets_8c_ac3c63497a5e45ed0a4dab4c05d9ac171}{censor\+\_\+buckets}} (\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$buckets, F\+I\+LE $\ast$input\+\_\+stream, F\+I\+LE $\ast$output\+\_\+stream, int $\ast$requested\+\_\+index)
 \begin{DoxyCompactList}\small\item\em Itterate through all lines and check for all words in buckets.~\newline
  \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -46,12 +44,35 @@ Definition in file \mbox{\hyperlink{censor__buckets_8c_source}{censor\+\_\+bucke
 
 
 
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{censor__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}\label{censor__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}} 
+\index{censor\_buckets.c@{censor\_buckets.c}!COLOR@{COLOR}}
+\index{COLOR@{COLOR}!censor\_buckets.c@{censor\_buckets.c}}
+\doxysubsubsection{\texorpdfstring{COLOR}{COLOR}}
+{\footnotesize\ttfamily \#define C\+O\+L\+OR~\char`\"{}\textbackslash{}033\mbox{[}0;93m\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{censor__buckets_8c_source_l00012}{12}} of file \mbox{\hyperlink{censor__buckets_8c_source}{censor\+\_\+buckets.\+c}}.
+
+\mbox{\Hypertarget{censor__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}\label{censor__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}} 
+\index{censor\_buckets.c@{censor\_buckets.c}!RESET@{RESET}}
+\index{RESET@{RESET}!censor\_buckets.c@{censor\_buckets.c}}
+\doxysubsubsection{\texorpdfstring{RESET}{RESET}}
+{\footnotesize\ttfamily \#define R\+E\+S\+ET~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{censor__buckets_8c_source_l00013}{13}} of file \mbox{\hyperlink{censor__buckets_8c_source}{censor\+\_\+buckets.\+c}}.
+
+
+
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{censor__buckets_8c_ac3c63497a5e45ed0a4dab4c05d9ac171}\label{censor__buckets_8c_ac3c63497a5e45ed0a4dab4c05d9ac171}} 
 \index{censor\_buckets.c@{censor\_buckets.c}!censor\_buckets@{censor\_buckets}}
 \index{censor\_buckets@{censor\_buckets}!censor\_buckets.c@{censor\_buckets.c}}
 \doxysubsubsection{\texorpdfstring{censor\_buckets()}{censor\_buckets()}}
-{\footnotesize\ttfamily void censor\+\_\+buckets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$}]{buckets,  }\item[{F\+I\+LE $\ast$}]{input\+\_\+stream,  }\item[{F\+I\+LE $\ast$}]{output\+\_\+stream,  }\item[{int $\ast$}]{requested\+\_\+index }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void censor\+\_\+buckets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$}]{buckets,  }\item[{F\+I\+LE $\ast$}]{input\+\_\+stream,  }\item[{F\+I\+LE $\ast$}]{output\+\_\+stream,  }\item[{int $\ast$}]{requested\+\_\+index }\end{DoxyParamCaption})}
 
 
 
@@ -94,11 +115,11 @@ Definition at line \mbox{\hyperlink{censor__buckets_8c_source_l00058}{58}} of fi
 \DoxyCodeLine{00071 }
 \DoxyCodeLine{00072             \mbox{\hyperlink{structnode}{node\_t}} *ptr = buckets[i];}
 \DoxyCodeLine{00073 }
-\DoxyCodeLine{00074             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>next, j++)\{}
+\DoxyCodeLine{00074             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}, j++)\{}
 \DoxyCodeLine{00075 }
 \DoxyCodeLine{00076                 \textcolor{comment}{//======================================}}
 \DoxyCodeLine{00078 \textcolor{comment}{}                \textcolor{comment}{//======================================}}
-\DoxyCodeLine{00079                 \mbox{\hyperlink{censor__buckets_8c_a93fc0d88295578ea4567b8000723d635}{remove\_key\_word}}(buff, ptr-\/>word);}
+\DoxyCodeLine{00079                 \mbox{\hyperlink{censor__buckets_8c_a93fc0d88295578ea4567b8000723d635}{remove\_key\_word}}(buff, ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}});}
 \DoxyCodeLine{00080             \}}
 \DoxyCodeLine{00081         \}}
 \DoxyCodeLine{00082         fputs(buff, output\_stream);}

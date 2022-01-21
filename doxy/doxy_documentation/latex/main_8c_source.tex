@@ -20,9 +20,9 @@
 \DoxyCodeLine{00020 \textcolor{preprocessor}{\#include "../inc/choose\_buckets.h"}}
 \DoxyCodeLine{00021 \textcolor{preprocessor}{\#include "../inc/display\_list.h"}}
 \DoxyCodeLine{00022 }
-\DoxyCodeLine{00023 \textcolor{preprocessor}{\#define COLOR "\(\backslash\)033[0;94m"}}
-\DoxyCodeLine{00024 \textcolor{preprocessor}{\#define COLOR1 "\(\backslash\)033[0;92m"}}
-\DoxyCodeLine{00025 \textcolor{preprocessor}{\#define RESET "\(\backslash\)033[0m"}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00023}\mbox{\hyperlink{main_8c_a4b5014034c9aac136ab8c82c2d16dc82}{00023}} \textcolor{preprocessor}{\#define COLOR "\(\backslash\)033[0;94m"}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00024}\mbox{\hyperlink{main_8c_a1169cd1b397420b29bd3b0153f047818}{00024}} \textcolor{preprocessor}{\#define COLOR1 "\(\backslash\)033[0;92m"}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00025}\mbox{\hyperlink{main_8c_ab702106cf3b3e96750b6845ded4e0299}{00025}} \textcolor{preprocessor}{\#define RESET "\(\backslash\)033[0m"}}
 \DoxyCodeLine{00026 }
 \DoxyCodeLine{00027 }
 \DoxyCodeLine{\Hypertarget{main_8c_source_l00028}\mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{00028}} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)\{}
@@ -64,9 +64,9 @@
 \DoxyCodeLine{00066     FILE *input\_stream = fopen(input\_file, \textcolor{stringliteral}{"r"});}
 \DoxyCodeLine{00067     FILE *output\_stream = fopen(\textcolor{stringliteral}{"TEXTFILES/buckets.txt"}, \textcolor{stringliteral}{"wb+"});}
 \DoxyCodeLine{00068 }
-\DoxyCodeLine{00069     \mbox{\hyperlink{fill__buckets_8c_ad7879271ac1cf2fd1a4fd3159d65b627}{fill\_buckets}}(buckets, hash\_limit, input\_stream);}
+\DoxyCodeLine{00069     \mbox{\hyperlink{fill__buckets_8h_ad7879271ac1cf2fd1a4fd3159d65b627}{fill\_buckets}}(buckets, hash\_limit, input\_stream);}
 \DoxyCodeLine{00070     }
-\DoxyCodeLine{00071     \mbox{\hyperlink{display__list_8c_ad0de26c7c2dc54dba3dbec2d7623e6a7}{display\_list}}(buckets, output\_stream, 40);}
+\DoxyCodeLine{00071     \mbox{\hyperlink{display__list_8h_ad0de26c7c2dc54dba3dbec2d7623e6a7}{display\_list}}(buckets, output\_stream, 40);}
 \DoxyCodeLine{00072 }
 \DoxyCodeLine{00073     \textcolor{comment}{//Close input and output streams}}
 \DoxyCodeLine{00074     fclose(input\_stream);input\_stream = NULL;}
@@ -92,12 +92,12 @@
 \DoxyCodeLine{00096         input\_stream  = fopen(input\_file, \textcolor{stringliteral}{"r"});}
 \DoxyCodeLine{00097         output\_stream = fopen(\textcolor{stringliteral}{"censored\_buckets.txt"}, \textcolor{stringliteral}{"wb+"});}
 \DoxyCodeLine{00098         \textcolor{comment}{//Request user input}}
-\DoxyCodeLine{00099         \mbox{\hyperlink{choose__buckets_8c_a8ae7c98d661bdc4d004450b9548a60c3}{choose\_buckets}}(buckets, requested\_index, chosen\_flag);}
+\DoxyCodeLine{00099         \mbox{\hyperlink{choose__buckets_8h_a8ae7c98d661bdc4d004450b9548a60c3}{choose\_buckets}}(buckets, requested\_index, chosen\_flag);}
 \DoxyCodeLine{00100         \textcolor{comment}{//Censor all words matching chosen buckets}}
 \DoxyCodeLine{00101         \textcolor{comment}{//and write to censored\_buckets.txt}}
-\DoxyCodeLine{00102         \mbox{\hyperlink{censor__buckets_8c_ac3c63497a5e45ed0a4dab4c05d9ac171}{censor\_buckets}}(buckets, input\_stream, output\_stream, requested\_index);}
+\DoxyCodeLine{00102         \mbox{\hyperlink{censor__buckets_8h_ac3c63497a5e45ed0a4dab4c05d9ac171}{censor\_buckets}}(buckets, input\_stream, output\_stream, requested\_index);}
 \DoxyCodeLine{00103 }
-\DoxyCodeLine{00104         printf(COLOR1);printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nTextfile censored\_buckets.txt was created\(\backslash\)n"});printf(RESET);}
+\DoxyCodeLine{00104         printf(\mbox{\hyperlink{main_8c_a1169cd1b397420b29bd3b0153f047818}{COLOR1}});printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nTextfile censored\_buckets.txt was created\(\backslash\)n"});printf(\mbox{\hyperlink{main_8c_ab702106cf3b3e96750b6845ded4e0299}{RESET}});}
 \DoxyCodeLine{00105         \textcolor{comment}{//Close input and output streams}}
 \DoxyCodeLine{00106         fclose(input\_stream);input\_stream = NULL;}
 \DoxyCodeLine{00107         fclose(output\_stream);output\_stream = NULL;}
@@ -116,9 +116,9 @@
 \DoxyCodeLine{00121         output\_stream = fopen(\textcolor{stringliteral}{"TEXTFILES/temp.txt"}, \textcolor{stringliteral}{"wb+"});}
 \DoxyCodeLine{00122 }
 \DoxyCodeLine{00123         \textcolor{comment}{//Request user input}}
-\DoxyCodeLine{00124         \mbox{\hyperlink{choose__buckets_8c_a8ae7c98d661bdc4d004450b9548a60c3}{choose\_buckets}}(buckets, requested\_index, chosen\_flag);}
+\DoxyCodeLine{00124         \mbox{\hyperlink{choose__buckets_8h_a8ae7c98d661bdc4d004450b9548a60c3}{choose\_buckets}}(buckets, requested\_index, chosen\_flag);}
 \DoxyCodeLine{00125         \textcolor{comment}{//Censor all word matching the buckets}}
-\DoxyCodeLine{00126         \mbox{\hyperlink{censor__buckets_8c_ac3c63497a5e45ed0a4dab4c05d9ac171}{censor\_buckets}}(buckets, input\_stream, output\_stream, requested\_index);}
+\DoxyCodeLine{00126         \mbox{\hyperlink{censor__buckets_8h_ac3c63497a5e45ed0a4dab4c05d9ac171}{censor\_buckets}}(buckets, input\_stream, output\_stream, requested\_index);}
 \DoxyCodeLine{00127 }
 \DoxyCodeLine{00128         \textcolor{comment}{//Close input and output streams}}
 \DoxyCodeLine{00129         fclose(input\_stream);input\_stream = NULL;}
@@ -128,10 +128,10 @@
 \DoxyCodeLine{00133         input\_stream\_censored = fopen(\textcolor{stringliteral}{"TEXTFILES/temp.txt"}, \textcolor{stringliteral}{"r"});}
 \DoxyCodeLine{00134         output\_stream         = fopen(\textcolor{stringliteral}{"censored\_all\_except\_buckets.txt"}, \textcolor{stringliteral}{"wb+"});}
 \DoxyCodeLine{00135         }
-\DoxyCodeLine{00136         printf(COLOR1);printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nTextfile censored\_all\_except\_buckets.txt was created\(\backslash\)n"});printf(RESET);}
+\DoxyCodeLine{00136         printf(\mbox{\hyperlink{main_8c_a1169cd1b397420b29bd3b0153f047818}{COLOR1}});printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nTextfile censored\_all\_except\_buckets.txt was created\(\backslash\)n"});printf(\mbox{\hyperlink{main_8c_ab702106cf3b3e96750b6845ded4e0299}{RESET}});}
 \DoxyCodeLine{00137         \textcolor{comment}{//Read censored textfile and compare to original input file and replace all letter with censored char}}
 \DoxyCodeLine{00138         \textcolor{comment}{//Write new file to censored\_all\_except\_buckets.txt}}
-\DoxyCodeLine{00139         \mbox{\hyperlink{censor__except__buckets_8c_ae6b559bb68ba469e9a375b77de8bf2c2}{censor\_except\_buckets}}(input\_stream, input\_stream\_censored, output\_stream);}
+\DoxyCodeLine{00139         \mbox{\hyperlink{censor__except__buckets_8h_ae6b559bb68ba469e9a375b77de8bf2c2}{censor\_except\_buckets}}(input\_stream, input\_stream\_censored, output\_stream);}
 \DoxyCodeLine{00140 }
 \DoxyCodeLine{00141         fclose(input\_stream\_censored);input\_stream\_censored = NULL;}
 \DoxyCodeLine{00142         fclose(input\_stream);input\_stream = NULL;}
@@ -139,7 +139,7 @@
 \DoxyCodeLine{00144     \}}
 \DoxyCodeLine{00145     \textcolor{comment}{//===============}}
 \DoxyCodeLine{00147 \textcolor{comment}{}    \textcolor{comment}{//===============}}
-\DoxyCodeLine{00148     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < hash\_limit; i++)\mbox{\hyperlink{free__buckets_8c_a49fec80669e0bd67bbdc830bd45572e6}{free\_buckets}}(buckets[i]);}
+\DoxyCodeLine{00148     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < hash\_limit; i++)\mbox{\hyperlink{free__buckets_8h_a49fec80669e0bd67bbdc830bd45572e6}{free\_buckets}}(buckets[i]);}
 \DoxyCodeLine{00149 }
 \DoxyCodeLine{00150     \textcolor{keywordflow}{return} 0;}
 \DoxyCodeLine{00151 \}}

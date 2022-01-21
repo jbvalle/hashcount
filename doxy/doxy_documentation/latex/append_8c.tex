@@ -11,3 +11,68 @@ Appends to last element of list.
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}../inc/node\+\_\+t.\+h\char`\"{}}\newline
 Include dependency graph for append.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{append_8c_a53de05066e101242b94e4f458b5ae35b}{append}} (\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$head, char $\ast$word)
+\begin{DoxyCompactList}\small\item\em Appends to last element of list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Appends to last element of list. 
+
+\begin{DoxyAuthor}{Author}
+John Bryan Valle 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{append_8c_source}{append.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{append_8c_a53de05066e101242b94e4f458b5ae35b}\label{append_8c_a53de05066e101242b94e4f458b5ae35b}} 
+\index{append.c@{append.c}!append@{append}}
+\index{append@{append}!append.c@{append.c}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily void append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$}]{head,  }\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+
+
+Appends to last element of list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em head} & headreference \\
+\hline
+\mbox{\texttt{ in}}  & {\em word} & string member to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{append_8c_source_l00019}{19}} of file \mbox{\hyperlink{append_8c_source}{append.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019                                       \{}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \mbox{\hyperlink{structnode}{node\_t}} *ptr = *head;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \mbox{\hyperlink{structnode}{node\_t}} *\textcolor{keyword}{new} = (\mbox{\hyperlink{structnode}{node\_t}} *)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structnode}{node\_t}}));}
+\DoxyCodeLine{00024     strcpy(new-\/>word, \mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}});}
+\DoxyCodeLine{00025     \textcolor{keyword}{new}-\/>occurance = 1;}
+\DoxyCodeLine{00026     \textcolor{keyword}{new}-\/>next = NULL;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{keywordflow}{if}(ptr == NULL)\{}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030         *head = \textcolor{keyword}{new};}
+\DoxyCodeLine{00031         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keywordflow}{for}(; ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} != NULL; ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}});}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{00037 \}}
+
+\end{DoxyCode}

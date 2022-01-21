@@ -13,11 +13,11 @@ digraph "/home/jv/Coding/hashcount/src/fill_buckets.c"
   Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
   Node5 [label="stdint.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
-  Node6 [label="../inc/node_t.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$node__t_8h_source.html",tooltip=" "];
+  Node6 [label="../inc/node_t.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$node__t_8h.html",tooltip=" "];
   Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
-  Node7 [label="../inc/stack.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stack_8h_source.html",tooltip=" "];
+  Node7 [label="../inc/stack.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stack_8h.html",tooltip=" "];
   Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
-  Node8 [label="../inc/append.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$append_8h_source.html",tooltip=" "];
+  Node8 [label="../inc/append.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$append_8h.html",tooltip=" "];
   Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
-  Node9 [label="../inc/insert.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$insert_8h_source.html",tooltip=" "];
+  Node9 [label="../inc/insert.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$insert_8h.html",tooltip=" "];
 }

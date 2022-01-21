@@ -9,8 +9,8 @@
 \DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <stdint.h>}}
 \DoxyCodeLine{00010 }
 \DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "../inc/node\_t.h"}}
-\DoxyCodeLine{00012 \textcolor{preprocessor}{\#define COLOR "\(\backslash\)033[0;93m"}}
-\DoxyCodeLine{00013 \textcolor{preprocessor}{\#define RESET "\(\backslash\)033[0m"}}
+\DoxyCodeLine{\Hypertarget{censor__buckets_8c_source_l00012}\mbox{\hyperlink{censor__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}{00012}} \textcolor{preprocessor}{\#define COLOR "\(\backslash\)033[0;93m"}}
+\DoxyCodeLine{\Hypertarget{censor__buckets_8c_source_l00013}\mbox{\hyperlink{censor__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}{00013}} \textcolor{preprocessor}{\#define RESET "\(\backslash\)033[0m"}}
 \DoxyCodeLine{00014 }
 \DoxyCodeLine{00015 }
 \DoxyCodeLine{\Hypertarget{censor__buckets_8c_source_l00023}\mbox{\hyperlink{censor__buckets_8c_a93fc0d88295578ea4567b8000723d635}{00023}} \textcolor{keywordtype}{void} \mbox{\hyperlink{censor__buckets_8c_a93fc0d88295578ea4567b8000723d635}{remove\_key\_word}}(\textcolor{keywordtype}{char} *input\_string, \textcolor{keywordtype}{char} *comparison\_string)\{}
@@ -52,11 +52,11 @@
 \DoxyCodeLine{00071 }
 \DoxyCodeLine{00072             \mbox{\hyperlink{structnode}{node\_t}} *ptr = buckets[i];}
 \DoxyCodeLine{00073 }
-\DoxyCodeLine{00074             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>next, j++)\{}
+\DoxyCodeLine{00074             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}, j++)\{}
 \DoxyCodeLine{00075 }
 \DoxyCodeLine{00076                 \textcolor{comment}{//======================================}}
 \DoxyCodeLine{00078 \textcolor{comment}{}                \textcolor{comment}{//======================================}}
-\DoxyCodeLine{00079                 \mbox{\hyperlink{censor__buckets_8c_a93fc0d88295578ea4567b8000723d635}{remove\_key\_word}}(buff, ptr-\/>word);}
+\DoxyCodeLine{00079                 \mbox{\hyperlink{censor__buckets_8c_a93fc0d88295578ea4567b8000723d635}{remove\_key\_word}}(buff, ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}});}
 \DoxyCodeLine{00080             \}}
 \DoxyCodeLine{00081         \}}
 \DoxyCodeLine{00082         fputs(buff, output\_stream);}

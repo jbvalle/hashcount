@@ -79,12 +79,12 @@ $(function() {
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &quot;../inc/node_t.h&quot;</code><br />
-<code>#include &quot;../inc/free_buckets.h&quot;</code><br />
-<code>#include &quot;../inc/stack.h&quot;</code><br />
-<code>#include &quot;../inc/append.h&quot;</code><br />
-<code>#include &quot;../inc/insert.h&quot;</code><br />
-<code>#include &quot;../inc/fill_buckets.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="node__t_8h_source.html">../inc/node_t.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="free__buckets_8h_source.html">../inc/free_buckets.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stack_8h_source.html">../inc/stack.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="append_8h_source.html">../inc/append.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="insert_8h_source.html">../inc/insert.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fill__buckets_8h_source.html">../inc/fill_buckets.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for censor_except_buckets.c:</div>
 <div class="dyncontent">
@@ -96,11 +96,9 @@ Include dependency graph for censor_except_buckets.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a4b5014034c9aac136ab8c82c2d16dc82"><td class="memItemLeft" align="right" valign="top"><a id="a4b5014034c9aac136ab8c82c2d16dc82"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>COLOR</b>&#160;&#160;&#160;&quot;\033[0;93m&quot;</td></tr>
+<tr class="memitem:a4b5014034c9aac136ab8c82c2d16dc82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="censor__except__buckets_8c.html#a4b5014034c9aac136ab8c82c2d16dc82">COLOR</a>&#160;&#160;&#160;&quot;\033[0;93m&quot;</td></tr>
 <tr class="separator:a4b5014034c9aac136ab8c82c2d16dc82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab702106cf3b3e96750b6845ded4e0299"><td class="memItemLeft" align="right" valign="top"><a id="ab702106cf3b3e96750b6845ded4e0299"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RESET</b>&#160;&#160;&#160;&quot;\033[0m&quot;</td></tr>
+<tr class="memitem:ab702106cf3b3e96750b6845ded4e0299"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="censor__except__buckets_8c.html#ab702106cf3b3e96750b6845ded4e0299">RESET</a>&#160;&#160;&#160;&quot;\033[0m&quot;</td></tr>
 <tr class="separator:ab702106cf3b3e96750b6845ded4e0299"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -114,7 +112,40 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>John Bryan Valle </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="censor__except__buckets_8c_source.html">censor_except_buckets.c</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a4b5014034c9aac136ab8c82c2d16dc82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b5014034c9aac136ab8c82c2d16dc82">&#9670;&nbsp;</a></span>COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COLOR&#160;&#160;&#160;&quot;\033[0;93m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="censor__except__buckets_8c_source.html#l00018">18</a> of file <a class="el" href="censor__except__buckets_8c_source.html">censor_except_buckets.c</a>.</p>
+
+</div>
+</div>
+<a id="ab702106cf3b3e96750b6845ded4e0299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab702106cf3b3e96750b6845ded4e0299">&#9670;&nbsp;</a></span>RESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RESET&#160;&#160;&#160;&quot;\033[0m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="censor__except__buckets_8c_source.html#l00019">19</a> of file <a class="el" href="censor__except__buckets_8c_source.html">censor_except_buckets.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="ae6b559bb68ba469e9a375b77de8bf2c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6b559bb68ba469e9a375b77de8bf2c2">&#9670;&nbsp;</a></span>censor_except_buckets()</h2>
 
@@ -148,7 +179,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Censor everything except key words of buckets. </p>
-<p>Function takes input stream of already censored keywords and compares it to original inputfile.&lt;br &gt; All characters which are not censored by <a class="el" href="censor__buckets_8c.html#ac3c63497a5e45ed0a4dab4c05d9ac171" title="Itterate through all lines and check for all words in buckets.">censor_buckets()</a> will be censored, and anything not censored wise versa </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Function takes input stream of already censored keywords and compares it to original inputfile.&lt;br &gt; All characters which are not censored by <a class="el" href="censor__buckets_8h.html#ac3c63497a5e45ed0a4dab4c05d9ac171" title="Itterate through all lines and check for all words in buckets.">censor_buckets()</a> will be censored, and anything not censored wise versa </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">input_stream</td><td>Input stream of input file </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">input_stream_censored</td><td>Input stream of already censored keywords </td></tr>

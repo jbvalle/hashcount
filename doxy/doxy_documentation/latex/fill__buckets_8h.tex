@@ -1,0 +1,241 @@
+\hypertarget{fill__buckets_8h}{}\doxysection{/home/jv/\+Coding/hashcount/inc/fill\+\_\+buckets.h File Reference}
+\label{fill__buckets_8h}\index{/home/jv/Coding/hashcount/inc/fill\_buckets.h@{/home/jv/Coding/hashcount/inc/fill\_buckets.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{fill__buckets_8h_a81d78745bfb621471ef9dac9badb6db9}{pow\+\_\+t}} (int base, int exp)
+\begin{DoxyCompactList}\small\item\em This function serves as a personalized version of he pow() function of the math lib. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{fill__buckets_8h_aa6707e4d0f37a801750800a3571741fc}{hash\+\_\+index}} (char $\ast$word, int hash\+\_\+limit)
+\item 
+void \mbox{\hyperlink{fill__buckets_8h_ad8202785f43186178e979f230ffa5075}{add\+\_\+node}} (\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$head, char $\ast$new\+\_\+key)
+\item 
+void \mbox{\hyperlink{fill__buckets_8h_ad7879271ac1cf2fd1a4fd3159d65b627}{fill\+\_\+buckets}} (\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$buckets, int hash\+\_\+limit, F\+I\+LE $\ast$input\+\_\+stream)
+\begin{DoxyCompactList}\small\item\em Populates buckets of all the words within the input stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fill__buckets_8h_ad8202785f43186178e979f230ffa5075}\label{fill__buckets_8h_ad8202785f43186178e979f230ffa5075}} 
+\index{fill\_buckets.h@{fill\_buckets.h}!add\_node@{add\_node}}
+\index{add\_node@{add\_node}!fill\_buckets.h@{fill\_buckets.h}}
+\doxysubsubsection{\texorpdfstring{add\_node()}{add\_node()}}
+{\footnotesize\ttfamily void add\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$}]{head,  }\item[{char $\ast$}]{new\+\_\+key }\end{DoxyParamCaption})}
+
+Adds new node to list using \mbox{\hyperlink{stack_8h_a566f0c4642ac167626a631f693169b11}{stack()}}, \mbox{\hyperlink{insert_8h_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert()}} and \mbox{\hyperlink{append_8h_a53de05066e101242b94e4f458b5ae35b}{append()}} function Add new node in alphabetical order depending in string members of elements 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em head} & headreference of list \\
+\hline
+\mbox{\texttt{ in}}  & {\em new\+\_\+key} & new string member of new node \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Assign ptr to head reference
+\item Allocate new node and assign values
+\item Check for if Head is N\+U\+LL Pointer and assign new element as new head
+\item Check for multiple occurances in list
+\item Check if first elements string member -\/$>$ correct alphabetical order, else -\/$>$ stack unto list
+\item Traverse through list using ptr and stop when correct slot for new element is found according to string member
+\item If all preceding elements are preceding string members append new element to lost
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{fill__buckets_8c_source_l00069}{69}} of file \mbox{\hyperlink{fill__buckets_8c_source}{fill\+\_\+buckets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069                                            \{}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00072     \mbox{\hyperlink{structnode}{node\_t}} *ptr = *head;}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00075     \mbox{\hyperlink{structnode}{node\_t}} *\textcolor{keyword}{new} = (\mbox{\hyperlink{structnode}{node\_t}} *)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structnode}{node\_t}}));}
+\DoxyCodeLine{00076     strcpy(new-\/>word, new\_key);}
+\DoxyCodeLine{00077     \textcolor{keyword}{new}-\/>occurance = 1;}
+\DoxyCodeLine{00078     \textcolor{keyword}{new}-\/>next = NULL;}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00081     \textcolor{keywordflow}{if}(ptr == NULL)\{}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083         *head = \textcolor{keyword}{new};}
+\DoxyCodeLine{00084         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00085     \}}
+\DoxyCodeLine{00086     free(\textcolor{keyword}{new});}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00089     ptr = *head;}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091     \textcolor{keywordflow}{while}(ptr!=NULL)\{}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093         \textcolor{keywordflow}{if}(strcmp(ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}},new\_key)==0)\{}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095             ptr-\/>\mbox{\hyperlink{structnode_a94387ceffd9f9e4b7d3e1697c4f8d507}{occurance}} += 1;}
+\DoxyCodeLine{00096             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00097         \}}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099         ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{00100     \}}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00105     ptr = *head;}
+\DoxyCodeLine{00106     \textcolor{keywordflow}{if}(strcmp(ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, new\_key) > 0)\{}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108         \mbox{\hyperlink{stack_8h_a566f0c4642ac167626a631f693169b11}{stack}}(head, new\_key);}
+\DoxyCodeLine{00109         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00110     \}}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00113     ptr = *head;}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115     \textcolor{keywordflow}{for}(; (ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} != NULL)\&\&(strcmp(ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, new\_key) > 0); ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}});}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117     \mbox{\hyperlink{insert_8h_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert}}(head, ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, new\_key);}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00120     \textcolor{keywordflow}{if}(ptr == NULL)\mbox{\hyperlink{append_8h_a53de05066e101242b94e4f458b5ae35b}{append}}(head, new\_key);}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fill__buckets_8h_ad7879271ac1cf2fd1a4fd3159d65b627}\label{fill__buckets_8h_ad7879271ac1cf2fd1a4fd3159d65b627}} 
+\index{fill\_buckets.h@{fill\_buckets.h}!fill\_buckets@{fill\_buckets}}
+\index{fill\_buckets@{fill\_buckets}!fill\_buckets.h@{fill\_buckets.h}}
+\doxysubsubsection{\texorpdfstring{fill\_buckets()}{fill\_buckets()}}
+{\footnotesize\ttfamily void fill\+\_\+buckets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$}]{buckets,  }\item[{int}]{hash\+\_\+limit,  }\item[{F\+I\+LE $\ast$}]{input\+\_\+stream }\end{DoxyParamCaption})}
+
+
+
+Populates buckets of all the words within the input stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buckets} & Hashtable \\
+\hline
+\mbox{\texttt{ in}}  & {\em hash\+\_\+limit} & Limit of Hashtable \\
+\hline
+\mbox{\texttt{ in}}  & {\em input\+\_\+stream} & Input stream of input file to be analyzed \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Read every line of Input file
+\item Parse every word seperated by delimiter
+\item Add Word to linked list of given bucket of calculated hashindex
+\item Reset Buffer to save line
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{fill__buckets_8c_source_l00130}{130}} of file \mbox{\hyperlink{fill__buckets_8c_source}{fill\+\_\+buckets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130                                                                        \{}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133     \textcolor{keywordtype}{char} buff[100];}
+\DoxyCodeLine{00134     \textcolor{keywordtype}{char} *token;\textcolor{keywordtype}{char} delimiter[] = \textcolor{stringliteral}{" .\(\backslash\)n;:,?\(\backslash\)t"};}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00137     \textcolor{keywordflow}{while}(fgets(buff,\textcolor{keyword}{sizeof}(buff),input\_stream)!=NULL)\{}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00140         token = strtok(buff, delimiter);}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142         \textcolor{keywordflow}{while}(token!=NULL)\{}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00145             \mbox{\hyperlink{fill__buckets_8c_ad8202785f43186178e979f230ffa5075}{add\_node}}(\&buckets[\mbox{\hyperlink{fill__buckets_8c_aa6707e4d0f37a801750800a3571741fc}{hash\_index}}(token, hash\_limit)], token);}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147             token = strtok(NULL, delimiter);}
+\DoxyCodeLine{00148         \}}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00151         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 100; i++)buff[i]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00152     \}}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fill__buckets_8h_aa6707e4d0f37a801750800a3571741fc}\label{fill__buckets_8h_aa6707e4d0f37a801750800a3571741fc}} 
+\index{fill\_buckets.h@{fill\_buckets.h}!hash\_index@{hash\_index}}
+\index{hash\_index@{hash\_index}!fill\_buckets.h@{fill\_buckets.h}}
+\doxysubsubsection{\texorpdfstring{hash\_index()}{hash\_index()}}
+{\footnotesize\ttfamily int hash\+\_\+index (\begin{DoxyParamCaption}\item[{char $\ast$}]{word,  }\item[{int}]{hash\+\_\+limit }\end{DoxyParamCaption})}
+
+Generates hashindex depending on word Formular\+: {\ttfamily hash\+\_\+index = word\mbox{[}i\mbox{]} $\ast$ k $^\wedge$ i} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em word} & Assigned Word per Node \\
+\hline
+\mbox{\texttt{ in}}  & {\em hash\+\_\+limit} & size of hashmap array @parma\mbox{[}out\mbox{]} hash\+\_\+index resulting hashindex between 0 -\/ hashlimit \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Initialize hash\+\_\+value variable
+\item Iterate through letters and perform formular
+\item Return forumlar
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{fill__buckets_8c_source_l00048}{48}} of file \mbox{\hyperlink{fill__buckets_8c_source}{fill\+\_\+buckets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048                                           \{}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00051     uint64\_t hash\_value = 0;}
+\DoxyCodeLine{00052     \textcolor{keywordtype}{int} hash\_const = 13;}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00055     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; \mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}[i] != \textcolor{charliteral}{'\(\backslash\)0'}; i++)\{}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057         hash\_value += \mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}[i] * \mbox{\hyperlink{fill__buckets_8c_a81d78745bfb621471ef9dac9badb6db9}{pow\_t}}(hash\_const, i);}
+\DoxyCodeLine{00058     \}}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00061     \textcolor{keywordflow}{return} hash\_value\%hash\_limit;}
+\DoxyCodeLine{00062 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{fill__buckets_8h_a81d78745bfb621471ef9dac9badb6db9}\label{fill__buckets_8h_a81d78745bfb621471ef9dac9badb6db9}} 
+\index{fill\_buckets.h@{fill\_buckets.h}!pow\_t@{pow\_t}}
+\index{pow\_t@{pow\_t}!fill\_buckets.h@{fill\_buckets.h}}
+\doxysubsubsection{\texorpdfstring{pow\_t()}{pow\_t()}}
+{\footnotesize\ttfamily uint64\+\_\+t pow\+\_\+t (\begin{DoxyParamCaption}\item[{int}]{base,  }\item[{int}]{exp }\end{DoxyParamCaption})}
+
+
+
+This function serves as a personalized version of he pow() function of the math lib. 
+
+Adds new node to list using \mbox{\hyperlink{stack_8h_a566f0c4642ac167626a631f693169b11}{stack()}}, \mbox{\hyperlink{insert_8h_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert()}} and \mbox{\hyperlink{append_8h_a53de05066e101242b94e4f458b5ae35b}{append()}} function Add new node in alphabetical order depending in string members of elements 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em head} & headreference of list \\
+\hline
+\mbox{\texttt{ in}}  & {\em new\+\_\+key} & new string member of new node\\
+\hline
+\mbox{\texttt{ in}}  & {\em base} & Base Number \\
+\hline
+ & {\em \mbox{[}exp\mbox{]}} & exp Exponent \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result Return the result of base $^\wedge$ exp 
+\end{DoxyReturn}
+
+\begin{DoxyEnumerate}
+\item Initialize result variable
+\item Catch zero exponent return 1
+\item Error catch negative exp, in this application neg exp not required
+\item Multiply base with itself exp times
+\item Return resulting value
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{fill__buckets_8c_source_l00022}{22}} of file \mbox{\hyperlink{fill__buckets_8c_source}{fill\+\_\+buckets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022                                  \{}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00025     uint64\_t result = 1;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00028     \textcolor{keywordflow}{if}(exp == 0)\textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00031     \textcolor{keywordflow}{if}(exp < 0)\textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00034     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < exp; i++)\{}
+\DoxyCodeLine{00035         result *= (uint64\_t)base;}
+\DoxyCodeLine{00036     \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00039     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00040 \}}
+
+\end{DoxyCode}

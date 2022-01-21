@@ -14,7 +14,7 @@ Include dependency graph for free\+\_\+buckets.\+c\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{free__buckets_8c_a49fec80669e0bd67bbdc830bd45572e6}{free\+\_\+buckets}} (\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$head)
+void \mbox{\hyperlink{free__buckets_8c_a49fec80669e0bd67bbdc830bd45572e6}{free\+\_\+buckets}} (\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$head)
 \end{DoxyCompactItemize}
 
 
@@ -37,7 +37,7 @@ Definition in file \mbox{\hyperlink{free__buckets_8c_source}{free\+\_\+buckets.\
 \index{free\_buckets.c@{free\_buckets.c}!free\_buckets@{free\_buckets}}
 \index{free\_buckets@{free\_buckets}!free\_buckets.c@{free\_buckets.c}}
 \doxysubsubsection{\texorpdfstring{free\_buckets()}{free\_buckets()}}
-{\footnotesize\ttfamily void free\+\_\+buckets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$}]{head }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void free\+\_\+buckets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$}]{head }\end{DoxyParamCaption})}
 
 Frees all mallocs of buckets
 
@@ -68,7 +68,7 @@ Definition at line \mbox{\hyperlink{free__buckets_8c_source_l00011}{11}} of file
 \DoxyCodeLine{00018 }
 \DoxyCodeLine{00020     \textcolor{keywordflow}{while}(ptr != NULL)\{}
 \DoxyCodeLine{00021 }
-\DoxyCodeLine{00023         \mbox{\hyperlink{structnode}{node\_t}} *temp = ptr-\/>next;}
+\DoxyCodeLine{00023         \mbox{\hyperlink{structnode}{node\_t}} *temp = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
 \DoxyCodeLine{00024 }
 \DoxyCodeLine{00026         free(ptr);ptr = NULL;}
 \DoxyCodeLine{00027 }

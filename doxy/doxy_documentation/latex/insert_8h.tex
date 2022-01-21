@@ -1,0 +1,55 @@
+\hypertarget{insert_8h}{}\doxysection{/home/jv/\+Coding/hashcount/inc/insert.h File Reference}
+\label{insert_8h}\index{/home/jv/Coding/hashcount/inc/insert.h@{/home/jv/Coding/hashcount/inc/insert.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{insert_8h_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert}} (\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$head, char $\ast$key, char $\ast$new\+\_\+key)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{insert_8h_a1f22eccdb6399bb02fcac2ab4102bcdd}\label{insert_8h_a1f22eccdb6399bb02fcac2ab4102bcdd}} 
+\index{insert.h@{insert.h}!insert@{insert}}
+\index{insert@{insert}!insert.h@{insert.h}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$}]{head,  }\item[{char $\ast$}]{key,  }\item[{char $\ast$}]{new\+\_\+key }\end{DoxyParamCaption})}
+
+Insertion new Element after element with key as string member 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em head} & head reference \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & Preceding String member of list element \\
+\hline
+\mbox{\texttt{ in}}  & {\em new\+\_\+key} & New String member of list element \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{insert_8c_source_l00015}{15}} of file \mbox{\hyperlink{insert_8c_source}{insert.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015                                                     \{}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \mbox{\hyperlink{structnode}{node\_t}} *ptr = *head;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     \mbox{\hyperlink{structnode}{node\_t}} *\textcolor{keyword}{new} = (\mbox{\hyperlink{structnode}{node\_t}} *)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structnode}{node\_t}}));}
+\DoxyCodeLine{00020     strcpy(new-\/>word, new\_key);}
+\DoxyCodeLine{00021     \textcolor{keyword}{new}-\/>occurance = 1;}
+\DoxyCodeLine{00022     \textcolor{keyword}{new}-\/>next = NULL;}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     \textcolor{keywordflow}{for}(; ptr != NULL; ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}})\{}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026         \textcolor{keywordflow}{if}(strcmp(ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, key) == 0)\{}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028             \textcolor{keyword}{new}-\/>next = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{00029             ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{00030             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00031         \}}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034 \}}
+
+\end{DoxyCode}

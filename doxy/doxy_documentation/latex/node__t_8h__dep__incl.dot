@@ -1,0 +1,30 @@
+digraph "/home/jv/Coding/hashcount/inc/node_t.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/jv/Coding/hashcount\l/inc/node_t.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="/home/jv/Coding/hashcount\l/inc/choose_buckets.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$choose__buckets_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="/home/jv/Coding/hashcount\l/src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="main entry point for hashcount program"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="/home/jv/Coding/hashcount\l/src/append.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$append_8c.html",tooltip="Appends to last element of list."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="/home/jv/Coding/hashcount\l/src/censor_buckets.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$censor__buckets_8c.html",tooltip="Removes keywords of buckets from a string."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="/home/jv/Coding/hashcount\l/src/censor_except_buckets.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$censor__except__buckets_8c.html",tooltip="Censor everything except key words of buckets."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="/home/jv/Coding/hashcount\l/src/choose_buckets.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$choose__buckets_8c.html",tooltip="Function requests user input of indices and displays them."];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="/home/jv/Coding/hashcount\l/src/display_list.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$display__list_8c.html",tooltip="Display each element of buckets."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="/home/jv/Coding/hashcount\l/src/fill_buckets.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fill__buckets_8c.html",tooltip="This function adds new nodes to hashtable by calculating the hashindex and adding it to a list."];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="/home/jv/Coding/hashcount\l/src/free_buckets.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$free__buckets_8c.html",tooltip="Frees all mallocs of buckets."];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="/home/jv/Coding/hashcount\l/src/insert.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$insert_8c.html",tooltip="Insertion new Element after element with key as string member."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="/home/jv/Coding/hashcount\l/src/stack.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stack_8c.html",tooltip="Stacks new element unto list."];
+}

@@ -78,8 +78,8 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../inc/node_t.h&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define COLOR &quot;\033[0;94m&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define RESET &quot;\033[0m&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="display__list_8c.html#a4b5014034c9aac136ab8c82c2d16dc82">   14</a></span>&#160;<span class="preprocessor">#define COLOR &quot;\033[0;94m&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="display__list_8c.html#ab702106cf3b3e96750b6845ded4e0299">   15</a></span>&#160;<span class="preprocessor">#define RESET &quot;\033[0m&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="display__list_8c.html#ad0de26c7c2dc54dba3dbec2d7623e6a7">   23</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="display__list_8c.html#ad0de26c7c2dc54dba3dbec2d7623e6a7">display_list</a>(<a class="code" href="structnode.html">node_t</a> **buckets, FILE *output_stream, <span class="keywordtype">int</span> hash_limit){</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
@@ -90,16 +90,16 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        printf(<span class="stringliteral">&quot;\n[%2d]: &quot;</span>, i);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        fprintf(output_stream, <span class="stringliteral">&quot;\n[%2d]: &quot;</span>, i);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 1; ptr != NULL; ptr = ptr-&gt;next, j++){</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 1; ptr != NULL; ptr = ptr-&gt;<a class="code" href="structnode.html#aa3e8aa83f864292b5a01210f4453fcc0">next</a>, j++){</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">if</span>(ptr-&gt;occurance &gt; 1){</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                printf(COLOR);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                printf(<span class="stringliteral">&quot;%s(%d), &quot;</span>,ptr-&gt;word, ptr-&gt;occurance);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                fprintf(output_stream, <span class="stringliteral">&quot;%s(%d), &quot;</span>,ptr-&gt;word, ptr-&gt;occurance);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                printf(RESET);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">if</span>(ptr-&gt;<a class="code" href="structnode.html#a94387ceffd9f9e4b7d3e1697c4f8d507">occurance</a> &gt; 1){</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                printf(<a class="code" href="display__list_8c.html#a4b5014034c9aac136ab8c82c2d16dc82">COLOR</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                printf(<span class="stringliteral">&quot;%s(%d), &quot;</span>,ptr-&gt;<a class="code" href="structnode.html#a4fac939f5236506c96b518c8bde027e6">word</a>, ptr-&gt;<a class="code" href="structnode.html#a94387ceffd9f9e4b7d3e1697c4f8d507">occurance</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                fprintf(output_stream, <span class="stringliteral">&quot;%s(%d), &quot;</span>,ptr-&gt;<a class="code" href="structnode.html#a4fac939f5236506c96b518c8bde027e6">word</a>, ptr-&gt;<a class="code" href="structnode.html#a94387ceffd9f9e4b7d3e1697c4f8d507">occurance</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                printf(<a class="code" href="display__list_8c.html#ab702106cf3b3e96750b6845ded4e0299">RESET</a>);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                printf(<span class="stringliteral">&quot;%s, &quot;</span>,ptr-&gt;word);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                fprintf(output_stream, <span class="stringliteral">&quot;%s, &quot;</span>,ptr-&gt;word);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                printf(<span class="stringliteral">&quot;%s, &quot;</span>,ptr-&gt;<a class="code" href="structnode.html#a4fac939f5236506c96b518c8bde027e6">word</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                fprintf(output_stream, <span class="stringliteral">&quot;%s, &quot;</span>,ptr-&gt;<a class="code" href="structnode.html#a4fac939f5236506c96b518c8bde027e6">word</a>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">if</span>((j%10)==0){</div>
@@ -110,8 +110,13 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructnode_html_a4fac939f5236506c96b518c8bde027e6"><div class="ttname"><a href="structnode.html#a4fac939f5236506c96b518c8bde027e6">node::word</a></div><div class="ttdeci">char word[15]</div><div class="ttdef"><b>Definition:</b> <a href="node__t_8h_source.html#l00009">node_t.h:9</a></div></div>
 <div class="ttc" id="astructnode_html"><div class="ttname"><a href="structnode.html">node</a></div><div class="ttdef"><b>Definition:</b> <a href="node__t_8h_source.html#l00007">node_t.h:7</a></div></div>
+<div class="ttc" id="adisplay__list_8c_html_a4b5014034c9aac136ab8c82c2d16dc82"><div class="ttname"><a href="display__list_8c.html#a4b5014034c9aac136ab8c82c2d16dc82">COLOR</a></div><div class="ttdeci">#define COLOR</div><div class="ttdef"><b>Definition:</b> <a href="display__list_8c_source.html#l00014">display_list.c:14</a></div></div>
 <div class="ttc" id="adisplay__list_8c_html_ad0de26c7c2dc54dba3dbec2d7623e6a7"><div class="ttname"><a href="display__list_8c.html#ad0de26c7c2dc54dba3dbec2d7623e6a7">display_list</a></div><div class="ttdeci">void display_list(node_t **buckets, FILE *output_stream, int hash_limit)</div><div class="ttdoc">Display each element of buckets.</div><div class="ttdef"><b>Definition:</b> <a href="display__list_8c_source.html#l00023">display_list.c:23</a></div></div>
+<div class="ttc" id="adisplay__list_8c_html_ab702106cf3b3e96750b6845ded4e0299"><div class="ttname"><a href="display__list_8c.html#ab702106cf3b3e96750b6845ded4e0299">RESET</a></div><div class="ttdeci">#define RESET</div><div class="ttdef"><b>Definition:</b> <a href="display__list_8c_source.html#l00015">display_list.c:15</a></div></div>
+<div class="ttc" id="astructnode_html_a94387ceffd9f9e4b7d3e1697c4f8d507"><div class="ttname"><a href="structnode.html#a94387ceffd9f9e4b7d3e1697c4f8d507">node::occurance</a></div><div class="ttdeci">int occurance</div><div class="ttdef"><b>Definition:</b> <a href="node__t_8h_source.html#l00010">node_t.h:10</a></div></div>
+<div class="ttc" id="astructnode_html_aa3e8aa83f864292b5a01210f4453fcc0"><div class="ttname"><a href="structnode.html#aa3e8aa83f864292b5a01210f4453fcc0">node::next</a></div><div class="ttdeci">struct node * next</div><div class="ttdef"><b>Definition:</b> <a href="node__t_8h_source.html#l00011">node_t.h:11</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

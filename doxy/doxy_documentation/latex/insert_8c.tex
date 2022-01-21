@@ -15,7 +15,7 @@ Include dependency graph for insert.\+c\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{insert_8c_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert}} (\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$head, char $\ast$key, char $\ast$new\+\_\+key)
+void \mbox{\hyperlink{insert_8c_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert}} (\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$head, char $\ast$key, char $\ast$new\+\_\+key)
 \end{DoxyCompactItemize}
 
 
@@ -42,7 +42,7 @@ Definition in file \mbox{\hyperlink{insert_8c_source}{insert.\+c}}.
 \index{insert.c@{insert.c}!insert@{insert}}
 \index{insert@{insert}!insert.c@{insert.c}}
 \doxysubsubsection{\texorpdfstring{insert()}{insert()}}
-{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$}]{head,  }\item[{char $\ast$}]{key,  }\item[{char $\ast$}]{new\+\_\+key }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$}]{head,  }\item[{char $\ast$}]{key,  }\item[{char $\ast$}]{new\+\_\+key }\end{DoxyParamCaption})}
 
 Insertion new Element after element with key as string member 
 \begin{DoxyParams}[1]{Parameters}
@@ -68,12 +68,12 @@ Definition at line \mbox{\hyperlink{insert_8c_source_l00015}{15}} of file \mbox{
 \DoxyCodeLine{00021     \textcolor{keyword}{new}-\/>occurance = 1;}
 \DoxyCodeLine{00022     \textcolor{keyword}{new}-\/>next = NULL;}
 \DoxyCodeLine{00023 }
-\DoxyCodeLine{00024     \textcolor{keywordflow}{for}(; ptr != NULL; ptr = ptr-\/>next)\{}
+\DoxyCodeLine{00024     \textcolor{keywordflow}{for}(; ptr != NULL; ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}})\{}
 \DoxyCodeLine{00025 }
-\DoxyCodeLine{00026         \textcolor{keywordflow}{if}(strcmp(ptr-\/>word, key) == 0)\{}
+\DoxyCodeLine{00026         \textcolor{keywordflow}{if}(strcmp(ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, key) == 0)\{}
 \DoxyCodeLine{00027 }
-\DoxyCodeLine{00028             \textcolor{keyword}{new}-\/>next = ptr-\/>next;}
-\DoxyCodeLine{00029             ptr-\/>next = \textcolor{keyword}{new};}
+\DoxyCodeLine{00028             \textcolor{keyword}{new}-\/>next = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{00029             ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = \textcolor{keyword}{new};}
 \DoxyCodeLine{00030             \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00031         \}}
 \DoxyCodeLine{00032     \}}

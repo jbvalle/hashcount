@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_2ec_34',['main.c',['../main_8c.html',1,'']]]
+  ['logo_2epng_67',['logo.png',['../logo_8png.html',1,'']]]
 ];

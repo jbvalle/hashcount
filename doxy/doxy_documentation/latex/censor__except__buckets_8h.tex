@@ -1,0 +1,60 @@
+\hypertarget{censor__except__buckets_8h}{}\doxysection{/home/jv/\+Coding/hashcount/inc/censor\+\_\+except\+\_\+buckets.h File Reference}
+\label{censor__except__buckets_8h}\index{/home/jv/Coding/hashcount/inc/censor\_except\_buckets.h@{/home/jv/Coding/hashcount/inc/censor\_except\_buckets.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{censor__except__buckets_8h_ae6b559bb68ba469e9a375b77de8bf2c2}{censor\+\_\+except\+\_\+buckets}} (F\+I\+LE $\ast$input\+\_\+stream, F\+I\+LE $\ast$input\+\_\+stream\+\_\+censored, F\+I\+LE $\ast$output\+\_\+stream)
+\begin{DoxyCompactList}\small\item\em Censor everything except key words of buckets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{censor__except__buckets_8h_ae6b559bb68ba469e9a375b77de8bf2c2}\label{censor__except__buckets_8h_ae6b559bb68ba469e9a375b77de8bf2c2}} 
+\index{censor\_except\_buckets.h@{censor\_except\_buckets.h}!censor\_except\_buckets@{censor\_except\_buckets}}
+\index{censor\_except\_buckets@{censor\_except\_buckets}!censor\_except\_buckets.h@{censor\_except\_buckets.h}}
+\doxysubsubsection{\texorpdfstring{censor\_except\_buckets()}{censor\_except\_buckets()}}
+{\footnotesize\ttfamily void censor\+\_\+except\+\_\+buckets (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{input\+\_\+stream,  }\item[{F\+I\+LE $\ast$}]{input\+\_\+stream\+\_\+censored,  }\item[{F\+I\+LE $\ast$}]{output\+\_\+stream }\end{DoxyParamCaption})}
+
+
+
+Censor everything except key words of buckets. 
+
+Function takes input stream of already censored keywords and compares it to original inputfile.$<$br $>$ All characters which are not censored by \mbox{\hyperlink{censor__buckets_8h_ac3c63497a5e45ed0a4dab4c05d9ac171}{censor\+\_\+buckets()}} will be censored, and anything not censored wise versa 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input\+\_\+stream} & Input stream of input file \\
+\hline
+\mbox{\texttt{ in}}  & {\em input\+\_\+stream\+\_\+censored} & Input stream of already censored keywords \\
+\hline
+\mbox{\texttt{ in}}  & {\em output\+\_\+stream} & Output stream of outputfile \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{censor__except__buckets_8c_source_l00029}{29}} of file \mbox{\hyperlink{censor__except__buckets_8c_source}{censor\+\_\+except\+\_\+buckets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029                                                                                                 \{}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     \textcolor{comment}{//Output Requested Buckets}}
+\DoxyCodeLine{00032     \textcolor{keywordtype}{char} buff\_input1[100];}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{char} buff\_input2[100];}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keywordflow}{while}((fgets(buff\_input1,\textcolor{keyword}{sizeof}(buff\_input1),input\_stream))\&\&(fgets(buff\_input2,\textcolor{keyword}{sizeof}(buff\_input2),input\_stream\_censored)!=NULL))\{}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} x = 0; x < (int)strlen(buff\_input1); x++)\{}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039             \textcolor{keywordflow}{if}(buff\_input2[x] != \textcolor{charliteral}{'-\/'})buff\_input1[x] = \textcolor{charliteral}{'-\/'};}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         \}}
+\DoxyCodeLine{00042         fputs(buff\_input1, output\_stream);}
+\DoxyCodeLine{00043         fprintf(output\_stream, \textcolor{stringliteral}{"\(\backslash\)n”"});}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 100; i++)buff\_input1[i]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00046         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 100; i++)buff\_input2[i]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00047     \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049 \}}
+
+\end{DoxyCode}

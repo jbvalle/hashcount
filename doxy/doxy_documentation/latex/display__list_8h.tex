@@ -1,0 +1,72 @@
+\hypertarget{display__list_8h}{}\doxysection{/home/jv/\+Coding/hashcount/inc/display\+\_\+list.h File Reference}
+\label{display__list_8h}\index{/home/jv/Coding/hashcount/inc/display\_list.h@{/home/jv/Coding/hashcount/inc/display\_list.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{display__list_8h_ad0de26c7c2dc54dba3dbec2d7623e6a7}{display\+\_\+list}} (\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$buckets, F\+I\+LE $\ast$output\+\_\+stream, int hash\+\_\+limit)
+\begin{DoxyCompactList}\small\item\em Display each element of buckets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{display__list_8h_ad0de26c7c2dc54dba3dbec2d7623e6a7}\label{display__list_8h_ad0de26c7c2dc54dba3dbec2d7623e6a7}} 
+\index{display\_list.h@{display\_list.h}!display\_list@{display\_list}}
+\index{display\_list@{display\_list}!display\_list.h@{display\_list.h}}
+\doxysubsubsection{\texorpdfstring{display\_list()}{display\_list()}}
+{\footnotesize\ttfamily void display\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$}]{buckets,  }\item[{F\+I\+LE $\ast$}]{output\+\_\+stream,  }\item[{int}]{hash\+\_\+limit }\end{DoxyParamCaption})}
+
+
+
+Display each element of buckets. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buckets} & Hashtable of words \\
+\hline
+\mbox{\texttt{ in}}  & {\em hash\+\_\+limit} & Limit of hashtable size \\
+\hline
+\mbox{\texttt{ in}}  & {\em output\+\_\+stream} & Outputfile buckets are written to \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Itterate through al buckets
+\item Set Header Element of each list
+\item Travers through all elements of the lst
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{display__list_8c_source_l00023}{23}} of file \mbox{\hyperlink{display__list_8c_source}{display\+\_\+list.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023                                                                         \{}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00026     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < hash\_limit; i++)\{}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00029         \mbox{\hyperlink{structnode}{node\_t}} *ptr = buckets[i];}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031         printf(\textcolor{stringliteral}{"\(\backslash\)n[\%2d]: "}, i);}
+\DoxyCodeLine{00032         fprintf(output\_stream, \textcolor{stringliteral}{"\(\backslash\)n[\%2d]: "}, i);}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00035         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}, j++)\{}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037             \textcolor{keywordflow}{if}(ptr-\/>\mbox{\hyperlink{structnode_a94387ceffd9f9e4b7d3e1697c4f8d507}{occurance}} > 1)\{}
+\DoxyCodeLine{00038                 printf(\mbox{\hyperlink{display__list_8c_a4b5014034c9aac136ab8c82c2d16dc82}{COLOR}});}
+\DoxyCodeLine{00039                 printf(\textcolor{stringliteral}{"\%s(\%d), "},ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, ptr-\/>\mbox{\hyperlink{structnode_a94387ceffd9f9e4b7d3e1697c4f8d507}{occurance}});}
+\DoxyCodeLine{00040                 fprintf(output\_stream, \textcolor{stringliteral}{"\%s(\%d), "},ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, ptr-\/>\mbox{\hyperlink{structnode_a94387ceffd9f9e4b7d3e1697c4f8d507}{occurance}});}
+\DoxyCodeLine{00041                 printf(\mbox{\hyperlink{display__list_8c_ab702106cf3b3e96750b6845ded4e0299}{RESET}});}
+\DoxyCodeLine{00042             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00043                 printf(\textcolor{stringliteral}{"\%s, "},ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}});}
+\DoxyCodeLine{00044                 fprintf(output\_stream, \textcolor{stringliteral}{"\%s, "},ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}});}
+\DoxyCodeLine{00045             \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047             \textcolor{keywordflow}{if}((j\%10)==0)\{}
+\DoxyCodeLine{00048                 printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{00049                 fprintf(output\_stream, \textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{00050             \}}
+\DoxyCodeLine{00051         \}}
+\DoxyCodeLine{00052     \}}
+\DoxyCodeLine{00053 \}}
+
+\end{DoxyCode}
