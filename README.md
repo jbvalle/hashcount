@@ -104,6 +104,20 @@
    ```
 <hr>
 
+<!-- USAGE EXAMPLES -->
+## Example
+
+* These examples serve as illustrations how this application could be run
+* For inputting indices for removing and censoring words spaces or comma could be used
+   ```sh
+   ./hashcount -f input.txt -rc
+   ```
+<img src="./doxy/images/remove.png" width="70%" height="70%">
+<img src="./doxy/images/censor.png" width="70%" height="70%">
+
+<hr>
+
+
 ## Contact
 
 Author: John Bryan Valle

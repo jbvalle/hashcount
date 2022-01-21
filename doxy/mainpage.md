@@ -102,12 +102,24 @@
         <th>-c</th>
         <th>This censores all words except chosen buckets. This requires no arguments</th>
     </tr>
-
-
-
-
 </table>
 
+<hr>
+
+<!-- USAGE EXAMPLES -->
+## Example
+
+* These examples serve as illustrations how this application could be run
+* For inputting indices for removing and censoring words spaces or comma could be used
+   ```sh
+   ./hashcount -f input.txt -rc
+   ```
+
+\image html ./images/remove.png width=50% height=50% 
+\image html ./images/censor.png width=50% height=50% 
+
+
+<hr>
 
 <!-- CONTACT -->
 ## Contact
