@@ -66,6 +66,11 @@ int main(int argc, char **argv){
     FILE *input_stream = fopen(input_file, "r");
     FILE *output_stream = fopen("TEXTFILES/buckets.txt", "wb+");
 
+    //ERROR handling Streams-------------------------------------------------
+    if(input_stream == NULL)fprintf(stderr, "Error accessing %s", input_file); 
+    if(output_stream == NULL)fprintf(stderr, "Error accessing Output stream"); 
+    //-----------------------------------------------------------------------
+
     fill_buckets(buckets, hash_limit, input_stream);
     
     display_list(buckets, output_stream, 40);
@@ -95,6 +100,12 @@ int main(int argc, char **argv){
 
         input_stream  = fopen(input_file, "r");
         output_stream = fopen("censored_buckets.txt", "wb+");
+
+        //ERROR handling Streams-------------------------------------------------
+        if(input_stream == NULL)fprintf(stderr, "Error accessing %s", input_file); 
+        if(output_stream == NULL)fprintf(stderr, "Error accessing Output stream"); 
+        //-----------------------------------------------------------------------
+
         //Request user input
         choose_buckets(buckets, requested_index, chosen_flag);
         //Censor all words matching chosen buckets
@@ -117,8 +128,14 @@ int main(int argc, char **argv){
         // Reinit array for requested indices
         for(int i = 0; i < requested_index_size; i++)requested_index[i] = -1;
 
-        input_stream          = fopen(input_file, "r");
+        input_stream  = fopen(input_file, "r");
         output_stream = fopen("TEXTFILES/temp.txt", "wb+");
+
+        //ERROR handling Streams-------------------------------------------------
+        if(input_stream == NULL)fprintf(stderr, "Error accessing %s", input_file); 
+        if(output_stream == NULL)fprintf(stderr, "Error accessing Output stream"); 
+        //-----------------------------------------------------------------------
+
 
         //Request user input
         choose_buckets(buckets, requested_index, chosen_flag);
@@ -133,6 +150,13 @@ int main(int argc, char **argv){
         input_stream_censored = fopen("TEXTFILES/temp.txt", "r");
         output_stream         = fopen("censored_all_except_buckets.txt", "wb+");
         
+        //ERROR handling Streams-------------------------------------------------
+        if(input_stream == NULL)fprintf(stderr, "Error accessing %s", input_file); 
+        if(input_stream_censored == NULL)fprintf(stderr, "Error accessing Input stream"); 
+        if(output_stream == NULL)fprintf(stderr, "Error accessing Output stream"); 
+        //-----------------------------------------------------------------------
+
+
         printf(COLOR1);printf("\n\nTextfile censored_all_except_buckets.txt was created\n");printf(RESET);
         //Read censored textfile and compare to original input file and replace all letter with censored char
         //Write new file to censored_all_except_buckets.txt
