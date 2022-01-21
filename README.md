@@ -40,7 +40,6 @@
 
 <strong>3 Part: (UNSOLVED)<br /></strong>
 * The lists shall always retain alphabetic order.
-* The program arguments are handled by getopt(3).
 
 <strong>4 Part: (SOLVED)<br /></strong>
 * Give the user a choice to select one bucket to output separately.
