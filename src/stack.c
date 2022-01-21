@@ -6,7 +6,7 @@
 #include "../inc/node_t.h"
 /**
  *@file stack.c
- *Stacks new element unto list
+ *@brief Stacks new element unto list
  *@param[in] head head Reference of Hash table
  *@param[in] word String Member of element
  */

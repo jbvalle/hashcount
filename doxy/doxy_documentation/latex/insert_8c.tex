@@ -1,5 +1,10 @@
 \hypertarget{insert_8c}{}\doxysection{/home/jv/\+Coding/hashcount/src/insert.c File Reference}
 \label{insert_8c}\index{/home/jv/Coding/hashcount/src/insert.c@{/home/jv/Coding/hashcount/src/insert.c}}
+
+
+Insertion new Element after element with key as string member.  
+
+
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
@@ -15,7 +20,9 @@ void \mbox{\hyperlink{insert_8c_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert}} (\mb
 
 
 \doxysubsection{Detailed Description}
-Insertion new Element after element with key as string member 
+Insertion new Element after element with key as string member. 
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em head} & head reference \\
 \hline
@@ -24,6 +31,10 @@ Insertion new Element after element with key as string member
 \mbox{\texttt{ in}}  & {\em new\+\_\+key} & New String member of list element \\
 \hline
 \end{DoxyParams}
+
+
+Definition in file \mbox{\hyperlink{insert_8c_source}{insert.\+c}}.
+
 
 
 \doxysubsection{Function Documentation}
@@ -42,3 +53,31 @@ Insertion new Element after element with key as string member
 \mbox{\texttt{ in}}  & {\em new\+\_\+key} & New String member of list element \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{insert_8c_source_l00015}{15}} of file \mbox{\hyperlink{insert_8c_source}{insert.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015                                                     \{}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \mbox{\hyperlink{structnode}{node\_t}} *ptr = *head;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     \mbox{\hyperlink{structnode}{node\_t}} *\textcolor{keyword}{new} = (\mbox{\hyperlink{structnode}{node\_t}} *)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structnode}{node\_t}}));}
+\DoxyCodeLine{00020     strcpy(new-\/>word, new\_key);}
+\DoxyCodeLine{00021     \textcolor{keyword}{new}-\/>occurance = 1;}
+\DoxyCodeLine{00022     \textcolor{keyword}{new}-\/>next = NULL;}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     \textcolor{keywordflow}{for}(; ptr != NULL; ptr = ptr-\/>next)\{}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026         \textcolor{keywordflow}{if}(strcmp(ptr-\/>word, key) == 0)\{}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028             \textcolor{keyword}{new}-\/>next = ptr-\/>next;}
+\DoxyCodeLine{00029             ptr-\/>next = \textcolor{keyword}{new};}
+\DoxyCodeLine{00030             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00031         \}}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034 \}}
+
+\end{DoxyCode}

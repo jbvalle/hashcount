@@ -1,0 +1,149 @@
+\hypertarget{main_8c_source}{}\doxysection{main.\+c}
+\label{main_8c_source}\index{/home/jv/Coding/hashcount/src/main.c@{/home/jv/Coding/hashcount/src/main.c}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "../inc/node\_t.h"}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "../inc/free\_buckets.h"}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "../inc/stack.h"}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "../inc/append.h"}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include "../inc/insert.h"}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include "../inc/fill\_buckets.h"}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include "../inc/censor\_except\_buckets.h"}}
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include "../inc/censor\_buckets.h"}}
+\DoxyCodeLine{00020 \textcolor{preprocessor}{\#include "../inc/choose\_buckets.h"}}
+\DoxyCodeLine{00021 \textcolor{preprocessor}{\#include "../inc/display\_list.h"}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{preprocessor}{\#define COLOR "\(\backslash\)033[0;94m"}}
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#define COLOR1 "\(\backslash\)033[0;92m"}}
+\DoxyCodeLine{00025 \textcolor{preprocessor}{\#define RESET "\(\backslash\)033[0m"}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00028}\mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{00028}} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)\{}
+\DoxyCodeLine{00029     }
+\DoxyCodeLine{00030     \textcolor{comment}{//Set Maximum hashlimit}}
+\DoxyCodeLine{00031     \textcolor{keyword}{const} \textcolor{keywordtype}{int} hash\_limit = 40;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \mbox{\hyperlink{structnode}{node\_t}} *buckets[40];}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < hash\_limit; i++)buckets[i] = NULL;}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{comment}{//=============================================================}}
+\DoxyCodeLine{00039 \textcolor{comment}{}    \textcolor{comment}{//=============================================================}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{keywordtype}{int} chosen\_flag[3] = \{0, 0, 0\};}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{int} option;}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{keywordtype}{char} input\_file[100];}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     \textcolor{keywordflow}{while}((option = getopt(argc, argv, \textcolor{stringliteral}{"f:rc"})) != -\/1)\{}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048         \textcolor{keywordflow}{if}(option == \textcolor{charliteral}{'f'})\{}
+\DoxyCodeLine{00049             strcpy(input\_file, optarg);}
+\DoxyCodeLine{00050             chosen\_flag[2] = 1;}
+\DoxyCodeLine{00051         \}}
+\DoxyCodeLine{00052         \textcolor{keywordflow}{if}(option == \textcolor{charliteral}{'r'})chosen\_flag[0] = 1;}
+\DoxyCodeLine{00053         \textcolor{keywordflow}{if}(option == \textcolor{charliteral}{'c'})chosen\_flag[1] = 1;}
+\DoxyCodeLine{00054     \}}
+\DoxyCodeLine{00055     }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{if}(!chosen\_flag[2])\{}
+\DoxyCodeLine{00057         }
+\DoxyCodeLine{00058         printf(\textcolor{stringliteral}{"\(\backslash\)nDefault Input file TEXTFILES/default.txt used\(\backslash\)n"});}
+\DoxyCodeLine{00059         strcpy(input\_file, \textcolor{stringliteral}{"TEXTFILES/default.txt"});}
+\DoxyCodeLine{00060     \}}
+\DoxyCodeLine{00061     \textcolor{comment}{//=================================================}}
+\DoxyCodeLine{00063 \textcolor{comment}{}    \textcolor{comment}{//=================================================}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     FILE *input\_stream\_censored;}
+\DoxyCodeLine{00066     FILE *input\_stream = fopen(input\_file, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{00067     FILE *output\_stream = fopen(\textcolor{stringliteral}{"TEXTFILES/buckets.txt"}, \textcolor{stringliteral}{"wb+"});}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     \mbox{\hyperlink{fill__buckets_8c_ad7879271ac1cf2fd1a4fd3159d65b627}{fill\_buckets}}(buckets, hash\_limit, input\_stream);}
+\DoxyCodeLine{00070     }
+\DoxyCodeLine{00071     \mbox{\hyperlink{display__list_8c_ad0de26c7c2dc54dba3dbec2d7623e6a7}{display\_list}}(buckets, output\_stream, 40);}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     \textcolor{comment}{//Close input and output streams}}
+\DoxyCodeLine{00074     fclose(input\_stream);input\_stream = NULL;}
+\DoxyCodeLine{00075     fclose(output\_stream);output\_stream = NULL;}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077     \textcolor{comment}{//=================================================}}
+\DoxyCodeLine{00079 \textcolor{comment}{}    \textcolor{comment}{//=================================================}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{comment}{//Initilize array for requested indices}}
+\DoxyCodeLine{00082     \textcolor{keywordtype}{int} requested\_index[50];}
+\DoxyCodeLine{00083     \textcolor{keywordtype}{int} requested\_index\_size = (int)\textcolor{keyword}{sizeof}(requested\_index)/(int)\textcolor{keyword}{sizeof}(requested\_index[0]);}
+\DoxyCodeLine{00084     \textcolor{comment}{//Initialize requestedindex with -\/1}}
+\DoxyCodeLine{00085     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < requested\_index\_size; i++)requested\_index[i] = -\/1;}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     }
+\DoxyCodeLine{00088     \textcolor{comment}{//=================================================================}}
+\DoxyCodeLine{00090 \textcolor{comment}{}    \textcolor{comment}{// ================================================================}}
+\DoxyCodeLine{00091     \textcolor{keywordflow}{if}(chosen\_flag[0])\{}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093         \textcolor{comment}{//Set 3rd flag to 1 for requesting indices for censored buckets}}
+\DoxyCodeLine{00094         chosen\_flag[2] = 1;}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096         input\_stream  = fopen(input\_file, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{00097         output\_stream = fopen(\textcolor{stringliteral}{"censored\_buckets.txt"}, \textcolor{stringliteral}{"wb+"});}
+\DoxyCodeLine{00098         \textcolor{comment}{//Request user input}}
+\DoxyCodeLine{00099         \mbox{\hyperlink{choose__buckets_8c_a8ae7c98d661bdc4d004450b9548a60c3}{choose\_buckets}}(buckets, requested\_index, chosen\_flag);}
+\DoxyCodeLine{00100         \textcolor{comment}{//Censor all words matching chosen buckets}}
+\DoxyCodeLine{00101         \textcolor{comment}{//and write to censored\_buckets.txt}}
+\DoxyCodeLine{00102         \mbox{\hyperlink{censor__buckets_8c_ac3c63497a5e45ed0a4dab4c05d9ac171}{censor\_buckets}}(buckets, input\_stream, output\_stream, requested\_index);}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104         printf(COLOR1);printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nTextfile censored\_buckets.txt was created\(\backslash\)n"});printf(RESET);}
+\DoxyCodeLine{00105         \textcolor{comment}{//Close input and output streams}}
+\DoxyCodeLine{00106         fclose(input\_stream);input\_stream = NULL;}
+\DoxyCodeLine{00107         fclose(output\_stream);output\_stream = NULL;}
+\DoxyCodeLine{00108     \}}
+\DoxyCodeLine{00109     \textcolor{comment}{//=========================================================================}}
+\DoxyCodeLine{00111 \textcolor{comment}{}    \textcolor{comment}{// ========================================================================}}
+\DoxyCodeLine{00112     \textcolor{keywordflow}{if}(chosen\_flag[1])\{}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114         \textcolor{comment}{//Set 3rd flag to 0 for requesting indices for buckets which should not be censored}}
+\DoxyCodeLine{00115         chosen\_flag[2] = 0;}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117         \textcolor{comment}{// Reinit array for requested indices}}
+\DoxyCodeLine{00118         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < requested\_index\_size; i++)requested\_index[i] = -\/1;}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120         input\_stream          = fopen(input\_file, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{00121         output\_stream = fopen(\textcolor{stringliteral}{"TEXTFILES/temp.txt"}, \textcolor{stringliteral}{"wb+"});}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123         \textcolor{comment}{//Request user input}}
+\DoxyCodeLine{00124         \mbox{\hyperlink{choose__buckets_8c_a8ae7c98d661bdc4d004450b9548a60c3}{choose\_buckets}}(buckets, requested\_index, chosen\_flag);}
+\DoxyCodeLine{00125         \textcolor{comment}{//Censor all word matching the buckets}}
+\DoxyCodeLine{00126         \mbox{\hyperlink{censor__buckets_8c_ac3c63497a5e45ed0a4dab4c05d9ac171}{censor\_buckets}}(buckets, input\_stream, output\_stream, requested\_index);}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128         \textcolor{comment}{//Close input and output streams}}
+\DoxyCodeLine{00129         fclose(input\_stream);input\_stream = NULL;}
+\DoxyCodeLine{00130         fclose(output\_stream);output\_stream = NULL;}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132         input\_stream          = fopen(input\_file, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{00133         input\_stream\_censored = fopen(\textcolor{stringliteral}{"TEXTFILES/temp.txt"}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{00134         output\_stream         = fopen(\textcolor{stringliteral}{"censored\_all\_except\_buckets.txt"}, \textcolor{stringliteral}{"wb+"});}
+\DoxyCodeLine{00135         }
+\DoxyCodeLine{00136         printf(COLOR1);printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nTextfile censored\_all\_except\_buckets.txt was created\(\backslash\)n"});printf(RESET);}
+\DoxyCodeLine{00137         \textcolor{comment}{//Read censored textfile and compare to original input file and replace all letter with censored char}}
+\DoxyCodeLine{00138         \textcolor{comment}{//Write new file to censored\_all\_except\_buckets.txt}}
+\DoxyCodeLine{00139         \mbox{\hyperlink{censor__except__buckets_8c_ae6b559bb68ba469e9a375b77de8bf2c2}{censor\_except\_buckets}}(input\_stream, input\_stream\_censored, output\_stream);}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141         fclose(input\_stream\_censored);input\_stream\_censored = NULL;}
+\DoxyCodeLine{00142         fclose(input\_stream);input\_stream = NULL;}
+\DoxyCodeLine{00143         fclose(output\_stream);output\_stream = NULL;}
+\DoxyCodeLine{00144     \}}
+\DoxyCodeLine{00145     \textcolor{comment}{//===============}}
+\DoxyCodeLine{00147 \textcolor{comment}{}    \textcolor{comment}{//===============}}
+\DoxyCodeLine{00148     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < hash\_limit; i++)\mbox{\hyperlink{free__buckets_8c_a49fec80669e0bd67bbdc830bd45572e6}{free\_buckets}}(buckets[i]);}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00151 \}}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153 }
+
+\end{DoxyCode}

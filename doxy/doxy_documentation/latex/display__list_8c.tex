@@ -1,0 +1,96 @@
+\hypertarget{display__list_8c}{}\doxysection{/home/jv/\+Coding/hashcount/src/display\+\_\+list.c File Reference}
+\label{display__list_8c}\index{/home/jv/Coding/hashcount/src/display\_list.c@{/home/jv/Coding/hashcount/src/display\_list.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../inc/node\+\_\+t.\+h\char`\"{}}\newline
+Include dependency graph for display\+\_\+list.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{display__list_8c_a4b5014034c9aac136ab8c82c2d16dc82}\label{display__list_8c_a4b5014034c9aac136ab8c82c2d16dc82}} 
+\#define {\bfseries C\+O\+L\+OR}~\char`\"{}\textbackslash{}033\mbox{[}0;94m\char`\"{}
+\item 
+\mbox{\Hypertarget{display__list_8c_ab702106cf3b3e96750b6845ded4e0299}\label{display__list_8c_ab702106cf3b3e96750b6845ded4e0299}} 
+\#define {\bfseries R\+E\+S\+ET}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{display__list_8c_ad0de26c7c2dc54dba3dbec2d7623e6a7}{display\+\_\+list}} (\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$buckets, F\+I\+LE $\ast$output\+\_\+stream, int hash\+\_\+limit)
+\begin{DoxyCompactList}\small\item\em Display each element of buckets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+John Bryan Valle 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{display__list_8c_source}{display\+\_\+list.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{display__list_8c_ad0de26c7c2dc54dba3dbec2d7623e6a7}\label{display__list_8c_ad0de26c7c2dc54dba3dbec2d7623e6a7}} 
+\index{display\_list.c@{display\_list.c}!display\_list@{display\_list}}
+\index{display\_list@{display\_list}!display\_list.c@{display\_list.c}}
+\doxysubsubsection{\texorpdfstring{display\_list()}{display\_list()}}
+{\footnotesize\ttfamily void display\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$}]{buckets,  }\item[{F\+I\+LE $\ast$}]{output\+\_\+stream,  }\item[{int}]{hash\+\_\+limit }\end{DoxyParamCaption})}
+
+
+
+Display each element of buckets. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buckets} & Hashtable of words \\
+\hline
+\mbox{\texttt{ in}}  & {\em hash\+\_\+limit} & Limit of hashtable size \\
+\hline
+\mbox{\texttt{ in}}  & {\em output\+\_\+stream} & Outputfile buckets are written to \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Itterate through al buckets
+\item Set Header Element of each list
+\item Travers through all elements of the lst
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{display__list_8c_source_l00022}{22}} of file \mbox{\hyperlink{display__list_8c_source}{display\+\_\+list.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022                                                                         \{}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00025     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < hash\_limit; i++)\{}
+\DoxyCodeLine{00026     }
+\DoxyCodeLine{00028         \mbox{\hyperlink{structnode}{node\_t}} *ptr = buckets[i];}
+\DoxyCodeLine{00029         }
+\DoxyCodeLine{00030         printf(\textcolor{stringliteral}{"\(\backslash\)n[\%2d]: "}, i);}
+\DoxyCodeLine{00031         fprintf(output\_stream, \textcolor{stringliteral}{"\(\backslash\)n[\%2d]: "}, i);}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00034         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>next, j++)\{}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036             \textcolor{keywordflow}{if}(ptr-\/>occurance > 1)\{}
+\DoxyCodeLine{00037                 printf(COLOR);}
+\DoxyCodeLine{00038                 printf(\textcolor{stringliteral}{"\%s(\%d), "},ptr-\/>word, ptr-\/>occurance);}
+\DoxyCodeLine{00039                 fprintf(output\_stream, \textcolor{stringliteral}{"\%s(\%d), "},ptr-\/>word, ptr-\/>occurance);}
+\DoxyCodeLine{00040                 printf(RESET);}
+\DoxyCodeLine{00041             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00042                 printf(\textcolor{stringliteral}{"\%s, "},ptr-\/>word);}
+\DoxyCodeLine{00043                 fprintf(output\_stream, \textcolor{stringliteral}{"\%s, "},ptr-\/>word);}
+\DoxyCodeLine{00044             \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046             \textcolor{keywordflow}{if}((j\%10)==0)\{}
+\DoxyCodeLine{00047                 printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{00048                 fprintf(output\_stream, \textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{00049             \}}
+\DoxyCodeLine{00050         \}}
+\DoxyCodeLine{00051     \}}
+\DoxyCodeLine{00052 \}}
+
+\end{DoxyCode}

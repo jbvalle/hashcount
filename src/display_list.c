@@ -1,3 +1,7 @@
+/**
+ *@file display_list.c
+ *@author John Bryan Valle
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,20 +14,23 @@
 #define RESET "\033[0m"
 
 /**
- *Sorts words of buckets alphabetically
-*
-* @param[in] buckets 
-* @param[in] hash_limit
+*@brief Display each element of buckets
+* @param[in] buckets Hashtable of words
+* @param[in] hash_limit Limit of hashtable size
+* @param[in] output_stream Outputfile buckets are written to
  */
 void display_list(node_t **buckets, FILE *output_stream, int hash_limit){
 
-
+    ///1. Itterate through al buckets
     for(int i = 0; i < hash_limit; i++){
     
+        ///2. Set Header Element of each list
         node_t *ptr = buckets[i];
         
         printf("\n[%2d]: ", i);
         fprintf(output_stream, "\n[%2d]: ", i);
+
+        ///3. Travers through all elements of the lst
         for(int j = 1; ptr != NULL; ptr = ptr->next, j++){
 
             if(ptr->occurance > 1){

@@ -71,6 +71,9 @@ $(function() {
 <div class="title">insert.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Insertion new Element after element with key as string member.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
@@ -82,14 +85,17 @@ Include dependency graph for insert.c:</div>
 <div class="center"><img src="insert_8c__incl.png" border="0" usemap="#_2home_2jv_2Coding_2hashcount_2src_2insert_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="insert_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1f22eccdb6399bb02fcac2ab4102bcdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="insert_8c.html#a1f22eccdb6399bb02fcac2ab4102bcdd">insert</a> (<a class="el" href="structnode.html">node_t</a> **head, char *key, char *new_key)</td></tr>
 <tr class="separator:a1f22eccdb6399bb02fcac2ab4102bcdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Insertion new Element after element with key as string member </p><dl class="params"><dt>Parameters</dt><dd>
+<div class="textblock"><p>Insertion new Element after element with key as string member. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">head</td><td>head reference </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Preceding String member of list element </td></tr>
@@ -97,6 +103,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition in file <a class="el" href="insert_8c_source.html">insert.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a1f22eccdb6399bb02fcac2ab4102bcdd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f22eccdb6399bb02fcac2ab4102bcdd">&#9670;&nbsp;</a></span>insert()</h2>
@@ -138,9 +146,32 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="insert_8c_source.html#l00015">15</a> of file <a class="el" href="insert_8c_source.html">insert.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="structnode.html">node_t</a> *ptr = *head;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="structnode.html">node_t</a> *<span class="keyword">new</span> = (<a class="code" href="structnode.html">node_t</a> *)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structnode.html">node_t</a>));</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    strcpy(new-&gt;word, new_key);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">new</span>-&gt;occurance = 1;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">new</span>-&gt;next = NULL;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">for</span>(; ptr != NULL; ptr = ptr-&gt;next){</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span>(strcmp(ptr-&gt;word, key) == 0){</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keyword">new</span>-&gt;next = ptr-&gt;next;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            ptr-&gt;next = <span class="keyword">new</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="astructnode_html"><div class="ttname"><a href="structnode.html">node</a></div><div class="ttdef"><b>Definition:</b> <a href="node__t_8h_source.html#l00007">node_t.h:7</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

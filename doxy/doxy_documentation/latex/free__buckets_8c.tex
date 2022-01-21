@@ -1,5 +1,10 @@
 \hypertarget{free__buckets_8c}{}\doxysection{/home/jv/\+Coding/hashcount/src/free\+\_\+buckets.c File Reference}
 \label{free__buckets_8c}\index{/home/jv/Coding/hashcount/src/free\_buckets.c@{/home/jv/Coding/hashcount/src/free\_buckets.c}}
+
+
+Frees all mallocs of buckets.  
+
+
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
@@ -14,13 +19,17 @@ void \mbox{\hyperlink{free__buckets_8c_a49fec80669e0bd67bbdc830bd45572e6}{free\+
 
 
 \doxysubsection{Detailed Description}
-Frees all mallocs of buckets
+Frees all mallocs of buckets. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em \mbox{[}int\mbox{]}} & buckets \\
 \hline
 \end{DoxyParams}
+
+
+Definition in file \mbox{\hyperlink{free__buckets_8c_source}{free\+\_\+buckets.\+c}}.
+
 
 
 \doxysubsection{Function Documentation}
@@ -46,3 +55,25 @@ Frees all mallocs of buckets
 \item Free ptr
 \item Reassign temporary next element to ptr
 \end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{free__buckets_8c_source_l00011}{11}} of file \mbox{\hyperlink{free__buckets_8c_source}{free\+\_\+buckets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011                                \{}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00014     \textcolor{keywordflow}{if}(head == NULL)\textcolor{keywordflow}{return};}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00017     \mbox{\hyperlink{structnode}{node\_t}} *ptr = head;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00020     \textcolor{keywordflow}{while}(ptr != NULL)\{}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00023         \mbox{\hyperlink{structnode}{node\_t}} *temp = ptr-\/>next;}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00026         free(ptr);ptr = NULL;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00029         ptr = temp;}
+\DoxyCodeLine{00030     \}}
+\DoxyCodeLine{00031 \}}
+
+\end{DoxyCode}

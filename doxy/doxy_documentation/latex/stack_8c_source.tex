@@ -1,0 +1,30 @@
+\hypertarget{stack_8c_source}{}\doxysection{stack.\+c}
+\label{stack_8c_source}\index{/home/jv/Coding/hashcount/src/stack.c@{/home/jv/Coding/hashcount/src/stack.c}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "../inc/node\_t.h"}}
+\DoxyCodeLine{\Hypertarget{stack_8c_source_l00013}\mbox{\hyperlink{stack_8c_a566f0c4642ac167626a631f693169b11}{00013}} \textcolor{keywordtype}{void} \mbox{\hyperlink{stack_8c_a566f0c4642ac167626a631f693169b11}{stack}}(\mbox{\hyperlink{structnode}{node\_t}} **head, \textcolor{keywordtype}{char} *word)\{}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \mbox{\hyperlink{structnode}{node\_t}} *ptr = *head;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \mbox{\hyperlink{structnode}{node\_t}} *\textcolor{keyword}{new} = (\mbox{\hyperlink{structnode}{node\_t}} *)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structnode}{node\_t}}));}
+\DoxyCodeLine{00018     strcpy(new-\/>word, word);}
+\DoxyCodeLine{00019     \textcolor{keyword}{new}-\/>occurance = 1;}
+\DoxyCodeLine{00020     \textcolor{keyword}{new}-\/>next = NULL;}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{keywordflow}{if}(ptr == NULL)\{}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024         *head = \textcolor{keyword}{new};}
+\DoxyCodeLine{00025         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00026     \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{keyword}{new}-\/>next = *head;}
+\DoxyCodeLine{00029     *head = \textcolor{keyword}{new};}
+\DoxyCodeLine{00030 \}}
+
+\end{DoxyCode}

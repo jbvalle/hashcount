@@ -70,119 +70,104 @@ $(function() {
 <div align="center"></div><div align="center"><div class="image">
 <img src="logo.png" alt="" width="50%" height="50%"/>
 </div>
-</div><div align="center"><em>This project aims to demonstrate search and sorting algorithms as well as time complexity based comparisons to determine efficiency and usability. It is implemented in two parts.</em> <br  />
+</div><div align="center"><em>This project reads and saves a textfile in a generated hashtable and censores words depending on requested user input.</em> <br  />
  <br  />
-</div><div align="center"></div><p><br  />
-Table of Contents<br  />
- </p><ol>
-<li>
-<a href="#about-the-project">About The Project</a> </li>
-<li>
-<a href="#getting-started">Getting Started</a> </li>
-<li>
-<a href="#usage">Usage</a> </li>
-<li>
-<a href="#roadmap">Roadmap</a> </li>
-<li>
-<a href="#contributing">Contributing</a> </li>
-<li>
-<a href="#license">License</a> </li>
-<li>
-<a href="#contact">Contact</a> </li>
-<li>
-<a href="#acknowledgments">Acknowledgments</a> </li>
-</ol>
+</div><div align="center"></div><hr  />
 <h2><a class="anchor" id="autotoc_md0"></a>
 About The Project</h2>
-<p>This project aims to demonstrate search and sorting algorithms as well as time complexity based comparisons to determine efficiency and usability. It is implemented in two parts. <br  />
-</p>
-<ol type="1">
-<li>Part:<br  />
+<p><b>1 Part: (SOLVED)<br  />
+</b></p><ul>
+<li>Open a text file and read the text row by row.<br  />
 </li>
-</ol>
-<ul>
-<li>Implementation of merge-, quick-, bubble-, and insertionsort algorithms with randomized uniquely generated numbers as inputs<br  />
+<li>Separate words by these characters (" ", ".", "\n")<br  />
 </li>
-<li>Performance testing applying time complexity assessments to estimate performance levels<br  />
+<li>Store the values in a hashtable using dynamic linked lists.<br  />
 </li>
-<li>Evaluating performance tests based on time measurements alone.<br  />
+<li>Use the sum of character values as value to be hashed. E.g. Cat = (67+97+116) % 23<br  />
 </li>
-<li>Time Complexity assessment based on run time of insertionsort implementations using arrays and linked lists.<br  />
+<li>Words shall be stored in dynamically allocated memory<br  />
+</li>
+<li>Print out the hash in a readable way. E.g. max 10 words per row.<br  />
 </li>
 </ul>
-<ol type="1">
-<li>Part:<br  />
- ... <br  />
+<p><b>2 Part: (SOLVED)<br  />
+</b></p><ul>
+<li>The occurrence of words shall be counted instead of multiple entries in the list. <br  />
 </li>
-</ol>
-<p>(<a href="#top">back to top</a>)</p>
+<li>Add additional word separators:<br  />
+</li>
+<li>semicolon (;) <br  />
+</li>
+<li>colon (:)<br  />
+</li>
+<li>comma (,)<br  />
+</li>
+<li>question mark (?)<br  />
+</li>
+<li>tab (\t)<br  />
+</li>
+</ul>
+<p><b>3 Part: (UNSOLVED)<br  />
+</b></p><ul>
+<li>The lists shall always retain alphabetic order.</li>
+</ul>
+<p><b>4 Part: (SOLVED)<br  />
+</b></p><ul>
+<li>Give the user a choice to select one bucket to output separately.</li>
+<li>Print out the entries in the Bucket.</li>
+<li>Let the user select one or more buckets and remove all words from the text which do not match to these selected buckets and write it to a new text file.</li>
+</ul>
+<p><b>5 Part: (SOLVED)<br  />
+</b></p><ul>
+<li>Let the user select one or more buckets and censor all words from the text which match to these selected buckets and write it to a new text file.</li>
+<li>All word separators shall be copied to the new file in the correct places.</li>
+</ul>
+<p><b>6 Part: (SOLVED)<br  />
+</b></p><ul>
+<li>Store the hash in a binary file</li>
+<li>Read and populate the hash from a file and append/count new words into it when the user wants to do this.</li>
+</ul>
+<p><b>7 Part: (SOLVED)<br  />
+</b></p><ul>
+<li>The program arguments are handled by getopt(3).</li>
+</ul>
+<hr  />
 <h2><a class="anchor" id="autotoc_md1"></a>
 Getting Started</h2>
-<p>This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.</p>
+<ul>
+<li>Start by generating Binary file: Follow Installation instruction</li>
+</ul>
 <h3><a class="anchor" id="autotoc_md2"></a>
-Prerequisites</h3>
-<p>This is an example of how to list things you need to use the software and how to install them.</p><ul>
-<li>npm <div class="fragment"><div class="line">npm install npm@latest -g</div>
-</div><!-- fragment --></li>
-</ul>
-<h3><a class="anchor" id="autotoc_md3"></a>
 Installation</h3>
-<ol type="1">
-<li>Get a free API Key at <a href="https://example.com">https://example.com</a></li>
-<li>Clone the repo <div class="fragment"><div class="line">git clone https://github.com/github_username/repo_name.git</div>
+<ul>
+<li>Generate Binary File "./hashcount" by executing make in src/ <div class="fragment"><div class="line">make</div>
 </div><!-- fragment --></li>
-<li>Install NPM packages <div class="fragment"><div class="line">npm install</div>
-</div><!-- fragment --></li>
-<li>Enter your API in <code>config.js</code> <div class="fragment"><div class="line">const API_KEY = &#39;ENTER YOUR API&#39;;</div>
-</div><!-- fragment --></li>
-</ol>
-<p>(<a href="#top">back to top</a>)</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+</ul>
+<hr  />
+<h2><a class="anchor" id="autotoc_md3"></a>
 Usage</h2>
-<p>Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.</p>
-<p><em>For more examples, please refer to the <a href="https://example.com">Documentation</a></em></p>
-<p>(<a href="#top">back to top</a>)</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
-Roadmap</h2>
 <ul>
-<li>[] Feature 1</li>
-<li>[] Feature 2</li>
-<li>[] Feature 3<ul>
-<li>[] Nested Feature</li>
+<li>Hashcount is able to generate Hashtable from any file index requested</li>
+<li>If no input text is explicitly mentioned in argument a default text file in TEXTFILES/default.txt is used</li>
+<li>The User is able to choose different options</li>
+<li>Example: <div class="fragment"><div class="line">./hashcount -f input.txt -rc</div>
+</div><!-- fragment --></li>
 </ul>
-</li>
-</ul>
-<p>See the <a href="https://github.com/github_username/repo_name/issues">open issues</a> for a full list of proposed features (and known issues).</p>
-<p>(<a href="#top">back to top</a>)</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Contributing</h2>
-<p>Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are <b>greatly appreciated</b>.</p>
-<p>If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!</p>
-<ol type="1">
-<li>Fork the Project</li>
-<li>Create your Feature Branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
-<li>Commit your Changes (&lsquo;git commit -m 'Add some AmazingFeature&rsquo;<code>)</code></li>
-<li><code>Push to the Branch (</code>git push origin feature/AmazingFeature`)</li>
-<li>Open a Pull Request</li>
-</ol>
-<p>(<a href="#top">back to top</a>)</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
-License</h2>
-<p>Distributed under the MIT License. See <code>LICENSE.txt</code> for more information.</p>
-<p>(<a href="#top">back to top</a>)</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<table style="width=110%" border="solid black">
+<tr align="left">
+<th>OPTIONS </th><th>DESCRIPTION  </th></tr>
+<tr align="left">
+<th>-f path_rel_to_path/filename.txt </th><th>For specifying an input file declare a file name after the -f option i.e. -f input.txt  </th></tr>
+<tr align="left">
+<th>-r </th><th>This removes all keywords from a textfile by a chosen bucket. This requires no arguments.  </th></tr>
+<tr align="left">
+<th>-c </th><th><p class="starttd">This censores all words except chosen buckets. This requires no arguments </p>
+<p class="endtd"></p>
+</th></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md4"></a>
 Contact</h2>
-<p>Your Name - <a href="https://twitter.com/twitter_handle">@twitter_handle</a> - <a href="#" onclick="location.href='mai'+'lto:'+'ema'+'il'+'@em'+'ai'+'l_c'+'li'+'ent'+'.c'+'om'; return false;">email<span style="display: none;">.nosp@m.</span>@ema<span style="display: none;">.nosp@m.</span>il_cl<span style="display: none;">.nosp@m.</span>ient<span style="display: none;">.nosp@m.</span>.com</a></p>
-<p>Project Link: <a href="https://github.com/github_username/repo_name">https://github.com/github_username/repo_name</a></p>
-<p>(<a href="#top">back to top</a>)</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
-Acknowledgments</h2>
-<ul>
-<li>[]()</li>
-<li>[]()</li>
-<li>[]()</li>
-</ul>
-<p>(<a href="#top">back to top</a>)</p>
+<p>Author: John Bryan Valle Email: <a href="#" onclick="location.href='mai'+'lto:'+'jbv'+'al'+'le.'+'jv'+'@gm'+'ai'+'l.c'+'om'; return false;">jbval<span style="display: none;">.nosp@m.</span>le.j<span style="display: none;">.nosp@m.</span>v@gma<span style="display: none;">.nosp@m.</span>il.c<span style="display: none;">.nosp@m.</span>om</a> Date: 21.01.2022 </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

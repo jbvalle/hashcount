@@ -4,7 +4,7 @@
 #include "../inc/node_t.h"
 /**
  *@file free_buckets.c
- *Frees all mallocs of buckets
+ *@brief Frees all mallocs of buckets
  *
  *@param[int] buckets
  */

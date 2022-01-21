@@ -1,6 +1,7 @@
 /**
  *@file main.c
- * `main.c` main entry point for hashcount program
+ *
+ *@brief main entry point for hashcount program
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,6 +21,7 @@
 #include "../inc/display_list.h"
 
 #define COLOR "\033[0;94m"
+#define COLOR1 "\033[0;92m"
 #define RESET "\033[0m"
 
 
@@ -32,10 +34,9 @@ int main(int argc, char **argv){
 
     for(int i = 0; i < hash_limit; i++)buckets[i] = NULL;
 
-    //=================================================
-    // Fetch User input arguments for removing or
-    // censoring text
-    // ================================================
+    //=============================================================
+    ///1. Fetch User input arguments for removing or censoring text
+    //=============================================================
 
     int chosen_flag[3] = {0, 0, 0};
     int option;
@@ -58,7 +59,7 @@ int main(int argc, char **argv){
         strcpy(input_file, "TEXTFILES/default.txt");
     }
     //=================================================
-    // infuse buckets with input words
+    ///2. infuse buckets with input words
     //=================================================
 
     FILE *input_stream_censored;
@@ -74,7 +75,7 @@ int main(int argc, char **argv){
     fclose(output_stream);output_stream = NULL;
 
     //=================================================
-    // Select buckets and output new textfile
+    ///3. Select buckets and output new textfile
     //=================================================
 
     //Initilize array for requested indices
@@ -84,10 +85,9 @@ int main(int argc, char **argv){
     for(int i = 0; i < requested_index_size; i++)requested_index[i] = -1;
 
     
-    //=================================================
-    // remove requested buckets from textfile 
-    // and write to new textfile
-    // ================================================
+    //=================================================================
+    ///4. remove requested buckets from textfile and write to new textfile
+    // ================================================================
     if(chosen_flag[0]){
 
         //Set 3rd flag to 1 for requesting indices for censored buckets
@@ -101,15 +101,14 @@ int main(int argc, char **argv){
         //and write to censored_buckets.txt
         censor_buckets(buckets, input_stream, output_stream, requested_index);
 
-        printf(COLOR);printf("\n\nTextfile censored_buckets.txt was created\n");printf(RESET);
+        printf(COLOR1);printf("\n\nTextfile censored_buckets.txt was created\n");printf(RESET);
         //Close input and output streams
         fclose(input_stream);input_stream = NULL;
         fclose(output_stream);output_stream = NULL;
     }
-    //=================================================
-    // remove everything except buckets from textfile
-    // and write to new textfile
-    // ===============================================
+    //=========================================================================
+    ///5. remove everything except buckets from textfile and write to new textfile
+    // ========================================================================
     if(chosen_flag[1]){
 
         //Set 3rd flag to 0 for requesting indices for buckets which should not be censored
@@ -134,7 +133,7 @@ int main(int argc, char **argv){
         input_stream_censored = fopen("TEXTFILES/temp.txt", "r");
         output_stream         = fopen("censored_all_except_buckets.txt", "wb+");
         
-        printf(COLOR);printf("\n\nTextfile censored_all_except_buckets.txt was created\n");printf(RESET);
+        printf(COLOR1);printf("\n\nTextfile censored_all_except_buckets.txt was created\n");printf(RESET);
         //Read censored textfile and compare to original input file and replace all letter with censored char
         //Write new file to censored_all_except_buckets.txt
         censor_except_buckets(input_stream, input_stream_censored, output_stream);
@@ -143,9 +142,9 @@ int main(int argc, char **argv){
         fclose(input_stream);input_stream = NULL;
         fclose(output_stream);output_stream = NULL;
     }
-    //=================================================
-    // free all nodes
-    //=================================================
+    //===============
+    ///6. free all nodes
+    //===============
     for(int i = 0; i < hash_limit; i++)free_buckets(buckets[i]);
 
     return 0;

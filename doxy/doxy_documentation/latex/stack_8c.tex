@@ -1,5 +1,10 @@
 \hypertarget{stack_8c}{}\doxysection{/home/jv/\+Coding/hashcount/src/stack.c File Reference}
 \label{stack_8c}\index{/home/jv/Coding/hashcount/src/stack.c@{/home/jv/Coding/hashcount/src/stack.c}}
+
+
+Stacks new element unto list.  
+
+
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
@@ -15,13 +20,19 @@ void \mbox{\hyperlink{stack_8c_a566f0c4642ac167626a631f693169b11}{stack}} (\mbox
 
 
 \doxysubsection{Detailed Description}
-Stacks new element unto list 
+Stacks new element unto list. 
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em head} & head Reference of Hash table \\
 \hline
 \mbox{\texttt{ in}}  & {\em word} & String Member of element \\
 \hline
 \end{DoxyParams}
+
+
+Definition in file \mbox{\hyperlink{stack_8c_source}{stack.\+c}}.
+
 
 
 \doxysubsection{Function Documentation}
@@ -38,3 +49,29 @@ Stacks new element unto list
 \mbox{\texttt{ in}}  & {\em word} & String Member of element \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{stack_8c_source_l00013}{13}} of file \mbox{\hyperlink{stack_8c_source}{stack.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013                                      \{}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \mbox{\hyperlink{structnode}{node\_t}} *ptr = *head;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \mbox{\hyperlink{structnode}{node\_t}} *\textcolor{keyword}{new} = (\mbox{\hyperlink{structnode}{node\_t}} *)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structnode}{node\_t}}));}
+\DoxyCodeLine{00018     strcpy(new-\/>word, word);}
+\DoxyCodeLine{00019     \textcolor{keyword}{new}-\/>occurance = 1;}
+\DoxyCodeLine{00020     \textcolor{keyword}{new}-\/>next = NULL;}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{keywordflow}{if}(ptr == NULL)\{}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024         *head = \textcolor{keyword}{new};}
+\DoxyCodeLine{00025         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00026     \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{keyword}{new}-\/>next = *head;}
+\DoxyCodeLine{00029     *head = \textcolor{keyword}{new};}
+\DoxyCodeLine{00030 \}}
+
+\end{DoxyCode}

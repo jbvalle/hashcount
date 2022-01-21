@@ -1,0 +1,73 @@
+\hypertarget{choose__buckets_8c_source}{}\doxysection{choose\+\_\+buckets.\+c}
+\label{choose__buckets_8c_source}\index{/home/jv/Coding/hashcount/src/choose\_buckets.c@{/home/jv/Coding/hashcount/src/choose\_buckets.c}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "../inc/node\_t.h"}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#define COLOR "\(\backslash\)033[0;94m"}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#define RESET "\(\backslash\)033[0m"}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{\Hypertarget{choose__buckets_8c_source_l00021}\mbox{\hyperlink{choose__buckets_8c_a8ae7c98d661bdc4d004450b9548a60c3}{00021}} \textcolor{keywordtype}{void} \mbox{\hyperlink{choose__buckets_8c_a8ae7c98d661bdc4d004450b9548a60c3}{choose\_buckets}}(\mbox{\hyperlink{structnode}{node\_t}} **buckets, \textcolor{keywordtype}{int} *requested\_index, \textcolor{keywordtype}{int} *chosen\_flag)\{}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{keywordtype}{char} delimiter[] = \textcolor{stringliteral}{" .\(\backslash\)n;:,?\(\backslash\)t"};}
+\DoxyCodeLine{00024     \textcolor{keywordtype}{char} user\_input[50], letter;}
+\DoxyCodeLine{00025     \textcolor{keywordtype}{int} input\_index;}
+\DoxyCodeLine{00027     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 50; i++)user\_input[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00028     }
+\DoxyCodeLine{00030     \textcolor{keywordflow}{if}(chosen\_flag[2])\{}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032         printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
+\DoxyCodeLine{00033         printf(\textcolor{stringliteral}{"| Please enter desired indices of buckets to be removed |\(\backslash\)n"});}
+\DoxyCodeLine{00034         printf(\textcolor{stringliteral}{"+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
+\DoxyCodeLine{00035         printf(\textcolor{stringliteral}{"\(\backslash\)n»"});}
+\DoxyCodeLine{00036     \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{keywordflow}{if}(!chosen\_flag[2])\{}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040         printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
+\DoxyCodeLine{00041         printf(\textcolor{stringliteral}{"| Please enter desired indices of buckets which should not be censored|\(\backslash\)n"});}
+\DoxyCodeLine{00042         printf(\textcolor{stringliteral}{"+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
+\DoxyCodeLine{00043         printf(\textcolor{stringliteral}{"\(\backslash\)n»"});}
+\DoxyCodeLine{00044     \}}
+\DoxyCodeLine{00046     \textcolor{keywordflow}{for}(input\_index = 0; (letter = getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}; input\_index++)\{}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048         user\_input[input\_index] = letter;}
+\DoxyCodeLine{00049     \}}
+\DoxyCodeLine{00051     \textcolor{keywordflow}{while}(input\_index < 50)user\_input[input\_index++] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00054     \textcolor{keywordtype}{char} *token\_in = strtok(user\_input, delimiter); }
+\DoxyCodeLine{00055     }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; token\_in != NULL; i++)\{}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058         requested\_index[i] = strtol(token\_in, NULL, 10);}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060         token\_in = strtok(NULL, delimiter);}
+\DoxyCodeLine{00061     \} }
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00064     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} x = 0; requested\_index[x] != -\/1; x++)\{}
+\DoxyCodeLine{00065     }
+\DoxyCodeLine{00066         \textcolor{keywordtype}{int} i = requested\_index[x];}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068         \mbox{\hyperlink{structnode}{node\_t}} *ptr = buckets[i];}
+\DoxyCodeLine{00069         }
+\DoxyCodeLine{00070         printf(\textcolor{stringliteral}{"\(\backslash\)n[\%2d]: "}, i);}
+\DoxyCodeLine{00071         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>next, j++)\{}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073             \textcolor{keywordflow}{if}(ptr-\/>occurance > 1)\{}
+\DoxyCodeLine{00074                 printf(COLOR);}
+\DoxyCodeLine{00075                 printf(\textcolor{stringliteral}{"\%s(\%d), "},ptr-\/>word, ptr-\/>occurance);}
+\DoxyCodeLine{00076                 printf(RESET);}
+\DoxyCodeLine{00077             \}\textcolor{keywordflow}{else} printf(\textcolor{stringliteral}{"\%s, "},ptr-\/>word);}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079             \textcolor{keywordflow}{if}((j\%10)==0)printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{00080         \}}
+\DoxyCodeLine{00081     \}}
+\DoxyCodeLine{00082 \}}
+
+\end{DoxyCode}

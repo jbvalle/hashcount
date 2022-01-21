@@ -1,3 +1,8 @@
+/**
+ *@file append.c
+ *@author John Bryan Valle
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -6,13 +11,12 @@
 #include "../inc/node_t.h"
 
 /**
- *@file append.c
- *Appends to last element of list
+ *@brief Appends to last element of list
  *@param[in] head headreference
  *@param[in] word string member to be added
  */
 void append(node_t **head, char *word){
-
+    
     node_t *ptr = *head;
 
     node_t *new = (node_t *)malloc(sizeof(node_t));

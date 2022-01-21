@@ -1,0 +1,127 @@
+\hypertarget{choose__buckets_8c}{}\doxysection{/home/jv/\+Coding/hashcount/src/choose\+\_\+buckets.c File Reference}
+\label{choose__buckets_8c}\index{/home/jv/Coding/hashcount/src/choose\_buckets.c@{/home/jv/Coding/hashcount/src/choose\_buckets.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../inc/node\+\_\+t.\+h\char`\"{}}\newline
+Include dependency graph for choose\+\_\+buckets.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{choose__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}\label{choose__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}} 
+\#define {\bfseries C\+O\+L\+OR}~\char`\"{}\textbackslash{}033\mbox{[}0;94m\char`\"{}
+\item 
+\mbox{\Hypertarget{choose__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}\label{choose__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}} 
+\#define {\bfseries R\+E\+S\+ET}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{choose__buckets_8c_a8ae7c98d661bdc4d004450b9548a60c3}{choose\+\_\+buckets}} (\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$buckets, int $\ast$requested\+\_\+index, int $\ast$chosen\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em Function requests user input of indices and displays them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+John Bryan Valle 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{choose__buckets_8c_source}{choose\+\_\+buckets.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{choose__buckets_8c_a8ae7c98d661bdc4d004450b9548a60c3}\label{choose__buckets_8c_a8ae7c98d661bdc4d004450b9548a60c3}} 
+\index{choose\_buckets.c@{choose\_buckets.c}!choose\_buckets@{choose\_buckets}}
+\index{choose\_buckets@{choose\_buckets}!choose\_buckets.c@{choose\_buckets.c}}
+\doxysubsubsection{\texorpdfstring{choose\_buckets()}{choose\_buckets()}}
+{\footnotesize\ttfamily void choose\+\_\+buckets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$}]{buckets,  }\item[{int $\ast$}]{requested\+\_\+index,  }\item[{int $\ast$}]{chosen\+\_\+flag }\end{DoxyParamCaption})}
+
+
+
+Function requests user input of indices and displays them. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buckets} & Generated buckets to choose from \\
+\hline
+\mbox{\texttt{ in}}  & {\em requested\+\_\+index} & Empty Array serve as a look up table datastructure to save user input \\
+\hline
+\mbox{\texttt{ in}}  & {\em chosen\+\_\+flag} & Depending on previous chosen arguments for running the program, requested data changes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Initialize user\+\_\+input
+\item Request Users indices input
+\item Read Letterwise user input
+\item Fill rest of user\+\_\+input buffer with terminator to prevent undefined behavior
+\item Parse User input -\/$>$ interpret numbers and read number indices using strtok
+\item Output Requested Buckets
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{choose__buckets_8c_source_l00021}{21}} of file \mbox{\hyperlink{choose__buckets_8c_source}{choose\+\_\+buckets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021                                                                              \{}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{keywordtype}{char} delimiter[] = \textcolor{stringliteral}{" .\(\backslash\)n;:,?\(\backslash\)t"};}
+\DoxyCodeLine{00024     \textcolor{keywordtype}{char} user\_input[50], letter;}
+\DoxyCodeLine{00025     \textcolor{keywordtype}{int} input\_index;}
+\DoxyCodeLine{00027     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 50; i++)user\_input[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00028     }
+\DoxyCodeLine{00030     \textcolor{keywordflow}{if}(chosen\_flag[2])\{}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032         printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
+\DoxyCodeLine{00033         printf(\textcolor{stringliteral}{"| Please enter desired indices of buckets to be removed |\(\backslash\)n"});}
+\DoxyCodeLine{00034         printf(\textcolor{stringliteral}{"+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
+\DoxyCodeLine{00035         printf(\textcolor{stringliteral}{"\(\backslash\)n»"});}
+\DoxyCodeLine{00036     \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{keywordflow}{if}(!chosen\_flag[2])\{}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040         printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
+\DoxyCodeLine{00041         printf(\textcolor{stringliteral}{"| Please enter desired indices of buckets which should not be censored|\(\backslash\)n"});}
+\DoxyCodeLine{00042         printf(\textcolor{stringliteral}{"+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\(\backslash\)n"});}
+\DoxyCodeLine{00043         printf(\textcolor{stringliteral}{"\(\backslash\)n»"});}
+\DoxyCodeLine{00044     \}}
+\DoxyCodeLine{00046     \textcolor{keywordflow}{for}(input\_index = 0; (letter = getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}; input\_index++)\{}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048         user\_input[input\_index] = letter;}
+\DoxyCodeLine{00049     \}}
+\DoxyCodeLine{00051     \textcolor{keywordflow}{while}(input\_index < 50)user\_input[input\_index++] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00054     \textcolor{keywordtype}{char} *token\_in = strtok(user\_input, delimiter); }
+\DoxyCodeLine{00055     }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; token\_in != NULL; i++)\{}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058         requested\_index[i] = strtol(token\_in, NULL, 10);}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060         token\_in = strtok(NULL, delimiter);}
+\DoxyCodeLine{00061     \} }
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00064     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} x = 0; requested\_index[x] != -\/1; x++)\{}
+\DoxyCodeLine{00065     }
+\DoxyCodeLine{00066         \textcolor{keywordtype}{int} i = requested\_index[x];}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068         \mbox{\hyperlink{structnode}{node\_t}} *ptr = buckets[i];}
+\DoxyCodeLine{00069         }
+\DoxyCodeLine{00070         printf(\textcolor{stringliteral}{"\(\backslash\)n[\%2d]: "}, i);}
+\DoxyCodeLine{00071         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>next, j++)\{}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073             \textcolor{keywordflow}{if}(ptr-\/>occurance > 1)\{}
+\DoxyCodeLine{00074                 printf(COLOR);}
+\DoxyCodeLine{00075                 printf(\textcolor{stringliteral}{"\%s(\%d), "},ptr-\/>word, ptr-\/>occurance);}
+\DoxyCodeLine{00076                 printf(RESET);}
+\DoxyCodeLine{00077             \}\textcolor{keywordflow}{else} printf(\textcolor{stringliteral}{"\%s, "},ptr-\/>word);}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079             \textcolor{keywordflow}{if}((j\%10)==0)printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{00080         \}}
+\DoxyCodeLine{00081     \}}
+\DoxyCodeLine{00082 \}}
+
+\end{DoxyCode}

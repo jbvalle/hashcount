@@ -1,0 +1,156 @@
+\hypertarget{censor__buckets_8c}{}\doxysection{/home/jv/\+Coding/hashcount/src/censor\+\_\+buckets.c File Reference}
+\label{censor__buckets_8c}\index{/home/jv/Coding/hashcount/src/censor\_buckets.c@{/home/jv/Coding/hashcount/src/censor\_buckets.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../inc/node\+\_\+t.\+h\char`\"{}}\newline
+Include dependency graph for censor\+\_\+buckets.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{censor__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}\label{censor__buckets_8c_a4b5014034c9aac136ab8c82c2d16dc82}} 
+\#define {\bfseries C\+O\+L\+OR}~\char`\"{}\textbackslash{}033\mbox{[}0;93m\char`\"{}
+\item 
+\mbox{\Hypertarget{censor__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}\label{censor__buckets_8c_ab702106cf3b3e96750b6845ded4e0299}} 
+\#define {\bfseries R\+E\+S\+ET}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{censor__buckets_8c_a93fc0d88295578ea4567b8000723d635}{remove\+\_\+key\+\_\+word}} (char $\ast$input\+\_\+string, char $\ast$comparison\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Removes keywords of buckets from a string.~\newline
+ A string is itteratively analyzed and letterwise compared with the keyword if a complete Keyword was matched remove by rplacing characters with dashes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{censor__buckets_8c_ac3c63497a5e45ed0a4dab4c05d9ac171}{censor\+\_\+buckets}} (\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$buckets, F\+I\+LE $\ast$input\+\_\+stream, F\+I\+LE $\ast$output\+\_\+stream, int $\ast$requested\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Itterate through all lines and check for all words in buckets.~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+John Bryan Valle 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{censor__buckets_8c_source}{censor\+\_\+buckets.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{censor__buckets_8c_ac3c63497a5e45ed0a4dab4c05d9ac171}\label{censor__buckets_8c_ac3c63497a5e45ed0a4dab4c05d9ac171}} 
+\index{censor\_buckets.c@{censor\_buckets.c}!censor\_buckets@{censor\_buckets}}
+\index{censor\_buckets@{censor\_buckets}!censor\_buckets.c@{censor\_buckets.c}}
+\doxysubsubsection{\texorpdfstring{censor\_buckets()}{censor\_buckets()}}
+{\footnotesize\ttfamily void censor\+\_\+buckets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node\+\_\+t}} $\ast$$\ast$}]{buckets,  }\item[{F\+I\+LE $\ast$}]{input\+\_\+stream,  }\item[{F\+I\+LE $\ast$}]{output\+\_\+stream,  }\item[{int $\ast$}]{requested\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Itterate through all lines and check for all words in buckets.~\newline
+ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buckets} & All buckets of given requested indices are checed \\
+\hline
+\mbox{\texttt{ in}}  & {\em input\+\_\+stream} & Current Input stream of an input text \\
+\hline
+\mbox{\texttt{ in}}  & {\em output\+\_\+stream} & Output Stream to write new line \\
+\hline
+\mbox{\texttt{ in}}  & {\em requested\+\_\+index} & Array with all requested indices \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item request word of single bucket
+\item remove words inside bucket from string
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{censor__buckets_8c_source_l00057}{57}} of file \mbox{\hyperlink{censor__buckets_8c_source}{censor\+\_\+buckets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057                                                                                                     \{}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{comment}{//Output Requested Buckets}}
+\DoxyCodeLine{00060     \textcolor{keywordtype}{char} buff[100];}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \textcolor{keywordflow}{while}(fgets(buff,\textcolor{keyword}{sizeof}(buff),input\_stream)!=NULL)\{}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064         \textcolor{comment}{//===================================}}
+\DoxyCodeLine{00066 \textcolor{comment}{}        \textcolor{comment}{//===================================}}
+\DoxyCodeLine{00067         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} x = 0; requested\_index[x] != -\/1; x++)\{}
+\DoxyCodeLine{00068         }
+\DoxyCodeLine{00069             \textcolor{keywordtype}{int} i = requested\_index[x];}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071             \mbox{\hyperlink{structnode}{node\_t}} *ptr = buckets[i];}
+\DoxyCodeLine{00072             }
+\DoxyCodeLine{00073             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 1; ptr != NULL; ptr = ptr-\/>next, j++)\{}
+\DoxyCodeLine{00074                 }
+\DoxyCodeLine{00075                 \textcolor{comment}{//======================================}}
+\DoxyCodeLine{00077 \textcolor{comment}{}                \textcolor{comment}{//======================================}}
+\DoxyCodeLine{00078                 \mbox{\hyperlink{censor__buckets_8c_a93fc0d88295578ea4567b8000723d635}{remove\_key\_word}}(buff, ptr-\/>word);}
+\DoxyCodeLine{00079             \}}
+\DoxyCodeLine{00080         \}}
+\DoxyCodeLine{00081         fputs(buff, output\_stream);}
+\DoxyCodeLine{00082         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 100; i++)buff[i]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00083     \}}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{censor__buckets_8c_a93fc0d88295578ea4567b8000723d635}\label{censor__buckets_8c_a93fc0d88295578ea4567b8000723d635}} 
+\index{censor\_buckets.c@{censor\_buckets.c}!remove\_key\_word@{remove\_key\_word}}
+\index{remove\_key\_word@{remove\_key\_word}!censor\_buckets.c@{censor\_buckets.c}}
+\doxysubsubsection{\texorpdfstring{remove\_key\_word()}{remove\_key\_word()}}
+{\footnotesize\ttfamily void remove\+\_\+key\+\_\+word (\begin{DoxyParamCaption}\item[{char $\ast$}]{input\+\_\+string,  }\item[{char $\ast$}]{comparison\+\_\+string }\end{DoxyParamCaption})}
+
+
+
+Removes keywords of buckets from a string.~\newline
+ A string is itteratively analyzed and letterwise compared with the keyword if a complete Keyword was matched remove by rplacing characters with dashes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input\+\_\+string} & current line \\
+\hline
+\mbox{\texttt{ in}}  & {\em comparison\+\_\+string} & String of a Bucket element \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Check for match
+\item If match found increment occurance and delete word
+\item Replace matching keyword character
+\item Set current index to end of word
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{censor__buckets_8c_source_l00022}{22}} of file \mbox{\hyperlink{censor__buckets_8c_source}{censor\+\_\+buckets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022                                                                  \{}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \textcolor{keywordtype}{int} input\_string\_len = strlen(input\_string);}
+\DoxyCodeLine{00026     \textcolor{keywordtype}{int} comparison\_string\_len = strlen(comparison\_string);}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i <= (input\_string\_len -\/ (int)strlen(comparison\_string)); i++)\{}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00033         \textcolor{keywordflow}{for}(x = 0; x < comparison\_string\_len; x++)\{}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035            \textcolor{keywordflow}{if}(comparison\_string[x] != input\_string[i + x])\textcolor{keywordflow}{break};}
+\DoxyCodeLine{00036         \}}
+\DoxyCodeLine{00038         \textcolor{keywordflow}{if}(x == comparison\_string\_len)\{}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k = i; k < i + comparison\_string\_len;k++)\{}
+\DoxyCodeLine{00042                 input\_string[k] = \textcolor{charliteral}{'-\/'};}
+\DoxyCodeLine{00043             \}}
+\DoxyCodeLine{00045             i += comparison\_string\_len -\/ 1;}
+\DoxyCodeLine{00046         \}}
+\DoxyCodeLine{00047     \}}
+\DoxyCodeLine{00048 \}}
+
+\end{DoxyCode}
