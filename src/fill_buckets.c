@@ -78,8 +78,9 @@ void add_node(node_t **head, char *new_key){
     new->next = NULL;
 
     ///3. Check for if Head is NULL Pointer and assign new element as new head
-    if(ptr == NULL){
+    if(ptr == NULL || strcmp(ptr->word, new->word)>=0){
 
+        new->next = *head;
         *head = new;
         return;
     }
@@ -103,6 +104,7 @@ void add_node(node_t **head, char *new_key){
 
     ///5. Check if first elements string member -> correct alphabetical order, else -> stack unto list
     ptr = *head;
+
     if(strcmp(ptr->word, new_key) > 0){
 
         stack(head, new_key);
