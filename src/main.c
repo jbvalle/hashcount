@@ -76,7 +76,7 @@ int main(int argc, char **argv){
 
     fill_buckets(buckets, hash_limit, input_stream);
 
-
+    //Sort Individual Buckets
     for(int i = 0; i < hash_limit; i++)insertionSort(&buckets[i]);
     
     display_list(buckets, output_stream, 40);

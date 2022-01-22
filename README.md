@@ -38,7 +38,7 @@
 -  tab (\t)<br />
 
 
-<strong>3 Part: (UNSOLVED)<br /></strong>
+<strong>3 Part: (SOLVED)<br /></strong>
 * The lists shall always retain alphabetic order.
 
 <strong>4 Part: (SOLVED)<br /></strong>

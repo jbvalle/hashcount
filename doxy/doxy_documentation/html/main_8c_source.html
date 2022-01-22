@@ -141,7 +141,7 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="fill__buckets_8h.html#ad7879271ac1cf2fd1a4fd3159d65b627">fill_buckets</a>(buckets, hash_limit, input_stream);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">//Sort Individual Buckets</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; hash_limit; i++)<a class="code" href="sorting_8h.html#a34b660311040b306916a66f615baea2e">insertionSort</a>(&amp;buckets[i]);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="display__list_8h.html#ad0de26c7c2dc54dba3dbec2d7623e6a7">display_list</a>(buckets, output_stream, 40);</div>
