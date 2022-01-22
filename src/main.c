@@ -19,10 +19,13 @@
 #include "../inc/censor_buckets.h"
 #include "../inc/choose_buckets.h"
 #include "../inc/display_list.h"
+#include "../inc/sorting.h"
 
 #define COLOR "\033[0;94m"
 #define COLOR1 "\033[0;92m"
 #define RESET "\033[0m"
+
+
 
 
 int main(int argc, char **argv){
@@ -72,6 +75,9 @@ int main(int argc, char **argv){
     //-----------------------------------------------------------------------
 
     fill_buckets(buckets, hash_limit, input_stream);
+
+
+    for(int i = 0; i < hash_limit; i++)insertionSort(&buckets[i]);
     
     display_list(buckets, output_stream, 40);
 

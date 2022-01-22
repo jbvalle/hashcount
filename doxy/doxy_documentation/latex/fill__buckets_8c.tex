@@ -98,24 +98,23 @@ Definition at line \mbox{\hyperlink{fill__buckets_8c_source_l00069}{69}} of file
 \DoxyCodeLine{00099         ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
 \DoxyCodeLine{00100     \}}
 \DoxyCodeLine{00101 }
-\DoxyCodeLine{00102 }
-\DoxyCodeLine{00103 }
-\DoxyCodeLine{00105     ptr = *head;}
-\DoxyCodeLine{00106     \textcolor{keywordflow}{if}(strcmp(ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, new\_key) > 0)\{}
-\DoxyCodeLine{00107 }
-\DoxyCodeLine{00108         \mbox{\hyperlink{stack_8h_a566f0c4642ac167626a631f693169b11}{stack}}(head, new\_key);}
-\DoxyCodeLine{00109         \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00110     \}}
-\DoxyCodeLine{00111 }
-\DoxyCodeLine{00113     ptr = *head;}
-\DoxyCodeLine{00114 }
-\DoxyCodeLine{00115     \textcolor{keywordflow}{for}(; (ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} != NULL)\&\&(strcmp(ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, new\_key) > 0); ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}});}
-\DoxyCodeLine{00116 }
-\DoxyCodeLine{00117     \mbox{\hyperlink{insert_8h_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert}}(head, ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, new\_key);}
-\DoxyCodeLine{00118 }
-\DoxyCodeLine{00120     \textcolor{keywordflow}{if}(ptr == NULL)\mbox{\hyperlink{append_8h_a53de05066e101242b94e4f458b5ae35b}{append}}(head, new\_key);}
-\DoxyCodeLine{00121 }
-\DoxyCodeLine{00122 \}}
+\DoxyCodeLine{00103     ptr = *head;}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105     \textcolor{keywordflow}{if}(strcmp(ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, new\_key) > 0)\{}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107         \mbox{\hyperlink{stack_8h_a566f0c4642ac167626a631f693169b11}{stack}}(head, new\_key);}
+\DoxyCodeLine{00108         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00109     \}}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00112     ptr = *head;}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114     \textcolor{keywordflow}{for}(; (ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} != NULL)\&\&(strcmp(ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, new\_key) < 0); ptr = ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}});}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116     \mbox{\hyperlink{insert_8h_a1f22eccdb6399bb02fcac2ab4102bcdd}{insert}}(head, ptr-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, new\_key);}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00119     \textcolor{keywordflow}{if}(ptr == NULL)\mbox{\hyperlink{append_8h_a53de05066e101242b94e4f458b5ae35b}{append}}(head, new\_key);}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{fill__buckets_8c_ad7879271ac1cf2fd1a4fd3159d65b627}\label{fill__buckets_8c_ad7879271ac1cf2fd1a4fd3159d65b627}} 
@@ -145,32 +144,32 @@ Populates buckets of all the words within the input stream.
 \item Reset Buffer to save line
 \end{DoxyEnumerate}
 
-Definition at line \mbox{\hyperlink{fill__buckets_8c_source_l00130}{130}} of file \mbox{\hyperlink{fill__buckets_8c_source}{fill\+\_\+buckets.\+c}}.
+Definition at line \mbox{\hyperlink{fill__buckets_8c_source_l00129}{129}} of file \mbox{\hyperlink{fill__buckets_8c_source}{fill\+\_\+buckets.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00130                                                                        \{}
+\DoxyCodeLine{00129                                                                        \{}
+\DoxyCodeLine{00130 }
 \DoxyCodeLine{00131 }
-\DoxyCodeLine{00132 }
-\DoxyCodeLine{00133     \textcolor{keywordtype}{char} buff[100];}
-\DoxyCodeLine{00134     \textcolor{keywordtype}{char} *token;\textcolor{keywordtype}{char} delimiter[] = \textcolor{stringliteral}{" .\(\backslash\)n;:,?\(\backslash\)t"};}
-\DoxyCodeLine{00135 }
-\DoxyCodeLine{00137     \textcolor{keywordflow}{while}(fgets(buff,\textcolor{keyword}{sizeof}(buff),input\_stream)!=NULL)\{}
-\DoxyCodeLine{00138 }
-\DoxyCodeLine{00140         token = strtok(buff, delimiter);}
-\DoxyCodeLine{00141 }
-\DoxyCodeLine{00142         \textcolor{keywordflow}{while}(token!=NULL)\{}
-\DoxyCodeLine{00143 }
-\DoxyCodeLine{00145             \mbox{\hyperlink{fill__buckets_8c_ad8202785f43186178e979f230ffa5075}{add\_node}}(\&buckets[\mbox{\hyperlink{fill__buckets_8c_aa6707e4d0f37a801750800a3571741fc}{hash\_index}}(token, hash\_limit)], token);}
-\DoxyCodeLine{00146 }
-\DoxyCodeLine{00147             token = strtok(NULL, delimiter);}
-\DoxyCodeLine{00148         \}}
-\DoxyCodeLine{00149 }
-\DoxyCodeLine{00151         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 100; i++)buff[i]=\textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00152     \}}
+\DoxyCodeLine{00132     \textcolor{keywordtype}{char} buff[100];}
+\DoxyCodeLine{00133     \textcolor{keywordtype}{char} *token;\textcolor{keywordtype}{char} delimiter[] = \textcolor{stringliteral}{" .\(\backslash\)n;:,?\(\backslash\)t"};}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00136     \textcolor{keywordflow}{while}(fgets(buff,\textcolor{keyword}{sizeof}(buff),input\_stream)!=NULL)\{}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00139         token = strtok(buff, delimiter);}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141         \textcolor{keywordflow}{while}(token!=NULL)\{}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00144             \mbox{\hyperlink{fill__buckets_8c_ad8202785f43186178e979f230ffa5075}{add\_node}}(\&buckets[\mbox{\hyperlink{fill__buckets_8c_aa6707e4d0f37a801750800a3571741fc}{hash\_index}}(token, hash\_limit)], token);}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146             token = strtok(NULL, delimiter);}
+\DoxyCodeLine{00147         \}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00150         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 100; i++)buff[i]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00151     \}}
+\DoxyCodeLine{00152 }
 \DoxyCodeLine{00153 }
-\DoxyCodeLine{00154 }
-\DoxyCodeLine{00155 \}}
+\DoxyCodeLine{00154 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{fill__buckets_8c_aa6707e4d0f37a801750800a3571741fc}\label{fill__buckets_8c_aa6707e4d0f37a801750800a3571741fc}} 

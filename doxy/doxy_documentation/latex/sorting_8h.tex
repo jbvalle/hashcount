@@ -1,0 +1,110 @@
+\hypertarget{sorting_8h}{}\doxysection{/home/jv/\+Coding/hashcount/inc/sorting.h File Reference}
+\label{sorting_8h}\index{/home/jv/Coding/hashcount/inc/sorting.h@{/home/jv/Coding/hashcount/inc/sorting.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sorting_8h_a8e8f0063a57589705b23ca7e6cb0aff4}{sorted\+\_\+insert}} (\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$sorted, \mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$new)
+\begin{DoxyCompactList}\small\item\em This function insert new element to list in an alphabetically sorted order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sorting_8h_a34b660311040b306916a66f615baea2e}{insertion\+Sort}} (\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$head)
+\begin{DoxyCompactList}\small\item\em This function traverses though list and adds any subsequent word into the sorted list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sorting_8h_a34b660311040b306916a66f615baea2e}\label{sorting_8h_a34b660311040b306916a66f615baea2e}} 
+\index{sorting.h@{sorting.h}!insertionSort@{insertionSort}}
+\index{insertionSort@{insertionSort}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{insertionSort()}{insertionSort()}}
+{\footnotesize\ttfamily void insertion\+Sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$}]{head }\end{DoxyParamCaption})}
+
+
+
+This function traverses though list and adds any subsequent word into the sorted list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em head} & Head of current Bucket \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Initialize head of sorted list
+\item Traverse through list and add subsequnent elements to the sorted list
+\item Assign new head of sorted list to original head
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{sorting_8c_source_l00050}{50}} of file \mbox{\hyperlink{sorting_8c_source}{sorting.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050                                  \{}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00053     \mbox{\hyperlink{structnode}{node\_t}} *sorted = NULL;}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \mbox{\hyperlink{structnode}{node\_t}} *curr\_ptr = *head;}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00058     \textcolor{keywordflow}{while}(curr\_ptr != NULL)\{}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060         \mbox{\hyperlink{structnode}{node\_t}} *temp = curr\_ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062         \mbox{\hyperlink{sorting_8c_a8e8f0063a57589705b23ca7e6cb0aff4}{sorted\_insert}}(\&sorted, curr\_ptr);}
+\DoxyCodeLine{00063         }
+\DoxyCodeLine{00064         curr\_ptr = temp;}
+\DoxyCodeLine{00065     \}}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00068     *head = sorted;}
+\DoxyCodeLine{00069 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sorting_8h_a8e8f0063a57589705b23ca7e6cb0aff4}\label{sorting_8h_a8e8f0063a57589705b23ca7e6cb0aff4}} 
+\index{sorting.h@{sorting.h}!sorted\_insert@{sorted\_insert}}
+\index{sorted\_insert@{sorted\_insert}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{sorted\_insert()}{sorted\_insert()}}
+{\footnotesize\ttfamily void sorted\+\_\+insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$$\ast$}]{sorted,  }\item[{\mbox{\hyperlink{node__t_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$}]{new }\end{DoxyParamCaption})}
+
+
+
+This function insert new element to list in an alphabetically sorted order. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sorted} & head of sorted list \\
+\hline
+\mbox{\texttt{ in}}  & {\em new} & Subsequent Word in a list \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyEnumerate}
+\item Checks if first element is null or if first element\textquotesingle{}s word is a \textquotesingle{}subsequent\textquotesingle{} word of new
+\item Stack new word unto list if first element is either Null or a subsequent word
+\item Traverse through list until elements list is a subsequent element to new element
+\item Insert new element behind the supposedly subsequent list\textquotesingle{}s element
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{sorting_8c_source_l00019}{19}} of file \mbox{\hyperlink{sorting_8c_source}{sorting.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019                                                 \{}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00022     \textcolor{keywordflow}{if}((*sorted) == NULL || ( strcmp((*sorted)-\/>word, new-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}) >= 0))\{}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00025         \textcolor{keyword}{new}-\/>next = *sorted;}
+\DoxyCodeLine{00026         *sorted = \textcolor{keyword}{new};}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00029         }
+\DoxyCodeLine{00031         \mbox{\hyperlink{structnode}{node\_t}} *curr\_ptr = *sorted;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033         \textcolor{keywordflow}{while}(curr\_ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} != NULL \&\& (strcmp(curr\_ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, new-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}) <= 0))\{}
+\DoxyCodeLine{00034             }
+\DoxyCodeLine{00035             curr\_ptr = curr\_ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{00036         \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00039         \textcolor{keyword}{new}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = curr\_ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{00040         curr\_ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{00041     \}}
+\DoxyCodeLine{00042 \}}
+
+\end{DoxyCode}

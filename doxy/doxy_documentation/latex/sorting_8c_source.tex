@@ -1,0 +1,55 @@
+\hypertarget{sorting_8c_source}{}\doxysection{sorting.\+c}
+\label{sorting_8c_source}\index{/home/jv/Coding/hashcount/src/sorting.c@{/home/jv/Coding/hashcount/src/sorting.c}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "../inc/node\_t.h"}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{sorting_8c_source_l00019}\mbox{\hyperlink{sorting_8c_a8e8f0063a57589705b23ca7e6cb0aff4}{00019}} \textcolor{keywordtype}{void} \mbox{\hyperlink{sorting_8c_a8e8f0063a57589705b23ca7e6cb0aff4}{sorted\_insert}}(\mbox{\hyperlink{structnode}{node\_t}} **sorted, \mbox{\hyperlink{structnode}{node\_t}} *\textcolor{keyword}{new})\{}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00022     \textcolor{keywordflow}{if}((*sorted) == NULL || ( strcmp((*sorted)-\/>word, new-\/>word) >= 0))\{}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00025         \textcolor{keyword}{new}-\/>next = *sorted;}
+\DoxyCodeLine{00026         *sorted = \textcolor{keyword}{new};}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00029         }
+\DoxyCodeLine{00031         \mbox{\hyperlink{structnode}{node\_t}} *curr\_ptr = *sorted;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033         \textcolor{keywordflow}{while}(curr\_ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} != NULL \&\& (strcmp(curr\_ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a4fac939f5236506c96b518c8bde027e6}{word}}, new-\/>word) <= 0))\{}
+\DoxyCodeLine{00034             }
+\DoxyCodeLine{00035             curr\_ptr = curr\_ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{00036         \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00039         \textcolor{keyword}{new}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = curr\_ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{00040         curr\_ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{00041     \}}
+\DoxyCodeLine{00042 \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{\Hypertarget{sorting_8c_source_l00050}\mbox{\hyperlink{sorting_8c_a34b660311040b306916a66f615baea2e}{00050}} \textcolor{keywordtype}{void} \mbox{\hyperlink{sorting_8c_a34b660311040b306916a66f615baea2e}{insertionSort}}(\mbox{\hyperlink{structnode}{node\_t}} **head)\{}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00053     \mbox{\hyperlink{structnode}{node\_t}} *sorted = NULL;}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \mbox{\hyperlink{structnode}{node\_t}} *curr\_ptr = *head;}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00058     \textcolor{keywordflow}{while}(curr\_ptr != NULL)\{}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060         \mbox{\hyperlink{structnode}{node\_t}} *temp = curr\_ptr-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062         \mbox{\hyperlink{sorting_8c_a8e8f0063a57589705b23ca7e6cb0aff4}{sorted\_insert}}(\&sorted, curr\_ptr);}
+\DoxyCodeLine{00063         }
+\DoxyCodeLine{00064         curr\_ptr = temp;}
+\DoxyCodeLine{00065     \}}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00068     *head = sorted;}
+\DoxyCodeLine{00069 \}}
+\DoxyCodeLine{00070 }
+
+\end{DoxyCode}
